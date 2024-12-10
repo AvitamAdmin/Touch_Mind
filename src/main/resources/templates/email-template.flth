@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="container">
+  <h2>Stock Report</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Site</th>
+       <th>Variant</th>
+       <th>Stock Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    <#list stocks as stock>
+          <tr>
+          <#list stock.records?values as value>
+              <td>${value}</td>
+          </#list>
+          </tr>
+      </#list>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
