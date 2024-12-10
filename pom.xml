@@ -8,10 +8,10 @@
 		<version>3.3.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.cheil</groupId>
-	<artifactId>HealthcheckMvp</artifactId>
+	<groupId>com.touchmind</groupId>
+	<artifactId>TouchMind</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>HealthcheckMvp</name>
+	<name>TouchMind</name>
 	<description>Test automation</description>
 	<packaging>war</packaging>
 	<properties>

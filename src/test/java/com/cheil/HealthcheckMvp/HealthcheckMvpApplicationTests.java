@@ -1,4 +1,4 @@
-package com.cheil.HealthcheckMvp;
+package com.touchmind.HealthcheckMvp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
