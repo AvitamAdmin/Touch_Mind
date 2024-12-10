@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Zero_In_Test_Suite_initialized" class="navigator-link">
+              <span class="suite-name border-failed">Zero In Test Suite initialized</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Zero_In_Test_Suite_initialized" class="navigator-link ">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Zero_In_Test_Suite_initialized" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Zero_In_Test_Suite_initialized" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Zero_In_Test_Suite_initialized" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Zero_In_Test_Suite_initialized" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Zero_In_Test_Suite_initialized" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Zero_In_Test_Suite_initialized" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Zero_In_Test_Suite_initialized" class="hide-methods failed suite-Zero_In_Test_Suite_initialized"> (hide)</a> <!-- hide-methods failed suite-Zero_In_Test_Suite_initialized -->
+                      <a href="#" panel-name="suite-Zero_In_Test_Suite_initialized" class="show-methods failed suite-Zero_In_Test_Suite_initialized"> (show)</a> <!-- show-methods failed suite-Zero_In_Test_Suite_initialized -->
+                    </span>
+                    <div class="method-list-content failed suite-Zero_In_Test_Suite_initialized">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Zero_In_Test_Suite_initialized" title="com.cheil.qa.testplans.CoreTest" class="method navigator-link" hash-for-method="processLocators(org.testng.TestRunner@17e694d8, [SM-S928BZKGEUB])">processLocators(org.testng.TestRunner@17e694d8, [SM-S928BZKGEUB])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Zero_In_Test_Suite_initialized -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Zero_In_Test_Suite_initialized" class="panel Zero_In_Test_Suite_initialized">
+          <div class="suite-Zero_In_Test_Suite_initialized-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.cheil.qa.testplans.CoreTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="processLocators(org.testng.TestRunner@17e694d8, [SM-S928BZKGEUB])">
+                  </a> <!-- processLocators(org.testng.TestRunner@17e694d8, [SM-S928BZKGEUB]) -->
+                  <span class="method-name">processLocators</span>
+                  <span class="parameters">(org.testng.TestRunner@17e694d8,[SM-S928BZKGEUB])</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Zero_In_Test_Suite_initialized-class-failed -->
+        </div> <!-- panel Zero_In_Test_Suite_initialized -->
+        <div panel-name="test-xml-Zero_In_Test_Suite_initialized" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Zero In Test Suite initialized&quot;&gt;
+  &lt;parameter name=&quot;data&quot; value=&quot;{&amp;quot;identifier&amp;quot;:&amp;quot;Test&amp;quot;,&amp;quot;emailSubject&amp;quot;:&amp;quot;test&amp;quot;,&amp;quot;cronExpression&amp;quot;:&amp;quot;56 13 * * *&amp;quot;,&amp;quot;skus&amp;quot;:&amp;quot;SM-S928BZKGEUB&amp;quot;,&amp;quot;jobStatus&amp;quot;:&amp;quot;Stopped&amp;quot;,&amp;quot;enableHistory&amp;quot;:&amp;quot;false&amp;quot;,&amp;quot;dashboard&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;siteUrl&amp;quot;:&amp;quot;http://localhost:8080&amp;quot;,&amp;quot;cronProfileId&amp;quot;:&amp;quot;66a20a589d073513c6a5acce&amp;quot;,&amp;quot;cronTestPlanFormList&amp;quot;:&amp;quot;[{\&amp;quot;testProfile\&amp;quot;:\&amp;quot;\&amp;quot;,\&amp;quot;categoryId\&amp;quot;:\&amp;quot;\&amp;quot;,\&amp;quot;environment\&amp;quot;:\&amp;quot;1718614547\&amp;quot;,\&amp;quot;subsidiary\&amp;quot;:\&amp;quot;1\&amp;quot;,\&amp;quot;testPlan\&amp;quot;:\&amp;quot;1715690418\&amp;quot;,\&amp;quot;siteIsoCode\&amp;quot;:\&amp;quot;de\&amp;quot;,\&amp;quot;cronProfileId\&amp;quot;:\&amp;quot;\&amp;quot;}]&amp;quot;,&amp;quot;campaign&amp;quot;:&amp;quot;Test&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;{\&amp;quot;timestamp\&amp;quot;:1721895641,\&amp;quot;counter\&amp;quot;:10857679,\&amp;quot;randomValue1\&amp;quot;:10290997,\&amp;quot;randomValue2\&amp;quot;:5062}&amp;quot;,&amp;quot;recordId&amp;quot;:&amp;quot;1721895641&amp;quot;,&amp;quot;creator&amp;quot;:&amp;quot;raja18.mech@gmail.com&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;true&amp;quot;,&amp;quot;creationTime&amp;quot;:&amp;quot;\&amp;quot;Jul 25, 2024, 10:20:41 AM\&amp;quot;&amp;quot;,&amp;quot;lastModified&amp;quot;:&amp;quot;\&amp;quot;Jul 25, 2024, 10:20:41 AM\&amp;quot;&amp;quot;,&amp;quot;sessionId&amp;quot;:&amp;quot;19082bbd-e3b8-4cca-bbc0-fbaa25396a0e&amp;quot;,&amp;quot;jobTime&amp;quot;:&amp;quot;2024-08-20 08:54:30&amp;quot;,&amp;quot;testProfile&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;environment&amp;quot;:&amp;quot;1718614547&amp;quot;,&amp;quot;subsidiary&amp;quot;:&amp;quot;1&amp;quot;,&amp;quot;testPlan&amp;quot;:&amp;quot;1715690418&amp;quot;,&amp;quot;siteIsoCode&amp;quot;:&amp;quot;de&amp;quot;,&amp;quot;currentUser&amp;quot;:&amp;quot;Test&amp;quot;,&amp;quot;testName&amp;quot;:&amp;quot;buy_BC_add_tradeIn_from_cart_guest_hd_amex_ackE&amp;quot;,&amp;quot;testCount&amp;quot;:&amp;quot;1&amp;quot;}&quot;/&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Zero in test class initialized&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.cheil.qa.testplans.CoreTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Zero in test class initialized --&gt;
+&lt;/suite&gt; &lt;!-- Zero In Test Suite initialized --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Zero_In_Test_Suite_initialized" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Zero In Test Suite initialized</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Zero in test class initialized (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Zero_In_Test_Suite_initialized" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Zero In Test Suite initialized</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Zero_In_Test_Suite_initialized" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Zero In Test Suite initialized</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Zero_In_Test_Suite_initialized');
+function tableData_Zero_In_Test_Suite_initialized() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'processLocators')
+data.setCell(0, 2, 'com.cheil.qa.testplans.CoreTest')
+data.setCell(0, 3, 23272);
+window.suiteTableData['Zero_In_Test_Suite_initialized']= { tableData: data, tableDiv: 'times-div-Zero_In_Test_Suite_initialized'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 23 seconds</span>
+              <div id="times-div-Zero_In_Test_Suite_initialized">
+              </div> <!-- times-div-Zero_In_Test_Suite_initialized -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Zero_In_Test_Suite_initialized" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Zero In Test Suite initialized</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Zero_In_Test_Suite_initialized" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Zero_In_Test_Suite_initialized" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.cheil.qa.testplans.CoreTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeSuite(org.testng.TestRunner@17e694d8)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">setupData(org.testng.TestRunner@17e694d8)</span>
+                <span class="method-start">312 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">processLocators(org.testng.TestRunner@17e694d8, [SM-S928BZKGEUB])</span>
+                <span class="method-start">321 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-suite after">
+                <span class="method-name">afterSuite(org.testng.TestRunner@17e694d8)</span>
+                <span class="method-start">23607 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

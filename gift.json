@@ -1,0 +1,5888 @@
+[
+{
+"products": [
+{
+"name": "Ladeadapter mit Schnellladefunktion EP-TA800N (USB Type-C, 25W)",
+"modelcode": "EP-TA800NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 19.9,
+"priceType": "BUY",
+"formattedValue": "19,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-TA800",
+"colorCode": "#010101",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-ta800nbegeu/gallery/de-wall-charger-super-fast-charging-ta800-298387-ep-ta800nbegeu-351481356?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Ladeadapter mit Schnellladefunktion EP-TA800N (USB Type-C, 25W)",
+"modelcode": "EP-TA800NWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 19.9,
+"priceType": "BUY",
+"formattedValue": "19,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EP-TA800",
+"colorCode": "#fffffe",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-ta800nwegeu/gallery/de-wall-charger-super-fast-charging-ta800-298387-ep-ta800nwegeu-351481435?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Duo mit Schnellladeadapter EP-P5400T",
+"modelcode": "EP-P5400TWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P5400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p5400-ep-p5400twegeu-530902292?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Duo mit Schnellladeadapter EP-P5400T",
+"modelcode": "EP-P5400TBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P5400",
+"colorCode": "#5e6061",
+"colorName": "Dark Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p5400-ep-p5400tbegeu-530902277?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Duo EP-P5400",
+"modelcode": "EP-P5400BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 69.9,
+"priceType": "BUY",
+"formattedValue": "69,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P5400",
+"colorCode": "#5e6061",
+"colorName": "Dark Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p5400-411555-ep-p5400bbegeu-530902982?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Duo EP-P5400",
+"modelcode": "EP-P5400BWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 69.9,
+"priceType": "BUY",
+"formattedValue": "69,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P5400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p5400-411555-ep-p5400bwegeu-530902997?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Pad mit Schnellladeadapter EP-P2400T",
+"modelcode": "EP-P2400TWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P2400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p2400-ep-p2400twegeu-530903146?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Pad mit Schnellladeadapter EP-P2400T",
+"modelcode": "EP-P2400TBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P2400",
+"colorCode": "#5e6061",
+"colorName": "Dark Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p2400-ep-p2400tbegeu-530903131?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Pad EP-P2400",
+"modelcode": "EP-P2400BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P2400",
+"colorCode": "#5e6061",
+"colorName": "Dark Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p2400-411560-ep-p2400bbegeu-530903206?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Pad EP-P2400",
+"modelcode": "EP-P2400BWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P2400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p2400-411560-ep-p2400bwegeu-530903221?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Schnellladeadapter Trio 65 Watt EP-T6530N",
+"modelcode": "EP-T6530NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-T6530N",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-t6530nbegeu/gallery/de-65w-power-adapter-trio-ep-t6530-ep-t6530nbegeu-530622323?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Schnellladeadapter Duo 35 Watt EP-TA220N",
+"modelcode": "EP-TA220NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 24.89,
+"priceType": "BUY",
+"formattedValue": "24,89 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "EP-TA220",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-ta220nbegeu/gallery/de-35w-power-adapter-ep-ta-220-ep-ta220nbegeu-427563191?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Schnellladeadapter (USB Type-C, 15 Watt) EP-T1510N",
+"modelcode": "EP-T1510NWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 14.9,
+"priceType": "BUY",
+"formattedValue": "14,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EP-T1510N",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-t1510nwegeu/gallery/de-15w-power-adapter-ep-t1510-407886-ep-t1510nwegeu-530516822?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "USB Type-C auf USB Type-C Kabel (1,8 m, 3A) EP-DX310",
+"modelcode": "EP-DX310JWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 17.9,
+"priceType": "BUY",
+"formattedValue": "17,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-DX310",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-dx310jwegeu/gallery/de-datenkabel-1-8-m-usb-type-c-3a-ep-dx310-410109-ep-dx310jwegeu-530777752?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "USB Type-C auf USB Type-C Kabel (1,8 m, 3A) EP-DX310",
+"modelcode": "EP-DX310JBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 17.9,
+"priceType": "BUY",
+"formattedValue": "17,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "EP-DX310",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-dx310jbegeu/gallery/de-datenkabel-1-8-m-usb-type-c-3a-ep-dx310-ep-dx310jbegeu-530777745?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Trio EP-P6300",
+"modelcode": "EP-P6300TWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 99.9,
+"priceType": "BUY",
+"formattedValue": "99,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P6300",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/de-wireless-charger-trio-p6300-ep-p6300twegeu-frontwhite-301164610?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Trio EP-P6300",
+"modelcode": "EP-P6300TBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 99.9,
+"priceType": "BUY",
+"formattedValue": "99,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P6300",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/de-wireless-charger-trio-p6300-ep-p6300tbegeu-frontblack-301164593?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Car Charger EP-H5300",
+"modelcode": "EP-H5300CBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-H5300",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-h5300cbegeu/gallery/de-wireless-car-charger-ep-h5300-ep-h5300cbegeu-530422848?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Kfz-Schnellladeadapter Duo 40 Watt EP-L4020N",
+"modelcode": "EP-L4020NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 34.9,
+"priceType": "BUY",
+"formattedValue": "34,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "EP-L4020",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-l4020nbegeu/gallery/de-40w-car-charger-duo-ep-l4020-ep-l4020nbegeu-531211277?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag EI-T5300",
+"modelcode": "EI-T5300BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 34.9,
+"priceType": "BUY",
+"formattedValue": "34,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T5300",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5300bbegeu/gallery/de-galaxy-smarttag-ei-t5300-ei-t5300bbegeu-499737720?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag EI-T5300",
+"modelcode": "EI-T5300BAEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 34.9,
+"priceType": "BUY",
+"formattedValue": "34,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EI-T5300",
+"colorCode": "#c5beb6",
+"colorName": "Oatmeal",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5300baegeu/gallery/de-galaxy-smarttag-ei-t5300-ei-t5300baegeu-499737275?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag (2er Pack) EI-T5300M",
+"modelcode": "EI-T5300MBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EI-T5300",
+"colorCode": "#000000",
+"colorName": "Black und Oatmeal",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5300mbegeu/gallery/de-galaxy-smarttag-ei-t5300-373884-ei-t5300mbegeu-499738546?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag+ EI-T7300",
+"modelcode": "EI-T7300BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T7300",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t7300bbegeu/gallery/de-galaxy-smarttag-ei-t7300-ei-t7300bbegeu-499738841?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag+ EI-T7300",
+"modelcode": "EI-T7300BLEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T7300",
+"colorCode": "#687585",
+"colorName": "Denim Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t7300blegeu/gallery/de-galaxy-smarttag-ei-t7300-ei-t7300blegeu-499738934?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag+ (2er Pack) EI-T7300M",
+"modelcode": "EI-T7300MLEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 64.9,
+"priceType": "BUY",
+"formattedValue": "64,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "EI-T7300",
+"colorCode": "#000000",
+"colorName": "Black und Denim Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t7300mlegeu/gallery/de-galaxy-smarttag-ei-t7300-386219-ei-t7300mlegeu-431169341?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_ACCESSOIRES_DE_POWER",
+"display_name": "Power",
+"order": "4",
+"groupCount": 25
+}
+},
+{
+"products": [
+{
+"name": "Galaxy Watch5 (40mm, Bluetooth)",
+"modelcode": "SM-R900NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 299,
+"priceType": "BUY",
+"formattedValue": "299,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R900N",
+"colorCode": "#4a4a4d",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-sm-r900nzaadbt-533238213?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (40mm, Bluetooth)",
+"modelcode": "SM-R900NZSADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 299,
+"priceType": "BUY",
+"formattedValue": "299,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R900N",
+"colorCode": "#c7c8c9",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-sm-r900nzsadbt-533238253?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (40mm, Bluetooth)",
+"modelcode": "SM-R900NZDADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 299,
+"priceType": "BUY",
+"formattedValue": "299,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R900N",
+"colorCode": "#f0cfc3",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-sm-r900nzdadbt-533238234?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, Bluetooth) ",
+"modelcode": "SM-R910NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 329,
+"priceType": "BUY",
+"formattedValue": "329,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R910N",
+"colorCode": "#4a4a4d",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-sm-r910nzaadbt-533235810?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, Bluetooth) ",
+"modelcode": "SM-R910NZSADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 329,
+"priceType": "BUY",
+"formattedValue": "329,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R910N",
+"colorCode": "#c7c8c9",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-sm-r910nzsadbt-533235863?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, Bluetooth) ",
+"modelcode": "SM-R910NZBADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 329,
+"priceType": "BUY",
+"formattedValue": "329,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R910N",
+"colorCode": "#6b7d98",
+"colorName": "Sapphire",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-sm-r910nzbadbt-533235826?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 Pro (45mm, Bluetooth)",
+"modelcode": "SM-R920NZKADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 469,
+"priceType": "BUY",
+"formattedValue": "469,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R920N",
+"colorCode": "#404145",
+"colorName": "Black Titanium",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-pro-sm-r920nzkadbt-533241646?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 Pro (45mm, Bluetooth)",
+"modelcode": "SM-R920NZTADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 469,
+"priceType": "BUY",
+"formattedValue": "469,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R920N",
+"colorCode": "#867e74",
+"colorName": "Gray Titanium",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-pro-sm-r920nztadbt-533241662?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (40mm, LTE)",
+"modelcode": "SM-R905FZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 349,
+"priceType": "BUY",
+"formattedValue": "349,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R905F",
+"colorCode": "#4a4a4d",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-431696-sm-r905fzaadbt-533238842?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (40mm, LTE)",
+"modelcode": "SM-R905FZSADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 349,
+"priceType": "BUY",
+"formattedValue": "349,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "SM-R905F",
+"colorCode": "#c7c8c9",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-431696-sm-r905fzsadbt-533238896?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (40mm, LTE)",
+"modelcode": "SM-R905FZDADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 349,
+"priceType": "BUY",
+"formattedValue": "349,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "SM-R905F",
+"colorCode": "#f0cfc3",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-431696-sm-r905fzdadbt-533238869?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, LTE) ",
+"modelcode": "SM-R915FZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 379,
+"priceType": "BUY",
+"formattedValue": "379,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "SM-R915F",
+"colorCode": "#4a4a4d",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-431672-sm-r915fzaadbt-533237607?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, LTE) ",
+"modelcode": "SM-R915FZSADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 379,
+"priceType": "BUY",
+"formattedValue": "379,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "SM-R915F",
+"colorCode": "#c7c8c9",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-431672-sm-r915fzsadbt-533237633?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, LTE) ",
+"modelcode": "SM-R915FZBADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 379,
+"priceType": "BUY",
+"formattedValue": "379,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R915F",
+"colorCode": "#6b7d98",
+"colorName": "Sapphire",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-431672-sm-r915fzbadbt-533237620?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 Pro (45mm, LTE)",
+"modelcode": "SM-R925FZKADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 519,
+"priceType": "BUY",
+"formattedValue": "519,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "SM-R925F",
+"colorCode": "#404145",
+"colorName": "Black Titanium",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-pro-431799-sm-r925fzkadbt-533243063?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 Pro (45mm, LTE)",
+"modelcode": "SM-R925FZTADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 519,
+"priceType": "BUY",
+"formattedValue": "519,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "SM-R925F",
+"colorCode": "#867e74",
+"colorName": "Gray Titanium",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-pro-431799-sm-r925fztadbt-533243076?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_ACCESSOIRES_DE_GALAXYWATCH",
+"display_name": "Galaxy Watch",
+"order": "6",
+"groupCount": 16
+}
+},
+{
+"products": [
+{
+"name": "Galaxy Z Fold4 Note Package",
+"modelcode": "EF-OF93KKBEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 99.9,
+"priceType": "BUY",
+"formattedValue": "99,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-OF93KK",
+"colorCode": "#404145",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-note-package-ef-of93kkbegww-533089992?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Standing Cover with Pen",
+"modelcode": "EF-OF93PCBEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-OF93PC",
+"colorCode": "#404145",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-standing-cover-with-pen-ef-of93p-ef-of93pcbegww-533090253?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Standing Cover with Pen",
+"modelcode": "EF-OF93PCJEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-OF93PC",
+"colorCode": "#5b686a",
+"colorName": "Graygreen",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-standing-cover-with-pen-ef-of93p-ef-of93pcjegww-533090271?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Standing Cover with Pen",
+"modelcode": "EF-OF93PCUEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-OF93PC",
+"colorCode": "#dacdc5",
+"colorName": "Sand",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-standing-cover-with-pen-ef-of93p-ef-of93pcuegww-533090286?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Silicone Grip Cover",
+"modelcode": "EF-GF936TBEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 49.9,
+"priceType": "BUY",
+"formattedValue": "49,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-GF936T",
+"colorCode": "#404145",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-silicone-grip-cover-ef-gf936-ef-gf936tbegww-533090105?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Front Protection Film",
+"modelcode": "EF-UF93PCTEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 14.9,
+"priceType": "BUY",
+"formattedValue": "14,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-UF93PC",
+"colorCode": "#fffffe",
+"colorName": "Transparent",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-front-protection-film-ef-uf93p-ef-uf93pctegww-533089739?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Slim Standing Cover",
+"modelcode": "EF-MF936CBEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 49.9,
+"priceType": "BUY",
+"formattedValue": "49,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-MF936C",
+"colorCode": "#404145",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-slim-standing-cover-ef-mf936-ef-mf936cbegww-533090191?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Slim Standing Cover",
+"modelcode": "EF-MF936CUEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 49.9,
+"priceType": "BUY",
+"formattedValue": "49,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-MF936C",
+"colorCode": "#dacdc5",
+"colorName": "Sand",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-slim-standing-cover-ef-mf936-ef-mf936cuegww-533090209?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Leather Cover",
+"modelcode": "EF-VF936LBEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 79.9,
+"priceType": "BUY",
+"formattedValue": "79,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-VF936L",
+"colorCode": "#404145",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-leather-cover-ef-vf936-ef-vf936lbegww-533089802?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Leather Cover",
+"modelcode": "EF-VF936LJEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 79.9,
+"priceType": "BUY",
+"formattedValue": "79,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-VF936L",
+"colorCode": "#5b686a",
+"colorName": "Graygreen",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-leather-cover-ef-vf936-ef-vf936ljegww-533089819?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Silicone Grip Cover",
+"modelcode": "EF-GF936TWEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 49.9,
+"priceType": "BUY",
+"formattedValue": "49,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EF-GF936T",
+"colorCode": "#e9e9e7",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-silicone-grip-cover-ef-gf936-ef-gf936twegww-533090121?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_ACCESSOIRES_DE_COVER",
+"display_name": "Cover",
+"order": "3",
+"groupCount": 11
+}
+},
+{
+"products": [
+{
+"name": "Galaxy Buds2 Pro",
+"modelcode": "SM-R510NLVADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 229,
+"priceType": "BUY",
+"formattedValue": "229,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R510N",
+"colorCode": "#b2a1cd",
+"colorName": "Bora Purple",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-buds2-pro-r510-sm-r510nlvadbt-533211701?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2 Pro",
+"modelcode": "SM-R510NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 229,
+"priceType": "BUY",
+"formattedValue": "229,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R510N",
+"colorCode": "#404145",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-buds2-pro-r510-sm-r510nzaadbt-533211718?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2 Pro",
+"modelcode": "SM-R510NZWADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 229,
+"priceType": "BUY",
+"formattedValue": "229,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R510N",
+"colorCode": "#f1f0ed",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-buds2-pro-r510-sm-r510nzwadbt-533211735?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZKADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzkadbt-481691176?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NLVADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#bfb1d2",
+"colorName": "Lavender",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nlvadbt-481691138?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZWADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzwadbt-481691195?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZTADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#0a0b0e",
+"colorName": "Onyx",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r177nztadbt/gallery/de-galaxy-buds2-r177-399733-sm-r177nztadbt-531994160?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZGADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#a39f86",
+"colorName": "Olive",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzgadbt-481691157?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZNAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#9a716e",
+"colorName": "Mystic Bronze",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nznaeua/gallery/de-galaxy-buds-live-r180-sm-r180nznaeua-499728329?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZWAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#eff0f1",
+"colorName": "Mystic white",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nzwaeua/gallery/de-galaxy-buds-live-r180-sm-r180nzwaeua-499730083?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZTAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#0a0b0e",
+"colorName": "Black Onyx",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nztaeua/gallery/de-galaxy-buds-live-r180-341791-sm-r180nztaeua-532000666?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZKAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#3c3c3e",
+"colorName": "Mystic Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nzkaeua/gallery/de-galaxy-buds-live-r180-sm-r180nzkaeua-499729798?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZBAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#384478",
+"colorName": "Mystic blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nzbaeua/gallery/de-galaxy-buds-live-r180-sm-r180nzbaeua-499731251?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZRAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#b8333e",
+"colorName": "Mystic red",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nzraeua/gallery/de-galaxy-buds-live-r180-sm-r180nzraeua-499732504?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_ACCESSORIES_DE_BUDS",
+"display_name": "Galaxy Buds",
+"order": "5",
+"groupCount": 14
+}
+},
+{
+"products": [
+{
+"name": "Galaxy Tab S8 Ultra 5G",
+"modelcode": "SM-X906BZAAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1299,
+"priceType": "BUY",
+"formattedValue": "1.299,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X906STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-ultra-5g-x906-sm-x906bzaaeub-530849518?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Ultra 5G",
+"modelcode": "SM-X906BZAEEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1399,
+"priceType": "BUY",
+"formattedValue": "1.399,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X906STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-ultra-5g-x906-sm-x906bzaeeub-530849539?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Ultra 5G",
+"modelcode": "SM-X906BZAFEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1599,
+"priceType": "BUY",
+"formattedValue": "1.599,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X906STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-ultra-5g-x906-sm-x906bzafeub-530849560?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Ultra Wi-Fi",
+"modelcode": "SM-X900NZAFEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1449,
+"priceType": "BUY",
+"formattedValue": "1.449,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X900STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-ultra-wifi-x900-sm-x900nzafeub-530848656?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Ultra Wi-Fi",
+"modelcode": "SM-X900NZAEEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1249,
+"priceType": "BUY",
+"formattedValue": "1.249,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "SM-X900STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-ultra-wifi-x900-sm-x900nzaeeub-530848635?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Ultra Wi-Fi",
+"modelcode": "SM-X900NZAAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1149,
+"priceType": "BUY",
+"formattedValue": "1.149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 1045,
+"priceType": "BUY",
+"formattedValue": "1.045,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X900STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-ultra-wifi-x900-sm-x900nzaaeub-530848614?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 1045,
+"priceType": "BUY",
+"formattedValue": "1.045,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ 5G",
+"modelcode": "SM-X806BIDBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1149,
+"priceType": "BUY",
+"formattedValue": "1.149,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X806STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-5g-x806-sm-x806bidbeub-530848357?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ 5G",
+"modelcode": "SM-X806BZABEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1149,
+"priceType": "BUY",
+"formattedValue": "1.149,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X806STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-5g-x806-sm-x806bzabeub-530848399?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ 5G",
+"modelcode": "SM-X806BZSBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1149,
+"priceType": "BUY",
+"formattedValue": "1.149,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X806STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-5g-x806-sm-x806bzsbeub-530848441?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ Wi-Fi",
+"modelcode": "SM-X800NIDBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 999,
+"priceType": "BUY",
+"formattedValue": "999,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X800STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-wifi-x800-sm-x800nidbeub-530848055?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ Wi-Fi",
+"modelcode": "SM-X800NZABEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 999,
+"priceType": "BUY",
+"formattedValue": "999,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "SM-X800STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-wifi-x800-sm-x800nzabeub-530848097?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ Wi-Fi",
+"modelcode": "SM-X800NZSBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 999,
+"priceType": "BUY",
+"formattedValue": "999,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X800STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-wifi-x800-sm-x800nzsbeub-530848139?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ 5G",
+"modelcode": "SM-X806BZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1099,
+"priceType": "BUY",
+"formattedValue": "1.099,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X806STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-5g-x806-sm-x806bzsaeub-530848420?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ 5G",
+"modelcode": "SM-X806BIDAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1099,
+"priceType": "BUY",
+"formattedValue": "1.099,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X806STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-5g-x806-sm-x806bidaeub-530848336?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ 5G",
+"modelcode": "SM-X806BZAAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 1099,
+"priceType": "BUY",
+"formattedValue": "1.099,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X806STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-5g-x806-sm-x806bzaaeub-530848378?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ Wi-Fi",
+"modelcode": "SM-X800NIDAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 949,
+"priceType": "BUY",
+"formattedValue": "949,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "SM-X800STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-wifi-x800-sm-x800nidaeub-530848034?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ Wi-Fi",
+"modelcode": "SM-X800NZAAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 949,
+"priceType": "BUY",
+"formattedValue": "949,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X800STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-wifi-x800-sm-x800nzaaeub-530848076?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8+ Wi-Fi",
+"modelcode": "SM-X800NZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 949,
+"priceType": "BUY",
+"formattedValue": "949,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X800STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-wifi-x800-sm-x800nzsaeub-530848118?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BIDBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 949,
+"priceType": "BUY",
+"formattedValue": "949,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bidbeub-530847650?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BZABEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 949,
+"priceType": "BUY",
+"formattedValue": "949,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bzabeub-530847692?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BZSBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 949,
+"priceType": "BUY",
+"formattedValue": "949,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bzsbeub-530847734?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NIDBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 799,
+"priceType": "BUY",
+"formattedValue": "799,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pinkgold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nidbeub-530845134?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NZABEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 799,
+"priceType": "BUY",
+"formattedValue": "799,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nzabeub-530845176?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NZSBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 799,
+"priceType": "BUY",
+"formattedValue": "799,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nzsbeub-530845218?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BIDAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 899,
+"priceType": "BUY",
+"formattedValue": "899,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bidaeub-530847629?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BZAAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 899,
+"priceType": "BUY",
+"formattedValue": "899,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bzaaeub-530847671?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 899,
+"priceType": "BUY",
+"formattedValue": "899,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bzsaeub-530847713?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NIDAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 749,
+"priceType": "BUY",
+"formattedValue": "749,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nidaeub-530845113?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NZAAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 749,
+"priceType": "BUY",
+"formattedValue": "749,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nzaaeub-530845155?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 749,
+"priceType": "BUY",
+"formattedValue": "749,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nzsaeub-530845197?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE 5G",
+"modelcode": "SM-T736BZKAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 649,
+"priceType": "BUY",
+"formattedValue": "649,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 539,
+"priceType": "BUY",
+"formattedValue": "539,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T736B",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t736bzkaeub/gallery/de-galaxy-tab-s7-fe-5g-t736-sm-t736bzkaeub-470340510?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 539,
+"priceType": "BUY",
+"formattedValue": "539,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE 5G",
+"modelcode": "SM-T736BZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 649,
+"priceType": "BUY",
+"formattedValue": "649,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 539,
+"priceType": "BUY",
+"formattedValue": "539,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T736B",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t736bzsaeub/gallery/de-galaxy-tab-s7-fe-5g-t736-sm-t736bzsaeub-470340512?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 539,
+"priceType": "BUY",
+"formattedValue": "539,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE Wi-Fi",
+"modelcode": "SM-T733NZKAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 578.99,
+"priceType": "BUY",
+"formattedValue": "578,99 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T733N",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t733nzkaeub/gallery/de-galaxy-tab-s7-fe-t730-390096-sm-t733nzkaeub-492997805?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE Wi-Fi",
+"modelcode": "SM-T733NZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 578.99,
+"priceType": "BUY",
+"formattedValue": "578,99 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T733N",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t733nzsaeub/gallery/de-galaxy-tab-s7-fe-t730-390096-sm-t733nzsaeub-492997868?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE Wi-Fi",
+"modelcode": "SM-T733NLGAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 578.99,
+"priceType": "BUY",
+"formattedValue": "578,99 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T733N",
+"colorCode": "#008000",
+"colorName": "Green",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t733nlgaeub/gallery/de-galaxy-tab-s7-fe-t730-390096-sm-t733nlgaeub-492997543?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE Wi-Fi",
+"modelcode": "SM-T733NLIAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 578.99,
+"priceType": "BUY",
+"formattedValue": "578,99 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T733N",
+"colorCode": "#ffc0cb",
+"colorName": "Pink",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t733nliaeub/gallery/de-galaxy-tab-s7-fe-t730-390096-sm-t733nliaeub-492997746?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite LTE (2022 Edition)",
+"modelcode": "SM-P619NZAEDBT",
+"price": {
+"currencyIso": "EUR",
+"value": 479,
+"priceType": "BUY",
+"formattedValue": "479,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 459,
+"priceType": "BUY",
+"formattedValue": "459,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P619N",
+"colorCode": "#777777",
+"colorName": "Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p619nzaedbt/gallery/de-galaxy-tab-s6-lite-lte-2022-edition-424406-sm-p619nzaedbt-532487880?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 459,
+"priceType": "BUY",
+"formattedValue": "459,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite Wi-Fi (2022 Edition)",
+"modelcode": "SM-P613NZAEDBT",
+"price": {
+"currencyIso": "EUR",
+"value": 419,
+"priceType": "BUY",
+"formattedValue": "419,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 409,
+"priceType": "BUY",
+"formattedValue": "409,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P613N",
+"colorCode": "#777777",
+"colorName": "Oxford Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p613nzaedbt/gallery/de-galaxy-tab-s6-lite-wi-fi-2022-edition-sm-p613nzaedbt-532486063?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 409,
+"priceType": "BUY",
+"formattedValue": "409,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite LTE (2022 Edition)",
+"modelcode": "SM-P619NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 439,
+"priceType": "BUY",
+"formattedValue": "439,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 429,
+"priceType": "BUY",
+"formattedValue": "429,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P619N",
+"colorCode": "#777777",
+"colorName": "Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p619nzaadbt/gallery/de-galaxy-tab-s6-lite-lte-2022-edition-sm-p619nzaadbt-532487171?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 429,
+"priceType": "BUY",
+"formattedValue": "429,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite LTE (2022 Edition)",
+"modelcode": "SM-P619NZBADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 439,
+"priceType": "BUY",
+"formattedValue": "439,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 429,
+"priceType": "BUY",
+"formattedValue": "429,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P619N",
+"colorCode": "#3355e7",
+"colorName": "Angora Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p619nzbadbt/gallery/de-galaxy-tab-s6-lite-lte-2022-edition-424406-sm-p619nzbadbt-532487247?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 429,
+"priceType": "BUY",
+"formattedValue": "429,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite Wi-Fi (2022 Edition)",
+"modelcode": "SM-P613NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 379,
+"priceType": "BUY",
+"formattedValue": "379,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 339,
+"priceType": "BUY",
+"formattedValue": "339,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P613N",
+"colorCode": "#777777",
+"colorName": "Oxford Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p613nzaadbt/gallery/de-galaxy-tab-s6-lite-wi-fi-2022-edition-424389-sm-p613nzaadbt-532486184?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 339,
+"priceType": "BUY",
+"formattedValue": "339,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite Wi-Fi (2022 Edition)",
+"modelcode": "SM-P613NZBADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 379,
+"priceType": "BUY",
+"formattedValue": "379,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 339,
+"priceType": "BUY",
+"formattedValue": "339,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P613N",
+"colorCode": "#3355e7",
+"colorName": "Angora Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p613nzbadbt/gallery/de-galaxy-tab-s6-lite-wi-fi-2022-edition-424389-sm-p613nzbadbt-532486107?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 339,
+"priceType": "BUY",
+"formattedValue": "339,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_ACCESSOIRES_DE_GALAXYTAB",
+"display_name": "Galaxy Tab",
+"order": "7",
+"groupCount": 42
+}
+},
+{
+"products": [
+{
+"name": "Alles was du brauchst",
+"modelcode": "F-Fold4-Bundle1",
+"price": {
+"currencyIso": "EUR",
+"value": 313.8,
+"priceType": "BUY",
+"formattedValue": "313,80 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 251.04,
+"priceType": "BUY",
+"formattedValue": "251,04 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "F-Fold4",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/de/smartphones/galaxy-z-flip4/buy/local/F-Fold4-Bundle1/F-Fold4-Bundle1_238x180px_V3.png",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N"
+},
+{
+"name": "Einfach alles im Griff",
+"modelcode": "F-Fold4-Bundle2",
+"price": {
+"currencyIso": "EUR",
+"value": 313.8,
+"priceType": "BUY",
+"formattedValue": "313,80 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 251.04,
+"priceType": "BUY",
+"formattedValue": "251,04 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "F-Fold4",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/de/smartphones/galaxy-z-flip4/buy/local/F-Fold4-Bundle2/F-Fold4-Bundle2_238x180px_V3.png",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N"
+},
+{
+"name": "Arbeitsplatz to go",
+"modelcode": "F-Fold4-Bundle3",
+"price": {
+"currencyIso": "EUR",
+"value": 353.8,
+"priceType": "BUY",
+"formattedValue": "353,80 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "F-Fold4",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/de/smartphones/galaxy-z-flip4/buy/local/F-Fold4-Bundle3/F-Fold4-Bundle3_238x180px_V3.png",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2 Pro",
+"modelcode": "SM-R510NLVADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 229,
+"priceType": "BUY",
+"formattedValue": "229,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R510N",
+"colorCode": "#b2a1cd",
+"colorName": "Bora Purple",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-buds2-pro-r510-sm-r510nlvadbt-533211701?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2 Pro",
+"modelcode": "SM-R510NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 229,
+"priceType": "BUY",
+"formattedValue": "229,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R510N",
+"colorCode": "#404145",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-buds2-pro-r510-sm-r510nzaadbt-533211718?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2 Pro",
+"modelcode": "SM-R510NZWADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 229,
+"priceType": "BUY",
+"formattedValue": "229,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R510N",
+"colorCode": "#f1f0ed",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-buds2-pro-r510-sm-r510nzwadbt-533211735?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (40mm, Bluetooth)",
+"modelcode": "SM-R900NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 299,
+"priceType": "BUY",
+"formattedValue": "299,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R900N",
+"colorCode": "#4a4a4d",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-sm-r900nzaadbt-533238213?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (40mm, Bluetooth)",
+"modelcode": "SM-R900NZSADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 299,
+"priceType": "BUY",
+"formattedValue": "299,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R900N",
+"colorCode": "#c7c8c9",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-sm-r900nzsadbt-533238253?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (40mm, Bluetooth)",
+"modelcode": "SM-R900NZDADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 299,
+"priceType": "BUY",
+"formattedValue": "299,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R900N",
+"colorCode": "#f0cfc3",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-40mm-sm-r900nzdadbt-533238234?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, Bluetooth) ",
+"modelcode": "SM-R910NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 329,
+"priceType": "BUY",
+"formattedValue": "329,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R910N",
+"colorCode": "#4a4a4d",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-sm-r910nzaadbt-533235810?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, Bluetooth) ",
+"modelcode": "SM-R910NZSADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 329,
+"priceType": "BUY",
+"formattedValue": "329,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R910N",
+"colorCode": "#c7c8c9",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-sm-r910nzsadbt-533235863?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 (44mm, Bluetooth) ",
+"modelcode": "SM-R910NZBADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 329,
+"priceType": "BUY",
+"formattedValue": "329,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R910N",
+"colorCode": "#6b7d98",
+"colorName": "Sapphire",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-44mm-sm-r910nzbadbt-533235826?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 Pro (45mm, Bluetooth)",
+"modelcode": "SM-R920NZKADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 469,
+"priceType": "BUY",
+"formattedValue": "469,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R920N",
+"colorCode": "#404145",
+"colorName": "Black Titanium",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-pro-sm-r920nzkadbt-533241646?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Watch5 Pro (45mm, Bluetooth)",
+"modelcode": "SM-R920NZTADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 469,
+"priceType": "BUY",
+"formattedValue": "469,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R920N",
+"colorCode": "#867e74",
+"colorName": "Gray Titanium",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-watch5-pro-sm-r920nztadbt-533241662?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Note Package",
+"modelcode": "EF-OF93KKBEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 99.9,
+"priceType": "BUY",
+"formattedValue": "99,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-OF93KK",
+"colorCode": "#404145",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-note-package-ef-of93kkbegww-533089992?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Standing Cover with Pen",
+"modelcode": "EF-OF93PCBEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-OF93PC",
+"colorCode": "#404145",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-standing-cover-with-pen-ef-of93p-ef-of93pcbegww-533090253?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Standing Cover with Pen",
+"modelcode": "EF-OF93PCJEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-OF93PC",
+"colorCode": "#5b686a",
+"colorName": "Graygreen",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-standing-cover-with-pen-ef-of93p-ef-of93pcjegww-533090271?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Z Fold4 Standing Cover with Pen",
+"modelcode": "EF-OF93PCUEGWW",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EF-OF93PC",
+"colorCode": "#dacdc5",
+"colorName": "Sand",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2208/gallery/de-galaxy-z-fold4-standing-cover-with-pen-ef-of93p-ef-of93pcuegww-533090286?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Ladeadapter mit Schnellladefunktion EP-TA800N (USB Type-C, 25W)",
+"modelcode": "EP-TA800NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 19.9,
+"priceType": "BUY",
+"formattedValue": "19,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-TA800",
+"colorCode": "#010101",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-ta800nbegeu/gallery/de-wall-charger-super-fast-charging-ta800-298387-ep-ta800nbegeu-351481356?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Ladeadapter mit Schnellladefunktion EP-TA800N (USB Type-C, 25W)",
+"modelcode": "EP-TA800NWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 19.9,
+"priceType": "BUY",
+"formattedValue": "19,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EP-TA800",
+"colorCode": "#fffffe",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-ta800nwegeu/gallery/de-wall-charger-super-fast-charging-ta800-298387-ep-ta800nwegeu-351481435?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Duo mit Schnellladeadapter EP-P5400T",
+"modelcode": "EP-P5400TWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P5400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p5400-ep-p5400twegeu-530902292?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Duo mit Schnellladeadapter EP-P5400T",
+"modelcode": "EP-P5400TBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 89.9,
+"priceType": "BUY",
+"formattedValue": "89,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P5400",
+"colorCode": "#5e6061",
+"colorName": "Dark Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p5400-ep-p5400tbegeu-530902277?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Duo EP-P5400",
+"modelcode": "EP-P5400BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 69.9,
+"priceType": "BUY",
+"formattedValue": "69,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P5400",
+"colorCode": "#5e6061",
+"colorName": "Dark Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p5400-411555-ep-p5400bbegeu-530902982?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Duo EP-P5400",
+"modelcode": "EP-P5400BWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 69.9,
+"priceType": "BUY",
+"formattedValue": "69,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P5400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p5400-411555-ep-p5400bwegeu-530902997?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Pad mit Schnellladeadapter EP-P2400T",
+"modelcode": "EP-P2400TWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P2400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p2400-ep-p2400twegeu-530903146?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Pad mit Schnellladeadapter EP-P2400T",
+"modelcode": "EP-P2400TBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P2400",
+"colorCode": "#5e6061",
+"colorName": "Dark Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p2400-ep-p2400tbegeu-530903131?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Pad EP-P2400",
+"modelcode": "EP-P2400BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P2400",
+"colorCode": "#5e6061",
+"colorName": "Dark Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p2400-411560-ep-p2400bbegeu-530903206?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Wireless Charger Pad EP-P2400",
+"modelcode": "EP-P2400BWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-P2400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-ep-p2400-411560-ep-p2400bwegeu-530903221?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Schnellladeadapter Trio 65 Watt EP-T6530N",
+"modelcode": "EP-T6530NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-T6530N",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-t6530nbegeu/gallery/de-65w-power-adapter-trio-ep-t6530-ep-t6530nbegeu-530622323?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Schnellladeadapter Duo 35 Watt EP-TA220N",
+"modelcode": "EP-TA220NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 24.89,
+"priceType": "BUY",
+"formattedValue": "24,89 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "EP-TA220",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-ta220nbegeu/gallery/de-35w-power-adapter-ep-ta-220-ep-ta220nbegeu-427563191?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZNAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#9a716e",
+"colorName": "Mystic Bronze",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nznaeua/gallery/de-galaxy-buds-live-r180-sm-r180nznaeua-499728329?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZWAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#eff0f1",
+"colorName": "Mystic white",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nzwaeua/gallery/de-galaxy-buds-live-r180-sm-r180nzwaeua-499730083?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZKAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#3c3c3e",
+"colorName": "Mystic Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nzkaeua/gallery/de-galaxy-buds-live-r180-sm-r180nzkaeua-499729798?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZBAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#384478",
+"colorName": "Mystic blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nzbaeua/gallery/de-galaxy-buds-live-r180-sm-r180nzbaeua-499731251?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds Live",
+"modelcode": "SM-R180NZRAEUA",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R180",
+"colorCode": "#b8333e",
+"colorName": "Mystic red",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r180nzraeua/gallery/de-galaxy-buds-live-r180-sm-r180nzraeua-499732504?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 72,
+"priceType": "BUY",
+"formattedValue": "72,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "S Pen Fold Edition",
+"modelcode": "EJ-PF926BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 49.9,
+"priceType": "BUY",
+"formattedValue": "49,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EJ-PF926B",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-s-pen-fold-edition-pf926-ej-pf926bbegeu-481181357?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag EI-T5300",
+"modelcode": "EI-T5300BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 34.9,
+"priceType": "BUY",
+"formattedValue": "34,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T5300",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5300bbegeu/gallery/de-galaxy-smarttag-ei-t5300-ei-t5300bbegeu-499737720?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag EI-T5300",
+"modelcode": "EI-T5300BAEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 34.9,
+"priceType": "BUY",
+"formattedValue": "34,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EI-T5300",
+"colorCode": "#c5beb6",
+"colorName": "Oatmeal",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5300baegeu/gallery/de-galaxy-smarttag-ei-t5300-ei-t5300baegeu-499737275?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Smart Keyboard Trio 500 EJ-B3400",
+"modelcode": "EJ-B3400BBGGDE",
+"price": {
+"currencyIso": "EUR",
+"value": 44.9,
+"priceType": "BUY",
+"formattedValue": "44,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EJ-B3400",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ej-b3400bbggde/gallery/de-samsung-smart-keyboard-trio-500-ej-b3400bbggde-422315662?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Smart Keyboard Trio 500 EJ-B3400",
+"modelcode": "EJ-B3400BWGGDE",
+"price": {
+"currencyIso": "EUR",
+"value": 44.9,
+"priceType": "BUY",
+"formattedValue": "44,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EJ-B3400",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ej-b3400bwggde/gallery/de-samsung-smart-keyboard-trio-500-ej-b3400bwggde-422315675?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag+ EI-T7300",
+"modelcode": "EI-T7300BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T7300",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t7300bbegeu/gallery/de-galaxy-smarttag-ei-t7300-ei-t7300bbegeu-499738841?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag+ EI-T7300",
+"modelcode": "EI-T7300BLEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T7300",
+"colorCode": "#687585",
+"colorName": "Denim Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t7300blegeu/gallery/de-galaxy-smarttag-ei-t7300-ei-t7300blegeu-499738934?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_ACCESSOIRES_DE_RECOMMENDED",
+"display_name": "Empfohlen",
+"order": "2",
+"groupCount": 42
+}
+},
+{
+"products": [
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZKADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzkadbt-481691176?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NLVADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#bfb1d2",
+"colorName": "Lavender",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nlvadbt-481691138?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZWADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzwadbt-481691195?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZTADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#0a0b0e",
+"colorName": "Onyx",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-r177nztadbt/gallery/de-galaxy-buds2-r177-399733-sm-r177nztadbt-531994160?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZGADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#a39f86",
+"colorName": "Olive",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzgadbt-481691157?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_DE_ZUGABE",
+"display_name": "Gratis",
+"order": "1",
+"groupCount": 5
+}
+},
+{
+"products": [
+{
+"name": "Schnellladeadapter Trio 65 Watt EP-T6530N",
+"modelcode": "EP-T6530NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EP-T6530N",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-t6530nbegeu/gallery/de-65w-power-adapter-trio-ep-t6530-ep-t6530nbegeu-530622323?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Schnellladeadapter Duo 35 Watt EP-TA220N",
+"modelcode": "EP-TA220NBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 24.89,
+"priceType": "BUY",
+"formattedValue": "24,89 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "EP-TA220",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-ta220nbegeu/gallery/de-35w-power-adapter-ep-ta-220-ep-ta220nbegeu-427563191?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Schnellladeadapter (USB Type-C, 15 Watt) EP-T1510N",
+"modelcode": "EP-T1510NWEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 14.9,
+"priceType": "BUY",
+"formattedValue": "14,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EP-T1510N",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ep-t1510nwegeu/gallery/de-15w-power-adapter-ep-t1510-407886-ep-t1510nwegeu-530516822?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZKADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzkadbt-481691176?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NLVADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#bfb1d2",
+"colorName": "Lavender",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nlvadbt-481691138?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZWADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#ffffff",
+"colorName": "White",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzwadbt-481691195?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Buds2",
+"modelcode": "SM-R177NZGADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 149,
+"priceType": "BUY",
+"formattedValue": "149,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-R177NZ",
+"colorCode": "#a39f86",
+"colorName": "Olive",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-galaxy-buds2-r177-sm-r177nzgadbt-481691157?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 93,
+"priceType": "BUY",
+"formattedValue": "93,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NIDBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 799,
+"priceType": "BUY",
+"formattedValue": "799,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pinkgold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nidbeub-530845134?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NZABEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 799,
+"priceType": "BUY",
+"formattedValue": "799,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nzabeub-530845176?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NZSBEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 799,
+"priceType": "BUY",
+"formattedValue": "799,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nzsbeub-530845218?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BIDAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 899,
+"priceType": "BUY",
+"formattedValue": "899,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bidaeub-530847629?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BZAAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 899,
+"priceType": "BUY",
+"formattedValue": "899,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bzaaeub-530847671?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 5G",
+"modelcode": "SM-X706BZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 899,
+"priceType": "BUY",
+"formattedValue": "899,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X706STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-5g-x706-sm-x706bzsaeub-530847713?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NIDAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 749,
+"priceType": "BUY",
+"formattedValue": "749,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#d6b6a8",
+"colorName": "Pink Gold",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nidaeub-530845113?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NZAAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 749,
+"priceType": "BUY",
+"formattedValue": "749,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#494d53",
+"colorName": "Graphite",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nzaaeub-530845155?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S8 Wi-Fi",
+"modelcode": "SM-X700NZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 749,
+"priceType": "BUY",
+"formattedValue": "749,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-X700STD",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-wifi-x700-sm-x700nzsaeub-530845197?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE 5G",
+"modelcode": "SM-T736BZKAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 649,
+"priceType": "BUY",
+"formattedValue": "649,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 539,
+"priceType": "BUY",
+"formattedValue": "539,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T736B",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t736bzkaeub/gallery/de-galaxy-tab-s7-fe-5g-t736-sm-t736bzkaeub-470340510?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 539,
+"priceType": "BUY",
+"formattedValue": "539,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE 5G",
+"modelcode": "SM-T736BZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 649,
+"priceType": "BUY",
+"formattedValue": "649,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 539,
+"priceType": "BUY",
+"formattedValue": "539,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T736B",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t736bzsaeub/gallery/de-galaxy-tab-s7-fe-5g-t736-sm-t736bzsaeub-470340512?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 539,
+"priceType": "BUY",
+"formattedValue": "539,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE Wi-Fi",
+"modelcode": "SM-T733NZKAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 578.99,
+"priceType": "BUY",
+"formattedValue": "578,99 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T733N",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t733nzkaeub/gallery/de-galaxy-tab-s7-fe-t730-390096-sm-t733nzkaeub-492997805?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE Wi-Fi",
+"modelcode": "SM-T733NZSAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 578.99,
+"priceType": "BUY",
+"formattedValue": "578,99 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T733N",
+"colorCode": "#c0c0c0",
+"colorName": "Silver",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t733nzsaeub/gallery/de-galaxy-tab-s7-fe-t730-390096-sm-t733nzsaeub-492997868?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE Wi-Fi",
+"modelcode": "SM-T733NLGAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 578.99,
+"priceType": "BUY",
+"formattedValue": "578,99 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T733N",
+"colorCode": "#008000",
+"colorName": "Green",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t733nlgaeub/gallery/de-galaxy-tab-s7-fe-t730-390096-sm-t733nlgaeub-492997543?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S7 FE Wi-Fi",
+"modelcode": "SM-T733NLIAEUB",
+"price": {
+"currencyIso": "EUR",
+"value": 578.99,
+"priceType": "BUY",
+"formattedValue": "578,99 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-T733N",
+"colorCode": "#ffc0cb",
+"colorName": "Pink",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-t733nliaeub/gallery/de-galaxy-tab-s7-fe-t730-390096-sm-t733nliaeub-492997746?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 471,
+"priceType": "BUY",
+"formattedValue": "471,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite LTE (2022 Edition)",
+"modelcode": "SM-P619NZAEDBT",
+"price": {
+"currencyIso": "EUR",
+"value": 479,
+"priceType": "BUY",
+"formattedValue": "479,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 459,
+"priceType": "BUY",
+"formattedValue": "459,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P619N",
+"colorCode": "#777777",
+"colorName": "Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p619nzaedbt/gallery/de-galaxy-tab-s6-lite-lte-2022-edition-424406-sm-p619nzaedbt-532487880?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 459,
+"priceType": "BUY",
+"formattedValue": "459,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite Wi-Fi (2022 Edition)",
+"modelcode": "SM-P613NZAEDBT",
+"price": {
+"currencyIso": "EUR",
+"value": 419,
+"priceType": "BUY",
+"formattedValue": "419,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 409,
+"priceType": "BUY",
+"formattedValue": "409,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P613N",
+"colorCode": "#777777",
+"colorName": "Oxford Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p613nzaedbt/gallery/de-galaxy-tab-s6-lite-wi-fi-2022-edition-sm-p613nzaedbt-532486063?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 409,
+"priceType": "BUY",
+"formattedValue": "409,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite LTE (2022 Edition)",
+"modelcode": "SM-P619NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 439,
+"priceType": "BUY",
+"formattedValue": "439,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 429,
+"priceType": "BUY",
+"formattedValue": "429,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P619N",
+"colorCode": "#777777",
+"colorName": "Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p619nzaadbt/gallery/de-galaxy-tab-s6-lite-lte-2022-edition-sm-p619nzaadbt-532487171?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 429,
+"priceType": "BUY",
+"formattedValue": "429,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite LTE (2022 Edition)",
+"modelcode": "SM-P619NZBADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 439,
+"priceType": "BUY",
+"formattedValue": "439,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 429,
+"priceType": "BUY",
+"formattedValue": "429,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P619N",
+"colorCode": "#3355e7",
+"colorName": "Angora Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p619nzbadbt/gallery/de-galaxy-tab-s6-lite-lte-2022-edition-424406-sm-p619nzbadbt-532487247?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 429,
+"priceType": "BUY",
+"formattedValue": "429,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite Wi-Fi (2022 Edition)",
+"modelcode": "SM-P613NZAADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 379,
+"priceType": "BUY",
+"formattedValue": "379,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 339,
+"priceType": "BUY",
+"formattedValue": "339,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P613N",
+"colorCode": "#777777",
+"colorName": "Oxford Gray",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p613nzaadbt/gallery/de-galaxy-tab-s6-lite-wi-fi-2022-edition-424389-sm-p613nzaadbt-532486184?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 339,
+"priceType": "BUY",
+"formattedValue": "339,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy Tab S6 Lite Wi-Fi (2022 Edition)",
+"modelcode": "SM-P613NZBADBT",
+"price": {
+"currencyIso": "EUR",
+"value": 379,
+"priceType": "BUY",
+"formattedValue": "379,00 €",
+"additionalPriceCurrencies": []
+},
+"promotionPrice": {
+"currencyIso": "EUR",
+"value": 339,
+"priceType": "BUY",
+"formattedValue": "339,00 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "SM-P613N",
+"colorCode": "#3355e7",
+"colorName": "Angora Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/sm-p613nzbadbt/gallery/de-galaxy-tab-s6-lite-wi-fi-2022-edition-424389-sm-p613nzbadbt-532486107?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [
+{
+"currencyIso": "EUR",
+"value": 339,
+"priceType": "BUY",
+"formattedValue": "339,00 €",
+"minQuantity": 1,
+"additionalPriceCurrencies": []
+}
+],
+"exVatTieredPrices": []
+},
+{
+"name": "S Pen Fold Edition",
+"modelcode": "EJ-PF926BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 49.9,
+"priceType": "BUY",
+"formattedValue": "49,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EJ-PF926B",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-s-pen-fold-edition-pf926-ej-pf926bbegeu-481181357?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "S Pen Pro EJ-P5450",
+"modelcode": "EJ-P5450SBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 99.9,
+"priceType": "BUY",
+"formattedValue": "99,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EJ-P5450S",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-s-pen-pro-p5450-ej-p5450sbegeu-481183399?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag EI-T5300",
+"modelcode": "EI-T5300BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 34.9,
+"priceType": "BUY",
+"formattedValue": "34,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T5300",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5300bbegeu/gallery/de-galaxy-smarttag-ei-t5300-ei-t5300bbegeu-499737720?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag EI-T5300",
+"modelcode": "EI-T5300BAEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 34.9,
+"priceType": "BUY",
+"formattedValue": "34,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EI-T5300",
+"colorCode": "#c5beb6",
+"colorName": "Oatmeal",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5300baegeu/gallery/de-galaxy-smarttag-ei-t5300-ei-t5300baegeu-499737275?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag (2er Pack) EI-T5300M",
+"modelcode": "EI-T5300MBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 59.9,
+"priceType": "BUY",
+"formattedValue": "59,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EI-T5300",
+"colorCode": "#000000",
+"colorName": "Black und Oatmeal",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t5300mbegeu/gallery/de-galaxy-smarttag-ei-t5300-373884-ei-t5300mbegeu-499738546?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag+ EI-T7300",
+"modelcode": "EI-T7300BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T7300",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t7300bbegeu/gallery/de-galaxy-smarttag-ei-t7300-ei-t7300bbegeu-499738841?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag+ EI-T7300",
+"modelcode": "EI-T7300BLEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 39.9,
+"priceType": "BUY",
+"formattedValue": "39,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "preOrder"
+},
+"groupCode": "EI-T7300",
+"colorCode": "#687585",
+"colorName": "Denim Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t7300blegeu/gallery/de-galaxy-smarttag-ei-t7300-ei-t7300blegeu-499738934?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "Y",
+"tieredPrices": [],
+"exVatTieredPrices": []
+},
+{
+"name": "Galaxy SmartTag+ (2er Pack) EI-T7300M",
+"modelcode": "EI-T7300MLEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 64.9,
+"priceType": "BUY",
+"formattedValue": "64,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "outOfStock"
+},
+"groupCode": "EI-T7300",
+"colorCode": "#000000",
+"colorName": "Black und Denim Blue",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/ei-t7300mlegeu/gallery/de-galaxy-smarttag-ei-t7300-386219-ei-t7300mlegeu-431169341?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_ACCESSOIRES_DE_ACCESSORIES",
+"display_name": "Zubehör",
+"order": "8",
+"groupCount": 36
+}
+},
+{
+"products": [
+{
+"name": "S Pen Fold Edition",
+"modelcode": "EJ-PF926BBEGEU",
+"price": {
+"currencyIso": "EUR",
+"value": 49.9,
+"priceType": "BUY",
+"formattedValue": "49,90 €",
+"additionalPriceCurrencies": []
+},
+"stock": {
+"stockLevelStatus": "inStock"
+},
+"groupCode": "EJ-PF926B",
+"colorCode": "#000000",
+"colorName": "Black",
+"picture": {
+"imageType": "PRIMARY",
+"url": "https://images.samsung.com/is/image/samsung/p6pim/de/2108/gallery/de-s-pen-fold-edition-pf926-ej-pf926bbegeu-481181357?$ORIGIN_PNG$",
+"galleryIndex": 0
+},
+"groupId": 0,
+"flagPreOrder": "N",
+"tieredPrices": [],
+"exVatTieredPrices": []
+}
+],
+"category": {
+"id": "AEM_ACCESSOIRES_DE_SPEN",
+"display_name": "S Pen",
+"order": "4",
+"groupCount": 1
+}
+}
+]

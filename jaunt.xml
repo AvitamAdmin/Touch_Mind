@@ -1,0 +1,374 @@
+<products>
+<product>
+    <availableServices>
+        <serviceCategory>
+            <code>tradein</code>
+            <name>Trade In</name>
+        </serviceCategory>
+    </availableServices>
+    <availableServices>
+        <serviceCategory>
+            <code>smc</code>
+            <name>Samsung Care+</name>
+        </serviceCategory>
+    </availableServices>
+    <availableServices>
+        <serviceCategory>
+            <code>dmc</code>
+            <name>Samsung Care+</name>
+        </serviceCategory>
+    </availableServices>
+<code>SM-X800NZAAEUB-ZERO</code>
+<exchangeableQuantity>0</exchangeableQuantity>
+<lowestInstallmentAmount>39.54</lowestInstallmentAmount>
+<lowestInstallmentAmountTenure>24</lowestInstallmentAmountTenure>
+<picture>
+<url>https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-wifi-x800-sm-x800nzaaeub-530848076?$ORIGIN_PNG$</url>
+</picture>
+<potentialPromotions>
+<code>de_d2c_foc_Flagship_Skittles_PreOrder_ValuePack3_Plus</code>
+<description>Value Pack 3</description>
+<endDate>2022-12-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_foc_TVOG_Battles_TabS8+_BookCoverKeyboardSlim</code>
+<description>Jetzt das Galaxy Tab S8+ kaufen und ein Book Cover Keyboard Slim gratis sichern.</description>
+<endDate>2022-10-03T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_vc_NPS_MX_10EUR</code>
+<description>10€ Rabatt</description>
+<endDate>2022-12-13T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_50EUR</code>
+<description>50€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_100EUR</code>
+<description>100€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_200EUR</code>
+<description>200€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_300EUR</code>
+<description>300€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_400EUR</code>
+<description>400€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_500EUR</code>
+<description>500€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_600EUR</code>
+<description>600€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_TradeIn_SIM_Umfrage_MX_10EUR</code>
+<description>Dein 10€ Gutschein</description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_50EUR</code>
+<description>50€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_Flagship_Skittles_PreOrder_04_AbandonedCart_5percent</code>
+<description>Sicher dir jetzt 5% Discount </description>
+<endDate>2022-12-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>DE_IM_12y anniversary_All_IM_Products_12percentDiscount_2022</code>
+<description>Kaufe jetzt das Galaxy Tab S7 FE 5G und erhalte Galaxy Buds+ in weiß gratis dazu.</description>
+<endDate>2022-12-31T09:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_100EUR</code>
+<description>100€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_vc_dc_IM_EU_Retention_Programme_15percent_2022</code>
+<description>15% Rabatt auf IM Produkte</description>
+<endDate>2022-12-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_Flagship_Rainbow_PreOrder_UpgradeWebinar_APS_50EUR</code>
+<description>50€ Webinar Gutschein</description>
+<endDate>2022-09-30T20:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_vc_dc_Influencer_Cooperation_IM_20percent</code>
+<description>20% Rabatt auf Produkte aus dem Bereich Mobile </description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_vc_EU_Retention_Programme_15percent_2022</code>
+<description>15% Rabatt</description>
+<endDate>2022-12-30T23:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_vc_PreOrder_Upgrade_Webinar_50EUR</code>
+<description>50€ Webinar Gutschein</description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>DE_d2c_E-Promoter_10percent_off_2022</code>
+<description>10% Rabatt</description>
+<endDate>2022-12-30T23:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_200EUR</code>
+<description>200€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_300EUR</code>
+<description>300€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_400EUR</code>
+<description>400€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_500EUR</code>
+<description>500€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_600EUR</code>
+<description>600€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_AlwaysOn_SamsungMember_5percent</code>
+<description>Sichere dir als Samsung Member 5% Rabatt</description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_vc_Livecommerce_Raffle_50EUR</code>
+<description>50€ Rabatt</description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<price>
+<currencyIso>EUR</currencyIso>
+<formattedValue>949,00 €</formattedValue>
+<priceType>BUY</priceType>
+<value>949.0</value>
+</price>
+<salesStatus>PURCHASABLE</salesStatus>
+<stock>
+<isValueRounded>false</isValueRounded>
+<stockLevel>109</stockLevel>
+<stockLevelStatus>inStock</stockLevelStatus>
+</stock>
+<supportedAvailableServices>RENTAL</supportedAvailableServices>
+<supportedAvailableServices>INSURANCE</supportedAvailableServices>
+<supportedAvailableServices>ACCESSORIES</supportedAvailableServices>
+<supportedAvailableServices>BENEFIT</supportedAvailableServices>
+<supportedAvailableServices>TRADE_IN</supportedAvailableServices>
+<taxInfos>
+<absolute>false</absolute>
+<code>de-vat-tax</code>
+<value>19.0</value>
+</taxInfos>
+</product>
+<product>
+<availableServices>
+<serviceCategory>
+<code>tradein</code>
+<name>Trade In</name>
+</serviceCategory>
+</availableServices>
+<availableServices>
+<serviceCategory>
+<code>smc</code>
+<name>Samsung Care+</name>
+</serviceCategory>
+</availableServices>
+<code>SM-X800NZAAEUB-ONE</code>
+<exchangeableQuantity>0</exchangeableQuantity>
+<lowestInstallmentAmount>39.54</lowestInstallmentAmount>
+<lowestInstallmentAmountTenure>24</lowestInstallmentAmountTenure>
+<picture>
+<url>https://images.samsung.com/is/image/samsung/p6pim/de/2202/gallery/de-galaxy-tab-s8-plus-wifi-x800-sm-x800nzaaeub-530848076?$ORIGIN_PNG$</url>
+</picture>
+<potentialPromotions>
+<code>de_d2c_foc_Flagship_Skittles_PreOrder_ValuePack3_Plus</code>
+<description>Value Pack 3</description>
+<endDate>2022-12-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_foc_TVOG_Battles_TabS8+_BookCoverKeyboardSlim</code>
+<description>Jetzt das Galaxy Tab S8+ kaufen und ein Book Cover Keyboard Slim gratis sichern.</description>
+<endDate>2022-10-03T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_vc_NPS_MX_10EUR</code>
+<description>10€ Rabatt</description>
+<endDate>2022-12-13T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_50EUR</code>
+<description>50€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_100EUR</code>
+<description>100€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_200EUR</code>
+<description>200€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_300EUR</code>
+<description>300€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_400EUR</code>
+<description>400€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_500EUR</code>
+<description>500€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_IMRepair_Q3_2022_600EUR</code>
+<description>600€ Rabatt</description>
+<endDate>2023-09-30T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_TradeIn_SIM_Umfrage_MX_10EUR</code>
+<description>Dein 10€ Gutschein</description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_50EUR</code>
+<description>50€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_Flagship_Skittles_PreOrder_04_AbandonedCart_5percent</code>
+<description>Sicher dir jetzt 5% Discount </description>
+<endDate>2022-12-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>DE_IM_12y anniversary_All_IM_Products_12percentDiscount_2022</code>
+<description>Kaufe jetzt das Galaxy Tab S7 FE 5G und erhalte Galaxy Buds+ in weiß gratis dazu.</description>
+<endDate>2022-12-31T09:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_100EUR</code>
+<description>100€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_vc_dc_IM_EU_Retention_Programme_15percent_2022</code>
+<description>15% Rabatt auf IM Produkte</description>
+<endDate>2022-12-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_Flagship_Rainbow_PreOrder_UpgradeWebinar_APS_50EUR</code>
+<description>50€ Webinar Gutschein</description>
+<endDate>2022-09-30T20:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_vc_dc_Influencer_Cooperation_IM_20percent</code>
+<description>20% Rabatt auf Produkte aus dem Bereich Mobile </description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_vc_EU_Retention_Programme_15percent_2022</code>
+<description>15% Rabatt</description>
+<endDate>2022-12-30T23:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_vc_PreOrder_Upgrade_Webinar_50EUR</code>
+<description>50€ Webinar Gutschein</description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>DE_d2c_E-Promoter_10percent_off_2022</code>
+<description>10% Rabatt</description>
+<endDate>2022-12-30T23:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_200EUR</code>
+<description>200€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_300EUR</code>
+<description>300€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_400EUR</code>
+<description>400€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_500EUR</code>
+<description>500€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_Matrix_IM_Repair_2022_600EUR</code>
+<description>600€ Rabatt</description>
+<endDate>2023-03-31T21:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_AlwaysOn_SamsungMember_5percent</code>
+<description>Sichere dir als Samsung Member 5% Rabatt</description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<potentialPromotions>
+<code>de_d2c_dc_vc_Livecommerce_Raffle_50EUR</code>
+<description>50€ Rabatt</description>
+<endDate>2022-12-31T22:59:00+0000</endDate>
+</potentialPromotions>
+<price>
+<currencyIso>EUR</currencyIso>
+<formattedValue>949,00 €</formattedValue>
+<priceType>BUY</priceType>
+<value>949.0</value>
+</price>
+<salesStatus>PURCHASABLE</salesStatus>
+<stock>
+<isValueRounded>false</isValueRounded>
+<stockLevel>109</stockLevel>
+<stockLevelStatus>inStock</stockLevelStatus>
+</stock>
+<supportedAvailableServices>RENTAL</supportedAvailableServices>
+<supportedAvailableServices>INSURANCE</supportedAvailableServices>
+<supportedAvailableServices>ACCESSORIES</supportedAvailableServices>
+<supportedAvailableServices>BENEFIT</supportedAvailableServices>
+<supportedAvailableServices>TRADE_IN</supportedAvailableServices>
+<taxInfos>
+<absolute>false</absolute>
+<code>de-vat-tax</code>
+<value>19.0</value>
+</taxInfos>
+</product>
+</products>

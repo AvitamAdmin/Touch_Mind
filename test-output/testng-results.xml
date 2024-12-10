@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-08-20T08:54:30 CEST" name="Zero In Test Suite initialized" finished-at="2024-08-20T08:54:53 CEST" duration-ms="23284">
+    <groups>
+    </groups>
+    <test started-at="2024-08-20T08:54:30 CEST" name="Zero in test class initialized" finished-at="2024-08-20T08:54:53 CEST" duration-ms="23284">
+      <class name="com.cheil.qa.testplans.CoreTest">
+        <test-method is-config="true" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:com.cheil.qa.testplans.CoreTest@2707d9a7]" started-at="2024-08-20T08:54:30 CEST" name="beforeSuite" finished-at="2024-08-20T08:54:30 CEST" duration-ms="311" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@17e694d8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="setupData(org.testng.ITestContext)[pri:0, instance:com.cheil.qa.testplans.CoreTest@2707d9a7]" started-at="2024-08-20T08:54:30 CEST" name="setupData" finished-at="2024-08-20T08:54:30 CEST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@17e694d8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupData -->
+        <test-method signature="processLocators(org.testng.ITestContext,[Ljava.lang.Object;)[pri:0, instance:com.cheil.qa.testplans.CoreTest@2707d9a7]" started-at="2024-08-20T08:54:30 CEST" name="processLocators" data-provider="inputSkus" finished-at="2024-08-20T08:54:53 CEST" duration-ms="23272" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@17e694d8]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@4a2136ee]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- processLocators -->
+        <test-method is-config="true" signature="afterSuite(org.testng.ITestContext)[pri:0, instance:com.cheil.qa.testplans.CoreTest@2707d9a7]" started-at="2024-08-20T08:54:53 CEST" name="afterSuite" finished-at="2024-08-20T08:54:54 CEST" duration-ms="804" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@17e694d8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.cheil.qa.testplans.CoreTest -->
+    </test> <!-- Zero in test class initialized -->
+  </suite> <!-- Zero In Test Suite initialized -->
+</testng-results>
