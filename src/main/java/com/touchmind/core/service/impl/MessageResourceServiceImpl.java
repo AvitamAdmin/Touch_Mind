@@ -34,7 +34,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @Service
 public class MessageResourceServiceImpl implements MessageResourceService {
 
-    public static final String ADMIN_MESSAGES = "/admin/message";
+    public static final String ADMIN_MESSAGES = "/admin/messages";
     @Autowired
     private MessageResourceRepository messageResourceRepository;
     @Autowired
