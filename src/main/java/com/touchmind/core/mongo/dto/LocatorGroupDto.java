@@ -15,7 +15,7 @@ public class LocatorGroupDto extends CommonDto {
     private List<LocatorPriorityDto> testLocators;
     private String subsidiary;
     private List<LocatorGroupDto> locatorGroupDtoList;
-    private List<ConditionGroupDto> conditionGroupList;
+ //   private List<ConditionGroupDto> conditionGroupList;
     private boolean checkEppSso;
     private String errorMsg;
     private Long priority;

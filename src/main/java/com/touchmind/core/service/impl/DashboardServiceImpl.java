@@ -1,25 +1,16 @@
 package com.touchmind.core.service.impl;
 
-import com.touchmind.core.mongo.dto.DashboardDto;
 import com.touchmind.core.mongo.dto.DashboardLabelDto;
 import com.touchmind.core.mongo.dto.DashboardWsDto;
-import com.touchmind.core.mongo.dto.ImpactLabelDto;
-import com.touchmind.core.mongo.model.Dashboard;
-import com.touchmind.core.mongo.model.DashboardProfile;
-import com.touchmind.core.mongo.model.ImpactConfig;
-import com.touchmind.core.mongo.model.Subsidiary;
+import com.touchmind.core.mongo.model.*;
 import com.touchmind.core.mongo.repository.DashboardRepository;
-import com.touchmind.core.mongo.repository.EntityConstants;
-import com.touchmind.core.mongo.repository.ImpactConfigRepository;
-import com.touchmind.core.mongo.repository.SubsidiaryRepository;
 import com.touchmind.core.mongotemplate.QATestResult;
 import com.touchmind.core.mongotemplate.repository.QARepository;
-import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.DashboardProfileService;
 import com.touchmind.core.service.DashboardService;
 import com.touchmind.form.DashboardForm;
-import com.touchmind.web.controllers.DashboardTableData;
+//import com.touchmind.web.controllers.DashboardTableData;
 import com.touchmind.web.controllers.QaSummaryData;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -62,12 +53,12 @@ public class DashboardServiceImpl implements DashboardService {
     private QARepository qaRepository;
     @Autowired
     private DashboardProfileService dashboardProfileService;
-    @Autowired
-    private SubsidiaryRepository subsidiaryRepository;
-    @Autowired
-    private ImpactConfigRepository impactConfigRepository;
-    @Autowired
-    private BaseService baseService;
+//    @Autowired
+//    private SubsidiaryRepository subsidiaryRepository;
+//    @Autowired
+//    private ImpactConfigRepository impactConfigRepository;
+//    @Autowired
+//    private BaseService baseService;
 
     private static void populateIssueChartData(QaSummaryData qaSummaryData, Map<String, Map<String, Set<String>>> issuesMap, Map<String, Integer> issuesChartMap) {
         double totalCount = 0;
@@ -137,35 +128,40 @@ public class DashboardServiceImpl implements DashboardService {
 
     @Override
     public DashboardWsDto handleEdit(DashboardWsDto request) {
-        DashboardWsDto dashboardWsDto = new DashboardWsDto();
-        List<DashboardDto> dashboards = request.getDashboards();
-        List<Dashboard> dashboardList = new ArrayList<>();
-        Dashboard requestData = null;
-        for (DashboardDto dashboard : dashboards) {
-            if (dashboard.getRecordId() != null) {
-                requestData = dashboardRepository.findByRecordId(dashboard.getRecordId());
-                modelMapper.map(dashboard, requestData);
-            } else {
-                if (baseService.validateIdentifier(EntityConstants.DASHBOARD, dashboard.getIdentifier()) != null) {
-                    request.setSuccess(false);
-                    request.setMessage("Identifier already present");
-                    return request;
-                }
-                requestData = modelMapper.map(dashboard, Dashboard.class);
-
-            }
-            baseService.populateCommonData(requestData);
-            dashboardRepository.save(requestData);
-            if (dashboard.getRecordId() == null) {
-                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
-            }
-            dashboardWsDto.setBaseUrl(ADMIN_DASHBOARD);
-            dashboardRepository.save(requestData);
-            dashboardList.add(requestData);
-        }
-        dashboardWsDto.setDashboards(modelMapper.map(dashboardList, List.class));
-        return dashboardWsDto;
+        return null;
     }
+
+    //  @Override
+//    public DashboardWsDto handleEdit(DashboardWsDto request) {
+//        DashboardWsDto dashboardWsDto = new DashboardWsDto();
+//        List<DashboardDto> dashboards = request.getDashboards();
+//        List<Dashboard> dashboardList = new ArrayList<>();
+//        Dashboard requestData = null;
+//        for (DashboardDto dashboard : dashboards) {
+//            if (dashboard.getRecordId() != null) {
+//                requestData = dashboardRepository.findByRecordId(dashboard.getRecordId());
+//                modelMapper.map(dashboard, requestData);
+//            } else {
+//                if (baseService.validateIdentifier(EntityConstants.DASHBOARD, dashboard.getIdentifier()) != null) {
+//                    request.setSuccess(false);
+//                    request.setMessage("Identifier already present");
+//                    return request;
+//                }
+//                requestData = modelMapper.map(dashboard, Dashboard.class);
+//
+//            }
+//            baseService.populateCommonData(requestData);
+//            dashboardRepository.save(requestData);
+//            if (dashboard.getRecordId() == null) {
+//                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
+//            }
+//            dashboardWsDto.setBaseUrl(ADMIN_DASHBOARD);
+//            dashboardRepository.save(requestData);
+//            dashboardList.add(requestData);
+//        }
+//        dashboardWsDto.setDashboards(modelMapper.map(dashboardList, List.class));
+        //return dashboardWsDto;
+   // }
 
     /**
      * This method prepare the dashboard for last N days of test runs
@@ -176,8 +172,8 @@ public class DashboardServiceImpl implements DashboardService {
      */
     public void getTestResultForLastNDays(Dashboard dashboard, QaSummaryData qaSummaryData, String subsidiaryId, String days, String runner) {
         List<QATestResult> qaTestResultList = new ArrayList<>();
-        List<DashboardTableData> dashboardTableDataList = new ArrayList<>();
-        Set<DashboardTableData> subsidiaryDataList = new HashSet<>();
+//        List<DashboardTableData> dashboardTableDataList = new ArrayList<>();
+//        Set<DashboardTableData> subsidiaryDataList = new HashSet<>();
         populateTestResults(subsidiaryId, days, runner, qaTestResultList, dashboard);
         Map<String, Map<String, Set<String>>> issuesMap = new HashMap<>();
         List<Map<String, String>> skuErrorMapList = new ArrayList<>();
@@ -193,17 +189,17 @@ public class DashboardServiceImpl implements DashboardService {
             int totalCount = passedCount + failedCount;
             String subId = StringUtils.EMPTY;
             //TODO FIX the id
-            Subsidiary subsidiary = subsidiaryRepository.findByRecordId(testResult.getRecordId());
-            if (subsidiary != null) {
-                subId = subsidiary.getIdentifier();
-            }
+//            Subsidiary subsidiary = subsidiaryRepository.findByRecordId(testResult.getRecordId());
+//            if (subsidiary != null) {
+//                subId = subsidiary.getIdentifier();
+//            }
             Map<String, Set<String>> errorMap = testResult.getErrorMap();
             if (errorMap != null && !errorMap.isEmpty()) {
-                populateCategorySections(dashboard, errorMap, issuesMap);
+              //  populateCategorySections(dashboard, errorMap, issuesMap);
                 populateValidationErrorMsgs(dashboard, errorMap, issuesMap);
             }
             if (status != 1) {
-                populateFailedData(dashboardTableDataList, testResult, passedCount, status, totalCount, subId, issuesMap);
+               // populateFailedData(dashboardTableDataList, testResult, passedCount, status, totalCount, subId, issuesMap);
             }
             totalPassedCount = totalPassedCount + passedCount;
             totalFailedCount = totalFailedCount + failedCount;
@@ -222,13 +218,13 @@ public class DashboardServiceImpl implements DashboardService {
                 });
                 skuErrorMapList.add(skuErrorMapUpdated);
             }
-            subsidiaryDataList.add(populateSubsidiaryData(testResult, subId, subsidiaryDataList));
+           // subsidiaryDataList.add(populateSubsidiaryData(testResult, subId, subsidiaryDataList));
         }
         qaSummaryData.setSkuErrorMapList(skuErrorMapList);
-        qaSummaryData.setSubsidiaryData(subsidiaryDataList.stream().collect(Collectors.toList()));
+        //qaSummaryData.setSubsidiaryData(subsidiaryDataList.stream().collect(Collectors.toList()));
         qaSummaryData.setIssuesMap(issuesMap);
         qaSummaryData.setSkusMap(skusMap);
-        qaSummaryData.setFailedData(dashboardTableDataList.size() > 10 ? dashboardTableDataList.subList(0, 9) : dashboardTableDataList);
+      //  qaSummaryData.setFailedData(dashboardTableDataList.size() > 10 ? dashboardTableDataList.subList(0, 9) : dashboardTableDataList);
         qaSummaryData.setTotalSkuCount(totalPassedCount + totalFailedCount);
         qaSummaryData.setTotalTestCaseCount(qaTestResultList.size());
         if (!issuesMap.isEmpty()) {
@@ -258,98 +254,98 @@ public class DashboardServiceImpl implements DashboardService {
         }
     }
 
-    private DashboardTableData populateSubsidiaryData(QATestResult testResult, String subId, Set<DashboardTableData> subsidiaryDataList) {
-        DashboardTableData dashboardTableData = new DashboardTableData();
+//    private DashboardTableData populateSubsidiaryData(QATestResult testResult, String subId, Set<DashboardTableData> subsidiaryDataList) {
+//        DashboardTableData dashboardTableData = new DashboardTableData();
+//
+//        dashboardTableData.setSubsidiary(subId);
+//        dashboardTableData.setSite(testResult.getSite());
+//        dashboardTableData.setPassedSkus(String.valueOf(testResult.getTestPassedCount()));
+//        dashboardTableData.setFailedSkus(String.valueOf(testResult.getTestFailedCount()));
+//        if (CollectionUtils.isNotEmpty(subsidiaryDataList)) {
+//            Optional<DashboardTableData> dashboardTableDataOptional = subsidiaryDataList.stream().filter(sub -> sub.getSubsidiary().equalsIgnoreCase(subId)).findFirst();
+//            if (dashboardTableDataOptional.isPresent()) {
+//                dashboardTableData = dashboardTableDataOptional.get();
+//                dashboardTableData.setPassedSkus(String.valueOf(testResult.getTestPassedCount() + Integer.parseInt(dashboardTableData.getPassedSkus())));
+//                dashboardTableData.setFailedSkus(String.valueOf(testResult.getTestFailedCount() + Integer.parseInt(dashboardTableData.getFailedSkus())));
+//            }
+//        }
+//        return dashboardTableData;
+//    }
 
-        dashboardTableData.setSubsidiary(subId);
-        dashboardTableData.setSite(testResult.getSite());
-        dashboardTableData.setPassedSkus(String.valueOf(testResult.getTestPassedCount()));
-        dashboardTableData.setFailedSkus(String.valueOf(testResult.getTestFailedCount()));
-        if (CollectionUtils.isNotEmpty(subsidiaryDataList)) {
-            Optional<DashboardTableData> dashboardTableDataOptional = subsidiaryDataList.stream().filter(sub -> sub.getSubsidiary().equalsIgnoreCase(subId)).findFirst();
-            if (dashboardTableDataOptional.isPresent()) {
-                dashboardTableData = dashboardTableDataOptional.get();
-                dashboardTableData.setPassedSkus(String.valueOf(testResult.getTestPassedCount() + Integer.parseInt(dashboardTableData.getPassedSkus())));
-                dashboardTableData.setFailedSkus(String.valueOf(testResult.getTestFailedCount() + Integer.parseInt(dashboardTableData.getFailedSkus())));
-            }
-        }
-        return dashboardTableData;
-    }
+//    private int calculateImpact(Map<String, Map<String, Set<String>>> issuesMap) {
+//        int impact = 0;
+//        if (issuesMap != null && !issuesMap.isEmpty()) {
+//            List<ImpactConfig> impactConfigs = impactConfigRepository.findAll();
+//            if (CollectionUtils.isNotEmpty(impactConfigs)) {
+//                for (ImpactConfig impactConfig : impactConfigs) {
+//                    for (ImpactLabelDto labels : impactConfig.getLabels()) {
+//                        for (String key : issuesMap.keySet()) {
+//                            for (String mapKey : issuesMap.get(key).keySet()) {
+//                                if (labels.getLabels().contains(mapKey)) {
+//                                    impact = impact + (labels.getImpact() * labels.getMultiplier());
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        return impact;
+//    }
+//
+//    private void populateFailedData(List<DashboardTableData> dashboardTableDataList, QATestResult testResult, int passedCount, int status, int totalCount, String subId, Map<String, Map<String, Set<String>>> issuesMap) {
+//        DashboardTableData failedData = new DashboardTableData();
+//        failedData.setStatus(status == 2 ? FAILED : PARTIALLY_PASSED);
+//        failedData.setSubsidiary(subId);
+//        failedData.setSite(testResult.getSite());
+//        failedData.setTestCase(String.valueOf(testResult.getLocatorGroupIdentifier()));
+//        Double percentage = (Double.valueOf(passedCount) / Double.valueOf(totalCount)) / 100;
+//        failedData.setPassedSkus(passedCount + " over " + totalCount + " (" + percentage.intValue() + "%)");
+//        failedData.setImpact(calculateImpact(issuesMap));
+//        dashboardTableDataList.add(failedData);
+//    }
 
-    private int calculateImpact(Map<String, Map<String, Set<String>>> issuesMap) {
-        int impact = 0;
-        if (issuesMap != null && !issuesMap.isEmpty()) {
-            List<ImpactConfig> impactConfigs = impactConfigRepository.findAll();
-            if (CollectionUtils.isNotEmpty(impactConfigs)) {
-                for (ImpactConfig impactConfig : impactConfigs) {
-                    for (ImpactLabelDto labels : impactConfig.getLabels()) {
-                        for (String key : issuesMap.keySet()) {
-                            for (String mapKey : issuesMap.get(key).keySet()) {
-                                if (labels.getLabels().contains(mapKey)) {
-                                    impact = impact + (labels.getImpact() * labels.getMultiplier());
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return impact;
-    }
-
-    private void populateFailedData(List<DashboardTableData> dashboardTableDataList, QATestResult testResult, int passedCount, int status, int totalCount, String subId, Map<String, Map<String, Set<String>>> issuesMap) {
-        DashboardTableData failedData = new DashboardTableData();
-        failedData.setStatus(status == 2 ? FAILED : PARTIALLY_PASSED);
-        failedData.setSubsidiary(subId);
-        failedData.setSite(testResult.getSite());
-        failedData.setTestCase(String.valueOf(testResult.getLocatorGroupIdentifier()));
-        Double percentage = (Double.valueOf(passedCount) / Double.valueOf(totalCount)) / 100;
-        failedData.setPassedSkus(passedCount + " over " + totalCount + " (" + percentage.intValue() + "%)");
-        failedData.setImpact(calculateImpact(issuesMap));
-        dashboardTableDataList.add(failedData);
-    }
-
-    private void populateCategorySections(Dashboard dashboard, Map<String, Set<String>> errorMap, Map<String, Map<String, Set<String>>> issuesMap) {
-        String recordId = dashboard.getDashboardProfile();
-        if (recordId == null) {
-            //OLD way rendering
-            issuesMap.put("all category", errorMap);
-        } else {
-            // Profile based rendering
-            DashboardProfile dashboardProfile = dashboardProfileService.getDashboardProfileByRecordId(dashboard.getDashboardProfile());
-            if (dashboardProfile == null) {
-                issuesMap.put("all category", errorMap);
-            } else {
-                List<DashboardLabelDto> labels = dashboardProfile.getLabels();
-                if (CollectionUtils.isNotEmpty(labels)) {
-                    errorMap.keySet().forEach(key -> {
-                        labels.forEach(dashboardLabelDto -> {
-                            Map<String, Set<String>> allChildren = new HashMap<>();
-                            if (key.equals(dashboardLabelDto.getParent())) {
-                                dashboardLabelDto.getChildren().forEach(child -> {
-                                    Set<String> childErrorTree = new TreeSet<>();
-                                    Set<String> childError = errorMap.get(child);
-                                    if (CollectionUtils.isNotEmpty(childError)) {
-                                        childErrorTree.addAll(childError.stream().filter(errorMsg -> StringUtils.isNotEmpty(errorMsg)).collect(Collectors.toSet()));
-                                    }
-                                    if (CollectionUtils.isNotEmpty(childErrorTree)) {
-                                        allChildren.put(child, childErrorTree);
-                                    }
-                                });
-                                if (!allChildren.isEmpty()) {
-                                    if (issuesMap.containsKey(key)) {
-                                        mergeIssueMap(issuesMap, key, allChildren);
-                                    } else {
-                                        issuesMap.put(key, allChildren);
-                                    }
-                                }
-                            }
-                        });
-                    });
-                }
-            }
-        }
-    }
+//    private void populateCategorySections(Dashboard dashboard, Map<String, Set<String>> errorMap, Map<String, Map<String, Set<String>>> issuesMap) {
+//        String recordId = dashboard.getDashboardProfile();
+//        if (recordId == null) {
+//            //OLD way rendering
+//            issuesMap.put("all category", errorMap);
+//        } else {
+//            // Profile based rendering
+//            DashboardProfile dashboardProfile = dashboardProfileService.getDashboardProfileByRecordId(dashboard.getDashboardProfile());
+//            if (dashboardProfile == null) {
+//                issuesMap.put("all category", errorMap);
+//            } else {
+//              //  List<DashboardLabelDto> labels = dashboardProfile.getLabels();
+//                if (CollectionUtils.isNotEmpty(labels)) {
+//                    errorMap.keySet().forEach(key -> {
+//                        labels.forEach(dashboardLabelDto -> {
+//                            Map<String, Set<String>> allChildren = new HashMap<>();
+//                            if (key.equals(dashboardLabelDto.getParent())) {
+//                                dashboardLabelDto.getChildren().forEach(child -> {
+//                                    Set<String> childErrorTree = new TreeSet<>();
+//                                    Set<String> childError = errorMap.get(child);
+//                                    if (CollectionUtils.isNotEmpty(childError)) {
+//                                        childErrorTree.addAll(childError.stream().filter(errorMsg -> StringUtils.isNotEmpty(errorMsg)).collect(Collectors.toSet()));
+//                                    }
+//                                    if (CollectionUtils.isNotEmpty(childErrorTree)) {
+//                                        allChildren.put(child, childErrorTree);
+//                                    }
+//                                });
+//                                if (!allChildren.isEmpty()) {
+//                                    if (issuesMap.containsKey(key)) {
+//                                        mergeIssueMap(issuesMap, key, allChildren);
+//                                    } else {
+//                                        issuesMap.put(key, allChildren);
+//                                    }
+//                                }
+//                            }
+//                        });
+//                    });
+//                }
+//            }
+//        }
+//    }
 
     private void mergeIssueMap(Map<String, Map<String, Set<String>>> issuesMap, String key, Map<String, Set<String>> allChildren) {
         Map<String, Set<String>> mergedMap = new HashMap<>();
@@ -495,7 +491,7 @@ public class DashboardServiceImpl implements DashboardService {
                 Map<String, Map<String, Set<String>>> issuesMap = new HashMap<>();
                 Map<String, Set<String>> errorMap = qaTestResult.getErrorMap();
                 if (errorMap != null && !errorMap.isEmpty()) {
-                    populateCategorySections(dashboard, errorMap, issuesMap);
+                   // populateCategorySections(dashboard, errorMap, issuesMap);
                     populateValidationErrorMsgs(dashboard, errorMap, issuesMap);
                 }
                 if (issuesMap != null && !issuesMap.isEmpty()) {

@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class TestProfileWsDto extends CommonWsDto {
-    List<ProfileLocatorDto> profileLocatorList;
+  //  List<ProfileLocatorDto> profileLocatorList;
     private List<TestProfileDto> testProfiles;
 }

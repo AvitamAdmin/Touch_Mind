@@ -1,10 +1,6 @@
 package com.touchmind.qa.service.impl;
 
 import com.touchmind.core.SpringContext;
-import com.touchmind.core.mongo.model.Subsidiary;
-import com.touchmind.core.mongo.model.Variant;
-import com.touchmind.core.mongo.repository.SubsidiaryRepository;
-import com.touchmind.core.mongo.repository.VariantRepository;
 import com.touchmind.qa.service.UrlService;
 import com.touchmind.qa.strategies.SubsidiaryType;
 import com.touchmind.qa.utils.TestDataUtils;
@@ -24,12 +20,12 @@ public class DefaultUrlService implements UrlService {
 
     public static final String DEFAULT_URL_SERVICE_TYPE = "DEFAULT";
     private static final Map<String, String> subsidiaryUrlServiceMappings = new HashMap<>();
-    @Autowired
-    private SubsidiaryRepository subsidiaryRepository;
+//    @Autowired
+//    private SubsidiaryRepository subsidiaryRepository;
 
-    public DefaultUrlService() {
-        initSubsidiaryUrlServiceMapping();
-    }
+//    //public DefaultUrlService() {
+//        initSubsidiaryUrlServiceMapping();
+//    }
 
     @Override
     public String getUrl(ITestContext context, String sku, String currentUrl) throws MalformedURLException {
@@ -37,21 +33,21 @@ public class DefaultUrlService implements UrlService {
         Map<String, String> params = new HashMap<>();
         params.put("temSite", TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE));
         //TODO check if the record is correctly fetched
-        Subsidiary subsidiary = subsidiaryRepository.findByRecordId(testData.getString(TestDataUtils.Field.SUBSIDIARY.toString()));
-        if (subsidiary != null) {
-            params.put("temLocale", subsidiary.getIsoCode());
-        }
+       // Subsidiary subsidiary = subsidiaryRepository.findByRecordId(testData.getString(TestDataUtils.Field.SUBSIDIARY.toString()));
+//        if (subsidiary != null) {
+//            params.put("temLocale", subsidiary.getIsoCode());
+//        }
         params.put("temVariant", sku);
-        processExternalProductUrlForSku(params, sku);
+        //processExternalProductUrlForSku(params, sku);
         return processUrl(currentUrl, params);
     }
 
-    public void processExternalProductUrlForSku(Map<String, String> params, String sku) {
-        Variant variant = SpringContext.getBean(VariantRepository.class).findByIdentifier(sku);
-        if (variant != null) {
-            params.put("temExternalProductUrl", variant.getExternalProductUrl());
-        }
-    }
+//    public void processExternalProductUrlForSku(Map<String, String> params, String sku) {
+//        Variant variant = SpringContext.getBean(VariantRepository.class).findByIdentifier(sku);
+//        if (variant != null) {
+//            params.put("temExternalProductUrl", variant.getExternalProductUrl());
+//        }
+//    }
 
     public String processUrl(String rawUrl, Map<String, String> params) {
         return StringSubstitutor.replace(rawUrl, params, "$[", "]");
@@ -65,11 +61,11 @@ public class DefaultUrlService implements UrlService {
         return DEFAULT_URL_SERVICE_TYPE;
     }
 
-    private void initSubsidiaryUrlServiceMapping() {
-        SubsidiaryRepository subsidiaryRepository = SpringContext.getBean(SubsidiaryRepository.class);
-        List<Subsidiary> subsidiaries = subsidiaryRepository.findByStatusOrderByIdentifier(true);
-        subsidiaries.stream().forEach(subsidiary -> {
-            subsidiaryUrlServiceMappings.put(subsidiary.getIdentifier(), DEFAULT_URL_SERVICE_TYPE);
-        });
-    }
+//    private void initSubsidiaryUrlServiceMapping() {
+//        SubsidiaryRepository subsidiaryRepository = SpringContext.getBean(SubsidiaryRepository.class);
+//        List<Subsidiary> subsidiaries = subsidiaryRepository.findByStatusOrderByIdentifier(true);
+//        subsidiaries.stream().forEach(subsidiary -> {
+//            subsidiaryUrlServiceMappings.put(subsidiary.getIdentifier(), DEFAULT_URL_SERVICE_TYPE);
+//        });
+//    }
 }

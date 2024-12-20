@@ -1,6 +1,5 @@
 package com.touchmind.core.mongo.model;
 
-import com.touchmind.core.mongo.dto.CronTestPlanDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,6 +21,6 @@ public class CronJob extends CommonFields {
     private String siteUrl;
     private String cronProfileId;
     private List<String> envProfiles;
-    private List<CronTestPlanDto> cronTestPlanDtoList;
+   // private List<CronTestPlanDto> cronTestPlanDtoList;
     private String campaign;
 }

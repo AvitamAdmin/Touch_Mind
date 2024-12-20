@@ -30,6 +30,6 @@ public class CommonQaFields extends CommonFields implements Serializable {
     private String identifier;
     private String shortDescription;
     @DBRef(lazy = true)
-    private List<ParamInput> paramInput;
+    //private List<ParamInput> paramInput;
     private List<String> subsidiaries;
 }

@@ -8,7 +8,6 @@ import com.touchmind.core.mongo.model.User;
 import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.NodeRepository;
 import com.touchmind.core.mongo.repository.UserRepository;
-import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.NodeService;
 import org.apache.commons.collections4.CollectionUtils;
@@ -46,8 +45,8 @@ public class NodeServiceImpl implements NodeService {
     @Autowired
     private CoreService coreService;
 
-    @Autowired
-    private BaseService baseService;
+//    @Autowired
+//    private BaseService baseService;
 
     @Override
     //@Cacheable(cacheNames = "allNodes")
@@ -107,41 +106,46 @@ public class NodeServiceImpl implements NodeService {
     }
 
     @Override
-    public NodeWsDto handleEdit(@RequestBody NodeWsDto request) {
-        NodeWsDto nodeWsDto = new NodeWsDto();
-        List<Node> nodes = new ArrayList<>();
-        for (com.touchmind.core.mongo.dto.NodeDto nodeDto : request.getNodes()) {
-            Node node = null;
-            if (nodeDto.getRecordId() != null) {
-                node = nodeRepository.findByRecordId(nodeDto.getRecordId());
-                modelMapper.map(nodeDto, node);
-            } else {
-                if (baseService.validateIdentifier(EntityConstants.NODE, nodeDto.getIdentifier()) != null) {
-                    request.setSuccess(false);
-                    request.setMessage("Identifier already present");
-                    return request;
-                }
-                node = modelMapper.map(nodeDto, Node.class);
-            }
-            Node parentNode = node.getParentNode();
-            if (parentNode != null) {
-                if (parentNode.getRecordId() != null) {
-                    node.setParentNode(nodeRepository.findByRecordId(parentNode.getRecordId()));
-                }
-            }
-            baseService.populateCommonData(node);
-            nodeRepository.save(node);
-            if (nodeDto.getRecordId() == null) {
-                node.setRecordId(String.valueOf(node.getId().getTimestamp()));
-            }
-            nodeRepository.save(node);
-            nodes.add(node);
-        }
-        nodeWsDto.setNodes(modelMapper.map(nodes, List.class));
-        nodeWsDto.setMessage("Nodes are updated successfully!!");
-        nodeWsDto.setBaseUrl(ADMIN_INTERFACE);
-        return nodeWsDto;
+    public NodeWsDto handleEdit(NodeWsDto request) {
+        return null;
     }
+
+//    @Override
+//    public NodeWsDto handleEdit(@RequestBody NodeWsDto request) {
+//        NodeWsDto nodeWsDto = new NodeWsDto();
+//        List<Node> nodes = new ArrayList<>();
+//        for (com.touchmind.core.mongo.dto.NodeDto nodeDto : request.getNodes()) {
+//            Node node = null;
+//            if (nodeDto.getRecordId() != null) {
+//                node = nodeRepository.findByRecordId(nodeDto.getRecordId());
+//                modelMapper.map(nodeDto, node);
+//            } else {
+//                if (baseService.validateIdentifier(EntityConstants.NODE, nodeDto.getIdentifier()) != null) {
+//                    request.setSuccess(false);
+//                    request.setMessage("Identifier already present");
+//                    return request;
+//                }
+//                node = modelMapper.map(nodeDto, Node.class);
+//            }
+//            Node parentNode = node.getParentNode();
+//            if (parentNode != null) {
+//                if (parentNode.getRecordId() != null) {
+//                    node.setParentNode(nodeRepository.findByRecordId(parentNode.getRecordId()));
+//                }
+//            }
+//            baseService.populateCommonData(node);
+//            nodeRepository.save(node);
+//            if (nodeDto.getRecordId() == null) {
+//                node.setRecordId(String.valueOf(node.getId().getTimestamp()));
+//            }
+//            nodeRepository.save(node);
+//            nodes.add(node);
+//        }
+//        nodeWsDto.setNodes(modelMapper.map(nodes, List.class));
+//        nodeWsDto.setMessage("Nodes are updated successfully!!");
+//        nodeWsDto.setBaseUrl(ADMIN_INTERFACE);
+//        return nodeWsDto;
+//    }
 
     @Override
     public Node findById(String id) {

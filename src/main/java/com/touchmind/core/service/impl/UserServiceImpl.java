@@ -3,14 +3,9 @@ package com.touchmind.core.service.impl;
 import com.touchmind.core.mongo.dto.UserDto;
 import com.touchmind.core.mongo.dto.UserWsDto;
 import com.touchmind.core.mongo.model.Role;
-import com.touchmind.core.mongo.model.Subsidiary;
 import com.touchmind.core.mongo.model.User;
-import com.touchmind.core.mongo.model.VerificationToken;
 import com.touchmind.core.mongo.repository.RoleRepository;
-import com.touchmind.core.mongo.repository.SubsidiaryRepository;
 import com.touchmind.core.mongo.repository.UserRepository;
-import com.touchmind.core.mongo.repository.VerificationTokenRepository;
-import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.UserService;
 import org.apache.commons.collections4.CollectionUtils;
@@ -43,17 +38,17 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @Autowired
-    private VerificationTokenRepository tokenRepository;
-
-    @Autowired
-    private SubsidiaryRepository subsidiaryRepository;
+//    @Autowired
+//    private VerificationTokenRepository tokenRepository;
+//
+//    @Autowired
+//    private SubsidiaryRepository subsidiaryRepository;
 
     @Autowired
     private ModelMapper modelMapper;
 
-    @Autowired
-    private BaseService baseService;
+//    @Autowired
+//    private BaseService baseService;
 
     @Autowired
     private CoreService coreService;
@@ -62,7 +57,7 @@ public class UserServiceImpl implements UserService {
     public void save(UserWsDto userWsDto) {
         for (UserDto requestUser : userWsDto.getUsers()) {
             User user = null;
-            //String userName = coreService.getCurrentUser().getUsername();
+            String userName = coreService.getCurrentUser().getUsername();
             if (requestUser.getRecordId() != null) {
                 user = userRepository.findByRecordId(requestUser.getRecordId());
                 if (StringUtils.isEmpty(requestUser.getPassword())) {
@@ -92,13 +87,13 @@ public class UserServiceImpl implements UserService {
                 }
                 user.setRoles(roleList);
             }
-            if (CollectionUtils.isNotEmpty(requestUser.getSubsidiaries())) {
-                Set<Subsidiary> subsidiaries = new HashSet<>();
-                for (String subsidiary : requestUser.getSubsidiaries()) {
-                    subsidiaries.add(subsidiaryRepository.findByRecordId(subsidiary));
-                }
-                user.setSubsidiaries(subsidiaries);
-            }
+//            if (CollectionUtils.isNotEmpty(requestUser.getSubsidiaries())) {
+//                Set<Subsidiary> subsidiaries = new HashSet<>();
+//                for (String subsidiary : requestUser.getSubsidiaries()) {
+//                    subsidiaries.add(subsidiaryRepository.findByRecordId(subsidiary));
+//                }
+//                user.setSubsidiaries(subsidiaries);
+//            }
             //user.setModifiedBy(userName);
             user.setLastModified(new Date());
             userRepository.save(user);
@@ -116,16 +111,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createVerificationToken(User user, String token) {
-        VerificationToken myToken = new VerificationToken();
-        myToken.setToken(token);
-        myToken.setUser(user);
-        tokenRepository.save(myToken);
+
     }
 
-    @Override
-    public VerificationToken getVerificationToken(String VerificationToken) {
-        return tokenRepository.findByToken(VerificationToken);
-    }
+
+
+//    @Override
+//    public void createVerificationToken(User user, String token) {
+//        VerificationToken myToken = new VerificationToken();
+//        myToken.setToken(token);
+//        myToken.setUser(user);
+//        tokenRepository.save(myToken);
+//    }
+//
+//    @Override
+//    public VerificationToken getVerificationToken(String VerificationToken) {
+//        return tokenRepository.findByToken(VerificationToken);
+//    }
 
     @Override
     public void saveRegisteredUser(User user) {
@@ -134,34 +136,44 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String validateVerificationToken(String token) {
-        final VerificationToken verificationToken = tokenRepository.findByToken(token);
-        if (verificationToken == null) {
-            return TOKEN_INVALID;
-        }
-
-        final User user = verificationToken.getUser();
-        final Calendar cal = Calendar.getInstance();
-        if ((verificationToken.getExpiryDate()
-                .getTime() - cal.getTime()
-                .getTime()) <= 0) {
-            tokenRepository.delete(verificationToken);
-            return TOKEN_EXPIRED;
-        }
-
-        //user.setStatus(true);
-        // tokenRepository.delete(verificationToken);
-        userRepository.save(user);
-        return TOKEN_VALID;
+        return null;
     }
 
     @Override
-    public User getUser(final String verificationToken) {
-        final VerificationToken token = tokenRepository.findByToken(verificationToken);
-        if (token != null) {
-            return token.getUser();
-        }
+    public User getUser(String verificationToken) {
         return null;
     }
+
+//    @Override
+//    public String validateVerificationToken(String token) {
+//        final VerificationToken verificationToken = tokenRepository.findByToken(token);
+//        if (verificationToken == null) {
+//            return TOKEN_INVALID;
+//        }
+//
+//        final User user = verificationToken.getUser();
+//        final Calendar cal = Calendar.getInstance();
+//        if ((verificationToken.getExpiryDate()
+//                .getTime() - cal.getTime()
+//                .getTime()) <= 0) {
+//            tokenRepository.delete(verificationToken);
+//            return TOKEN_EXPIRED;
+//        }
+//
+//        //user.setStatus(true);
+//        // tokenRepository.delete(verificationToken);
+//        userRepository.save(user);
+//        return TOKEN_VALID;
+//    }
+//
+//    @Override
+//    public User getUser(final String verificationToken) {
+//        final VerificationToken token = tokenRepository.findByToken(verificationToken);
+//        if (token != null) {
+//            return token.getUser();
+//        }
+//        return null;
+//    }
 
     @Override
     public boolean isAdminRole() {

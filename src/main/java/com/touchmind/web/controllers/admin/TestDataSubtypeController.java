@@ -1,20 +1,13 @@
 package com.touchmind.web.controllers.admin;
 
-import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.dto.TestDataSubtypeDto;
 import com.touchmind.core.mongo.dto.TestDataSubtypeWsDto;
 import com.touchmind.core.mongo.model.TestDataSubtype;
-import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.TestDataSubtypeRepository;
 import com.touchmind.core.mongo.repository.TestDataTypeRepository;
-import com.touchmind.core.service.SubsidiaryService;
 import com.touchmind.core.service.TestDataSubTypeService;
-import com.touchmind.fileimport.service.FileExportService;
-import com.touchmind.fileimport.service.FileImportService;
-import com.touchmind.fileimport.strategies.EntityType;
 import com.touchmind.web.controllers.BaseController;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -32,10 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -47,8 +37,8 @@ public class TestDataSubtypeController extends BaseController {
 
     public static final String ADMIN_TEST_DATA_SUB_TYPE = "/admin/testdatasubtype";
     Logger logger = LoggerFactory.getLogger(TestDataSubtypeController.class);
-    @Autowired
-    private SubsidiaryService subsidiaryService;
+//    @Autowired
+//    private SubsidiaryService subsidiaryService;
     @Autowired
     private TestDataSubtypeRepository testDataSubtypeRepository;
     @Autowired
@@ -56,10 +46,10 @@ public class TestDataSubtypeController extends BaseController {
 
     @Autowired
     private TestDataSubTypeService testDataSubTypeService;
-    @Autowired
-    private FileImportService fileImportService;
-    @Autowired
-    private FileExportService fileExportService;
+//    @Autowired
+//    private FileImportService fileImportService;
+//    @Autowired
+//    private FileExportService fileExportService;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -76,15 +66,15 @@ public class TestDataSubtypeController extends BaseController {
         testDataSubtypeWsDto.setBaseUrl(ADMIN_TEST_DATA_SUB_TYPE);
         testDataSubtypeWsDto.setTotalPages(page.getTotalPages());
         testDataSubtypeWsDto.setTotalRecords(page.getTotalElements());
-        testDataSubtypeWsDto.setAttributeList(getConfiguredAttributes(testDataSubtypeWsDto.getNode()));
+        //testDataSubtypeWsDto.setAttributeList(getConfiguredAttributes(testDataSubtypeWsDto.getNode()));
         return testDataSubtypeWsDto;
     }
 
-    @GetMapping("/getAdvancedSearch")
-    @ResponseBody
-    public List<SearchDto> getSearchAttributes() {
-        return getGroupedParentAndChildAttributes(new TestDataSubtype());
-    }
+//    @GetMapping("/getAdvancedSearch")
+//    @ResponseBody
+//    public List<SearchDto> getSearchAttributes() {
+//        return getGroupedParentAndChildAttributes(new TestDataSubtype());
+//    }
 
     @GetMapping("/get")
     @ResponseBody
@@ -140,30 +130,30 @@ public class TestDataSubtypeController extends BaseController {
                 .collect(Collectors.toMap(TestDataSubtype::getId, TestDataSubtype::getIdentifier));
     }
 
-    @PostMapping("/upload")
-    public TestDataSubtypeWsDto uploadFile(@RequestBody MultipartFile file) {
-        TestDataSubtypeWsDto testDataSubtypeWsDto = new TestDataSubtypeWsDto();
-        try {
-            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.TEST_DATA_SUB_TYPE, EntityConstants.TEST_DATA_SUB_TYPE, testDataSubtypeWsDto);
-            if (StringUtils.isEmpty(testDataSubtypeWsDto.getMessage())) {
-                testDataSubtypeWsDto.setMessage("File uploaded successfully!!");
-            }
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-        }
-        return testDataSubtypeWsDto;
-    }
-
-    @GetMapping("/export")
-    @ResponseBody
-    public TestDataSubtypeWsDto uploadFile() {
-        TestDataSubtypeWsDto testDataSubtypeWsDto = new TestDataSubtypeWsDto();
-        try {
-            testDataSubtypeWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.TEST_DATA_SUB_TYPE));
-            return testDataSubtypeWsDto;
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-            return null;
-        }
-    }
+//    @PostMapping("/upload")
+//    public TestDataSubtypeWsDto uploadFile(@RequestBody MultipartFile file) {
+//        TestDataSubtypeWsDto testDataSubtypeWsDto = new TestDataSubtypeWsDto();
+//        try {
+//            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.TEST_DATA_SUB_TYPE, EntityConstants.TEST_DATA_SUB_TYPE, testDataSubtypeWsDto);
+//            if (StringUtils.isEmpty(testDataSubtypeWsDto.getMessage())) {
+//                testDataSubtypeWsDto.setMessage("File uploaded successfully!!");
+//            }
+//        } catch (IOException e) {
+//            logger.error(e.getMessage());
+//        }
+//        return testDataSubtypeWsDto;
+//    }
+//
+//    @GetMapping("/export")
+//    @ResponseBody
+//    public TestDataSubtypeWsDto uploadFile() {
+//        TestDataSubtypeWsDto testDataSubtypeWsDto = new TestDataSubtypeWsDto();
+//        try {
+//            testDataSubtypeWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.TEST_DATA_SUB_TYPE));
+//            return testDataSubtypeWsDto;
+//        } catch (IOException e) {
+//            logger.error(e.getMessage());
+//            return null;
+//        }
+//    }
 }

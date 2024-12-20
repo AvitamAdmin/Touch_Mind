@@ -2,10 +2,8 @@ package com.touchmind.qa.strategies;
 
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.model.Media;
-import com.touchmind.core.mongo.model.Campaign;
 import com.touchmind.core.mongo.model.LocatorPriority;
 import com.touchmind.core.mongo.model.TestLocator;
-import com.touchmind.core.mongo.repository.CampaignRepository;
 import com.touchmind.form.LocatorGroupData;
 import com.touchmind.qa.framework.ThreadTestContext;
 import com.touchmind.qa.pages.concretepages.testPlans.AbstractTestPlan;
@@ -43,8 +41,8 @@ public class ActionFactory extends AbstractTestPlan {
     Environment env;
     @Autowired
     private SelectorService selectorService;
-    @Autowired
-    private CampaignRepository campaignRepository;
+//    @Autowired
+//    private CampaignRepository campaignRepository;
 
     public ActionFactory(Map<String, ElementActionService> actionServiceMap) {
         this.actionServiceMap = actionServiceMap;
@@ -180,14 +178,14 @@ public class ActionFactory extends AbstractTestPlan {
         return null;
     }
 
-    private String getCampaign(JSONObject testData) {
-        String campaignId = TestDataUtils.getString(testData, TestDataUtils.Field.SHOP_CAMPAIGN);
-        if (StringUtils.isNotEmpty(campaignId)) {
-            Campaign campaign = campaignRepository.findByRecordId((campaignId));
-            return campaign != null ? campaign.getIdentifier() : null;
-        }
-        return null;
-    }
+//    private String getCampaign(JSONObject testData) {
+//        String campaignId = TestDataUtils.getString(testData, TestDataUtils.Field.SHOP_CAMPAIGN);
+//        if (StringUtils.isNotEmpty(campaignId)) {
+//            Campaign campaign = campaignRepository.findByRecordId((campaignId));
+//            return campaign != null ? campaign.getIdentifier() : null;
+//        }
+//        return null;
+//    }
 
 
     private boolean performPostAction(ITestContext context, LocatorGroupData locatorGroupData, TestLocator locator, LocatorPriority locatorPriority) {

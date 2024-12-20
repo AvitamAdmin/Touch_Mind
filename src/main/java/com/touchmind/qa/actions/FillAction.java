@@ -1,7 +1,6 @@
 package com.touchmind.qa.actions;
 
 import com.aventstack.extentreports.model.Media;
-import com.touchmind.core.mongo.dto.ProfileLocatorDto;
 import com.touchmind.core.mongo.model.LocatorPriority;
 import com.touchmind.core.mongo.model.TestLocator;
 import com.touchmind.core.mongo.model.TestProfile;
@@ -50,51 +49,52 @@ public class FillAction implements ElementActionService {
         String itemSite = TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE);
         String testProfileId = TestDataUtils.getString(testData, TestDataUtils.Field.TEST_PROFILE);
 
-        String inputValue = null;
-        String encryptedInputVal = "";
-        if (StringUtils.isNotEmpty(testProfileId)) {
-            TestProfile testProfile = testProfileRepository.findByRecordId(testProfileId);
-            if (testProfile != null) {
-                List<ProfileLocatorDto> profileLocatorList = testProfile.getProfileLocators();
-                if (CollectionUtils.isNotEmpty(profileLocatorList)) {
-                    List<ProfileLocatorDto> profileLocatorOptional = profileLocatorList.stream().filter(identifier -> identifier.getLocatorId().equals(testLocator.getIdentifier())).collect(Collectors.toList());
-                    if (CollectionUtils.isNotEmpty(profileLocatorOptional)) {
-                        Optional<ProfileLocatorDto> profileLocator = profileLocatorOptional.stream().findFirst();
-                        if (profileLocator.isPresent()) {
-                            inputValue = profileLocator.get().getInputValue();
-                            encryptedInputVal = inputValue;
-                            inputValue = inputValue.contains(CONSTANT_VAL) ? decrypt(inputValue.replaceAll(CONSTANT_VAL, "")) : inputValue;
-                        }
-                    }
-                }
-            }
-        }
-        WebElement element = selectorService.getUiElement(context, testLocator);
-        if (element == null) {
-            Media media = reportAction(context, element, testLocator.getDescription() + " Data:" + encryptedInputVal, testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
-            ActionResult actionResult = new ActionResult();
-            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription() + " Data:" + encryptedInputVal, media != null ? media.getPath() : null, Status.FAIL);
-            return actionResult;
-        }
+//        String inputValue = null;
+//        String encryptedInputVal = "";
+//        if (StringUtils.isNotEmpty(testProfileId)) {
+//            TestProfile testProfile = testProfileRepository.findByRecordId(testProfileId);
+//            if (testProfile != null) {
+//               // List<ProfileLocatorDto> profileLocatorList = testProfile.getProfileLocators();
+//                if (CollectionUtils.isNotEmpty(profileLocatorList)) {
+//                    List<ProfileLocatorDto> profileLocatorOptional = profileLocatorList.stream().filter(identifier -> identifier.getLocatorId().equals(testLocator.getIdentifier())).collect(Collectors.toList());
+//                    if (CollectionUtils.isNotEmpty(profileLocatorOptional)) {
+//                        Optional<ProfileLocatorDto> profileLocator = profileLocatorOptional.stream().findFirst();
+//                        if (profileLocator.isPresent()) {
+//                            inputValue = profileLocator.get().getInputValue();
+//                            encryptedInputVal = inputValue;
+//                            inputValue = inputValue.contains(CONSTANT_VAL) ? decrypt(inputValue.replaceAll(CONSTANT_VAL, "")) : inputValue;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        WebElement element = selectorService.getUiElement(context, testLocator);
+//        if (element == null) {
+//            Media media = reportAction(context, element, testLocator.getDescription() + " Data:" + encryptedInputVal, testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
+//            ActionResult actionResult = new ActionResult();
+//            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription() + " Data:" + encryptedInputVal, media != null ? media.getPath() : null, Status.FAIL);
+//            return actionResult;
+//        }
 
-        element.clear();
-        ActionResult actionResult = new ActionResult();
-        LocatorSelectorDto locatorSelectorDto = testLocator.getUiLocatorSelector(itemSite);
-        String inputData = locatorSelectorDto != null ? locatorSelectorDto.getInputData():"";
-        //TODO check if encryption is correctly working
-        if (StringUtils.isNotEmpty(inputValue)) {
-            Media media = reportAction(context, element, testLocator.getDescription() + " Data:" + encryptedInputVal, testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
-            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription() + " Data:" + encryptedInputVal, media != null ? media.getPath() : null, Status.PASS);
-            element.sendKeys(inputValue);
-        } else if (BooleanUtils.isTrue(locatorPriority.getIsContextData())) {
-            Media media = reportAction(context, element, testLocator.getDescription() + " Data:" + threadTestContext.getData().get(testLocator.getInputDataEncrypted(itemSite)), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
-            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription() + " Data:" + threadTestContext.getData().get(testLocator.getInputDataEncrypted(itemSite)), media != null ? media.getPath() : null, Status.PASS);
-            element.sendKeys(threadTestContext.getData().get(inputData));
-        } else {
-            Media media = reportAction(context, element, testLocator.getDescription() + " Data:" + testLocator.getInputDataEncrypted(itemSite), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
-            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription() + " Data:" + testLocator.getInputDataEncrypted(itemSite), media != null ? media.getPath() : null, Status.PASS);
-            element.sendKeys(inputData);
-        }
-        return actionResult;
+//        element.clear();
+//        ActionResult actionResult = new ActionResult();
+//        LocatorSelectorDto locatorSelectorDto = testLocator.getUiLocatorSelector(itemSite);
+//        String inputData = locatorSelectorDto != null ? locatorSelectorDto.getInputData():"";
+//        //TODO check if encryption is correctly working
+//        if (StringUtils.isNotEmpty(inputValue)) {
+//            Media media = reportAction(context, element, testLocator.getDescription() + " Data:" + encryptedInputVal, testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
+//            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription() + " Data:" + encryptedInputVal, media != null ? media.getPath() : null, Status.PASS);
+//            element.sendKeys(inputValue);
+//        } else if (BooleanUtils.isTrue(locatorPriority.getIsContextData())) {
+//            Media media = reportAction(context, element, testLocator.getDescription() + " Data:" + threadTestContext.getData().get(testLocator.getInputDataEncrypted(itemSite)), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
+//            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription() + " Data:" + threadTestContext.getData().get(testLocator.getInputDataEncrypted(itemSite)), media != null ? media.getPath() : null, Status.PASS);
+//            element.sendKeys(threadTestContext.getData().get(inputData));
+//        } else {
+//            Media media = reportAction(context, element, testLocator.getDescription() + " Data:" + testLocator.getInputDataEncrypted(itemSite), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
+//            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription() + " Data:" + testLocator.getInputDataEncrypted(itemSite), media != null ? media.getPath() : null, Status.PASS);
+//            element.sendKeys(inputData);
+//        }
+//        return actionResult;
+        return null;
     }
-}
+    }

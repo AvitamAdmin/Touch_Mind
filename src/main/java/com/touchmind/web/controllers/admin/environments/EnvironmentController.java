@@ -2,17 +2,11 @@ package com.touchmind.web.controllers.admin.environments;
 
 import com.touchmind.core.mongo.dto.EnvironmentDto;
 import com.touchmind.core.mongo.dto.EnvironmentWsDto;
-import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.model.Environment;
-import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.EnvironmentRepository;
 import com.touchmind.core.service.EnvironmentService;
-import com.touchmind.fileimport.service.FileExportService;
-import com.touchmind.fileimport.service.FileImportService;
-import com.touchmind.fileimport.strategies.EntityType;
 import com.touchmind.web.controllers.BaseController;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,10 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,11 +41,11 @@ public class EnvironmentController extends BaseController {
     @Autowired
     private EnvironmentService environmentService;
 
-    @Autowired
-    private FileImportService fileImportService;
-
-    @Autowired
-    private FileExportService fileExportService;
+//    @Autowired
+//    private FileImportService fileImportService;
+//
+//    @Autowired
+//    private FileExportService fileExportService;
 
     @PostMapping
     @ResponseBody
@@ -68,15 +59,15 @@ public class EnvironmentController extends BaseController {
         environmentWsDto.setBaseUrl(ADMIN_ENVIRONMENT);
         environmentWsDto.setTotalPages(page.getTotalPages());
         environmentWsDto.setTotalRecords(page.getTotalElements());
-        environmentWsDto.setAttributeList(getConfiguredAttributes(environmentWsDto.getNode()));
+     //   environmentWsDto.setAttributeList(getConfiguredAttributes(environmentWsDto.getNode()));
         return environmentWsDto;
     }
 
-    @GetMapping("/getAdvancedSearch")
-    @ResponseBody
-    public List<SearchDto> getSearchAttributes() {
-        return getGroupedParentAndChildAttributes(new Environment());
-    }
+//    @GetMapping("/getAdvancedSearch")
+//    @ResponseBody
+//    public List<SearchDto> getSearchAttributes() {
+//        return getGroupedParentAndChildAttributes(new Environment());
+//    }
 
     @GetMapping("/get")
     @ResponseBody
@@ -127,30 +118,30 @@ public class EnvironmentController extends BaseController {
         return environmentWsDto;
     }
 
-    @GetMapping("/export")
-    @ResponseBody
-    public EnvironmentWsDto uploadFile() {
-        EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
-        try {
-            environmentWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.ENVIRONMENT));
-            return environmentWsDto;
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-            return null;
-        }
-    }
-
-    @PostMapping("/upload")
-    public EnvironmentWsDto uploadFile(@RequestBody MultipartFile file) {
-        EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
-        try {
-            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.ENVIRONMENT, EntityConstants.ENVIRONMENT, environmentWsDto);
-            if (StringUtils.isEmpty(environmentWsDto.getMessage())) {
-                environmentWsDto.setMessage("File uploaded successfully!!");
-            }
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-        }
-        return environmentWsDto;
-    }
+//    @GetMapping("/export")
+//    @ResponseBody
+//    public EnvironmentWsDto uploadFile() {
+//        EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
+//        try {
+//            environmentWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.ENVIRONMENT));
+//            return environmentWsDto;
+//        } catch (IOException e) {
+//            logger.error(e.getMessage());
+//            return null;
+//        }
+//    }
+//
+//    @PostMapping("/upload")
+//    public EnvironmentWsDto uploadFile(@RequestBody MultipartFile file) {
+//        EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
+//        try {
+//            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.ENVIRONMENT, EntityConstants.ENVIRONMENT, environmentWsDto);
+//            if (StringUtils.isEmpty(environmentWsDto.getMessage())) {
+//                environmentWsDto.setMessage("File uploaded successfully!!");
+//            }
+//        } catch (IOException e) {
+//            logger.error(e.getMessage());
+//        }
+//        return environmentWsDto;
+//    }
 }

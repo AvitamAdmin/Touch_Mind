@@ -16,6 +16,8 @@ public interface DashboardService {
 
     DashboardForm edit(DashboardForm dashboardForm);
 
+  //  QaSummaryData getDashBoard(Dashboard dashboard, String subsidiaryId, String days, String runner);
+
     QaSummaryData getDashBoard(Dashboard dashboard, String subsidiaryId, String days, String runner);
 
     DashboardWsDto handleEdit(DashboardWsDto request);

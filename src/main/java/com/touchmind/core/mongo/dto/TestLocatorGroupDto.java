@@ -14,7 +14,7 @@ import java.util.List;
 public class TestLocatorGroupDto extends CommonDto {
     private List<LocatorPriorityDto> testLocators;
     private String subsidiary;
-    private List<ConditionGroupDto> conditionGroupList;
+   // private List<ConditionGroupDto> conditionGroupList;
     private Boolean checkEppSso;
     private Boolean published;
     private Boolean takeAScreenshot;

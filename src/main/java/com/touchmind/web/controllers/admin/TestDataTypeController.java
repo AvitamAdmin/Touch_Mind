@@ -1,19 +1,13 @@
 package com.touchmind.web.controllers.admin;
 
-import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.dto.TestDataTypeDto;
 import com.touchmind.core.mongo.dto.TestDataTypeWsDto;
 import com.touchmind.core.mongo.model.TestDataType;
-import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.TestDataTypeRepository;
 import com.touchmind.core.service.TestDataTypeService;
-import com.touchmind.fileimport.service.FileExportService;
-import com.touchmind.fileimport.service.FileImportService;
-import com.touchmind.fileimport.strategies.EntityType;
 import com.touchmind.web.controllers.BaseController;
 import com.touchmind.web.controllers.catalog.CatalogController;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,13 +20,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,10 +39,10 @@ public class TestDataTypeController extends BaseController {
     private TestDataTypeRepository testDataTypeRepository;
     @Autowired
     private ModelMapper modelMapper;
-    @Autowired
-    private FileImportService fileImportService;
-    @Autowired
-    private FileExportService fileExportService;
+//    @Autowired
+//    private FileImportService fileImportService;
+//    @Autowired
+//    private FileExportService fileExportService;
 
     @PostMapping
     @ResponseBody
@@ -66,15 +56,15 @@ public class TestDataTypeController extends BaseController {
         testDataTypeWsDto.setBaseUrl(ADMIN_TEST_DATA_TYPE);
         testDataTypeWsDto.setTotalPages(page.getTotalPages());
         testDataTypeWsDto.setTotalRecords(page.getTotalElements());
-        testDataTypeWsDto.setAttributeList(getConfiguredAttributes(testDataTypeWsDto.getNode()));
+       // testDataTypeWsDto.setAttributeList(getConfiguredAttributes(testDataTypeWsDto.getNode()));
         return testDataTypeWsDto;
     }
 
-    @GetMapping("/getAdvancedSearch")
-    @ResponseBody
-    public List<SearchDto> getSearchAttributes() {
-        return getGroupedParentAndChildAttributes(new TestDataType());
-    }
+//    @GetMapping("/getAdvancedSearch")
+//    @ResponseBody
+//    public List<SearchDto> getSearchAttributes() {
+//        return getGroupedParentAndChildAttributes(new TestDataType());
+//    }
 
     @GetMapping("/get")
     @ResponseBody
@@ -125,30 +115,30 @@ public class TestDataTypeController extends BaseController {
         return testDataTypeWsDto;
     }
 
-    @PostMapping("/upload")
-    public TestDataTypeWsDto uploadFile(@RequestParam("file") MultipartFile file) {
-        TestDataTypeWsDto testDataTypeWsDto = new TestDataTypeWsDto();
-        try {
-            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.TEST_DATA_TYPE, EntityConstants.TEST_DATA_TYPE, testDataTypeWsDto);
-            if (StringUtils.isEmpty(testDataTypeWsDto.getMessage())) {
-                testDataTypeWsDto.setMessage("File uploaded successfully!!");
-            }
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-        }
-        return testDataTypeWsDto;
-    }
-
-    @GetMapping("/export")
-    @ResponseBody
-    public TestDataTypeWsDto uploadFile() {
-        TestDataTypeWsDto testDataTypeWsDto = new TestDataTypeWsDto();
-        try {
-            testDataTypeWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.TEST_DATA_TYPE));
-            return testDataTypeWsDto;
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-            return null;
-        }
-    }
+//    @PostMapping("/upload")
+//    public TestDataTypeWsDto uploadFile(@RequestParam("file") MultipartFile file) {
+//        TestDataTypeWsDto testDataTypeWsDto = new TestDataTypeWsDto();
+//        try {
+//            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.TEST_DATA_TYPE, EntityConstants.TEST_DATA_TYPE, testDataTypeWsDto);
+//            if (StringUtils.isEmpty(testDataTypeWsDto.getMessage())) {
+//                testDataTypeWsDto.setMessage("File uploaded successfully!!");
+//            }
+//        } catch (IOException e) {
+//            logger.error(e.getMessage());
+//        }
+//        return testDataTypeWsDto;
+//    }
+//
+//    @GetMapping("/export")
+//    @ResponseBody
+//    public TestDataTypeWsDto uploadFile() {
+//        TestDataTypeWsDto testDataTypeWsDto = new TestDataTypeWsDto();
+//        try {
+//            testDataTypeWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.TEST_DATA_TYPE));
+//            return testDataTypeWsDto;
+//        } catch (IOException e) {
+//            logger.error(e.getMessage());
+//            return null;
+//        }
+//    }
 }

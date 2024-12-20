@@ -1,7 +1,7 @@
 package com.touchmind.core.service.impl;
 
-import com.touchmind.core.service.CommonService;
 import com.google.gson.Gson;
+import com.touchmind.core.service.CommonService;
 import org.apache.commons.lang3.ObjectUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;

@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class InterfaceConfigDto extends CommonDto {
-    private List<SearchDto> attributes;
+   // private List<SearchDto> attributes;
     private String node;
 }

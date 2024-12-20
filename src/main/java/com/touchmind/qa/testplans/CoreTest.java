@@ -94,7 +94,7 @@ public class CoreTest extends AbstractTestPlan {
         String processType = TestDataUtils.getString(testData, TestDataUtils.Field.JOB_TYPE);
         if (StringUtils.isNotEmpty(processType) && "cronJob".equals(processType)) {
             ReportUtils.logMessage(context, isDebug, "=== Notification : " + testData);
-            getMessageResourceService().processNotifications(testData);
+//            getMessageResourceService().processNotifications(testData);
             ReportUtils.logMessage(context, isDebug, "=== Notification processed : " + testData);
         }
     }

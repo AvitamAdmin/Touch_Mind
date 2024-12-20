@@ -39,6 +39,7 @@ import java.util.List;
 @EnableWebSecurity
 public class WebSecurityConfig {
     @Qualifier("userDetailsServiceImpl")
+
     @Autowired
     private UserDetailsService userDetailsService;
     @Autowired

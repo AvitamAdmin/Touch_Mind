@@ -1,6 +1,5 @@
 package com.touchmind.core.mongo.model;
 
-import com.touchmind.core.mongo.dto.SearchDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,5 +13,5 @@ import java.util.List;
 @NoArgsConstructor
 public class InterfaceConfig extends CommonFields {
     private String node;
-    private List<SearchDto> attributes;
+   // private List<SearchDto> attributes;
 }

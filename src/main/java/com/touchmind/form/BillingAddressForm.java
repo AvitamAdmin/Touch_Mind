@@ -13,5 +13,5 @@ public class BillingAddressForm extends BaseForm {
     private String shortDescription;
     private List<String> subsidiaries;
     private String identifier;
-    private List<ParamInputForm> paramInput;
+  //  private List<ParamInputForm> paramInput;
 }

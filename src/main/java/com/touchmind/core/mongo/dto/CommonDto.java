@@ -24,5 +24,5 @@ public class CommonDto {
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date lastModified;
     private String modifiedBy;
-    List<SavedQueryDto> savedQueries;
+   // List<SavedQueryDto> savedQueries;
 }

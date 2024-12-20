@@ -2,12 +2,9 @@ package com.touchmind.qa.pages.concretepages.testPlans;
 
 import com.touchmind.core.SpringContext;
 import com.touchmind.core.mongo.model.LocatorPriority;
-import com.touchmind.core.mongo.model.Subsidiary;
 import com.touchmind.core.mongo.model.TestLocatorGroup;
 import com.touchmind.core.mongo.model.TestPlan;
-import com.touchmind.core.mongo.repository.SubsidiaryRepository;
 import com.touchmind.core.service.LocatorGroupService;
-import com.touchmind.core.service.MessageResourceService;
 import com.touchmind.core.service.TestPlanService;
 import com.touchmind.form.LocatorGroupData;
 import com.touchmind.qa.framework.ExtentManager;
@@ -21,7 +18,6 @@ import com.touchmind.qa.utils.TestDataUtils;
 import com.touchmind.qa.utils.TestDataUtils.Field;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
-import org.apache.commons.lang3.ObjectUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +31,6 @@ import org.testng.annotations.BeforeTest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -56,7 +51,7 @@ public abstract class AbstractTestPlan {
     protected UrlFactory urlFactory;
     protected ActionFactory actionFactory;
     private Environment env;
-    private MessageResourceService messageResourceService;
+   // private MessageResourceService messageResourceService;
 
     @BeforeSuite
     public void beforeSuite(ITestContext context) {
@@ -75,16 +70,16 @@ public abstract class AbstractTestPlan {
         JSONObject testData = (JSONObject) context.getSuite().getAttribute(TestDataUtils.Field.TESTNG_CONTEXT_PARAM_NAME.toString());
 
         setTestDataJson(testData, context);
-        initSubsidiaryUrlServiceMapping();
+       // initSubsidiaryUrlServiceMapping();
     }
 
-    private void initSubsidiaryUrlServiceMapping() {
-        SubsidiaryRepository subsidiaryRepository = SpringContext.getBean(SubsidiaryRepository.class);
-        List<Subsidiary> subsidiaries = subsidiaryRepository.findByStatusOrderByIdentifier(true);
-        subsidiaries.stream().forEach(subsidiary -> {
-            subsidiaryUrlServiceMappings.put(subsidiary.getIdentifier(), DEFAULT_URL_SERVICE_TYPE);
-        });
-    }
+//    private void initSubsidiaryUrlServiceMapping() {
+//        SubsidiaryRepository subsidiaryRepository = SpringContext.getBean(SubsidiaryRepository.class);
+//        List<Subsidiary> subsidiaries = subsidiaryRepository.findByStatusOrderByIdentifier(true);
+//        subsidiaries.stream().forEach(subsidiary -> {
+//            subsidiaryUrlServiceMappings.put(subsidiary.getIdentifier(), DEFAULT_URL_SERVICE_TYPE);
+//        });
+//    }
 
     @BeforeTest
     public void setupData(ITestContext context) {
@@ -156,9 +151,9 @@ public abstract class AbstractTestPlan {
         return actionFactory = getFactory(actionFactory, ActionFactory.class);
     }
 
-    protected MessageResourceService getMessageResourceService() {
-        return messageResourceService = getFactory(messageResourceService, MessageResourceService.class);
-    }
+//    protected MessageResourceService getMessageResourceService() {
+//        return messageResourceService = getFactory(messageResourceService, MessageResourceService.class);
+//    }
 
     protected String getTestPlanId(ITestContext context) {
         JSONObject testData = getTestData(context);
@@ -180,7 +175,7 @@ public abstract class AbstractTestPlan {
                 locators.sort(Comparator.comparing(LocatorPriority::getPriority));
                 locatorGroupData.setGroupId(groupId);
                 locatorGroupData.setLocatorPriorityList(locators);
-                locatorGroupData.setConditionGroupList(testLocatorGroup.getConditionGroupList());
+             //   locatorGroupData.setConditionGroupList(testLocatorGroup.getConditionGroupList());
                 locatorGroupData.setCheckEppSso(testLocatorGroup.getCheckEppSso());
                 locatorGroupData.setTakeAScreenshot(BooleanUtils.isTrue(testLocatorGroup.getTakeAScreenshot()));
                 testPlans.add(locatorGroupData);

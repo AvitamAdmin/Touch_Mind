@@ -22,8 +22,8 @@ public class QaSummaryData {
     private Map<String, Integer> testCasesMap;
     private Map<String, Map<String, Set<String>>> issuesMap;
     private Map<String, Integer> issuesChartMap;
-    private List<DashboardTableData> failedData;
-    private List<DashboardTableData> subsidiaryData;
+//    private List<DashboardTableData> failedData;
+//    private List<DashboardTableData> subsidiaryData;
     private Map<String, Map<String, Integer>> issuesSummaryChartMap;
     private List<Map<String, String>> skuErrorMapList;
 }

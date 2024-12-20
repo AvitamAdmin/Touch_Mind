@@ -1,8 +1,6 @@
 package com.touchmind.qa.actions;
 
-import com.touchmind.core.mongo.model.ShopNavigation;
 import com.touchmind.core.mongo.model.TestLocator;
-import com.touchmind.core.mongo.repository.ShopNavigationRepository;
 import com.touchmind.form.LocatorGroupData;
 import com.touchmind.form.LocatorSelectorDto;
 import com.touchmind.qa.framework.ThreadTestContext;
@@ -31,52 +29,52 @@ import java.util.Optional;
 public class TreeAction implements ElementActionService {
     @Autowired
     private CrawlerFactory crawlerFactory;
-    @Autowired
-    private ShopNavigationRepository shopNavigationRepository;
+//    @Autowired
+//    private ShopNavigationRepository shopNavigationRepository;
 
     private final Logger LOG = LoggerFactory.getLogger(TreeAction.class);
 
-    @Override
-    public ActionResult performAction(ActionRequest actionRequest) {
-        ITestContext context = actionRequest.getContext();
-        TestLocator locator = actionRequest.getTestLocator();
-        LocatorGroupData locatorGroupData = actionRequest.getLocatorGroupData();
-        JSONObject testDataJson = (JSONObject) context.getSuite().getAttribute(TestDataUtils.Field.TESTNG_CONTEXT_PARAM_NAME.toString());
-        ThreadTestContext threadTestContext = (ThreadTestContext) context.getAttribute(TestDataUtils.Field.THREAD_CONTEXT.toString());
-        boolean isDebug = BooleanUtils.toBoolean(TestDataUtils.getString(testDataJson, TestDataUtils.Field.IS_DEBUG));
-        String shopCampaign = TestDataUtils.getString(testDataJson, TestDataUtils.Field.SHOP_CAMPAIGN);
-        ShopNavigation shopNavigation = getNavigationTree(threadTestContext, testDataJson, shopCampaign);
-        ActionResult actionResult = new ActionResult();
-        if (StringUtils.isEmpty(shopCampaign)) {
-            LOG.error("Missing the campaign configuration in cronjob, make sure campaign is assigned unable to create the tree!");
-            //actionResult.setActionResult(locator.getIdentifier(), locator.getDescription() + " : Missing the campaign configuration in cronjob, make sure campaign is assigned unable to create the tree!", null, Status.FAIL);
-            return actionResult;
-        }
-        WebElement element = null;
-
-        if (shopNavigation == null) {
-            //actionResult.setActionResult(locator.getIdentifier(), locator.getDescription() + " : missing the dom tree! aborting the process!", null, Status.FAIL);
-            return actionResult;
-        }
-        if (isDebug) {
-            reportAction(context, element, shopNavigation != null && MapUtils.isNotEmpty(shopNavigation.getNavigationTree()) ? shopNavigation.getNavigationTree().toString() : "", locator.getIdentifier(), false);
-        }
-
-        String itemSite = TestDataUtils.getString(testDataJson, TestDataUtils.Field.SITE_ISOCODE);
-        LocatorSelectorDto locatorSelectorDto = locator.getUiLocatorSelector(itemSite);
-        actionResult = crawlerFactory.performAction(context, shopNavigation, getSelectorType(locatorSelectorDto), locatorGroupData.isTakeAScreenshot());
-        reportAction(context, element, locator.getDescription(), locator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
-        return actionResult;
-    }
-
-    private ShopNavigation getNavigationTree(ThreadTestContext threadTestContext, JSONObject testDataJson, String shopCampaign) {
-        String sku = testDataJson.getString(TestDataUtils.Field.SKU.toString());
-        String itemSite = TestDataUtils.getString(testDataJson, TestDataUtils.Field.SITE_ISOCODE);
-        String subsidiary = TestDataUtils.getString(testDataJson, TestDataUtils.Field.SUBSIDIARY);
-        List<ShopNavigation> shopNavigationList = shopNavigationRepository.findBySubsidiaryAndSiteAndVariantAndShopCampaignOrderByCreationTimeDesc(subsidiary, itemSite, sku, shopCampaign);
-        Optional<ShopNavigation> shopNavigationOptional = shopNavigationList.stream().findFirst();
-        return shopNavigationOptional.orElse(null);
-    }
+//    @Override
+//    public ActionResult performAction(ActionRequest actionRequest) {
+//        ITestContext context = actionRequest.getContext();
+//        TestLocator locator = actionRequest.getTestLocator();
+//        LocatorGroupData locatorGroupData = actionRequest.getLocatorGroupData();
+//        JSONObject testDataJson = (JSONObject) context.getSuite().getAttribute(TestDataUtils.Field.TESTNG_CONTEXT_PARAM_NAME.toString());
+//        ThreadTestContext threadTestContext = (ThreadTestContext) context.getAttribute(TestDataUtils.Field.THREAD_CONTEXT.toString());
+//        boolean isDebug = BooleanUtils.toBoolean(TestDataUtils.getString(testDataJson, TestDataUtils.Field.IS_DEBUG));
+//        String shopCampaign = TestDataUtils.getString(testDataJson, TestDataUtils.Field.SHOP_CAMPAIGN);
+//        //ShopNavigation shopNavigation = getNavigationTree(threadTestContext, testDataJson, shopCampaign);
+//        ActionResult actionResult = new ActionResult();
+//        if (StringUtils.isEmpty(shopCampaign)) {
+//            LOG.error("Missing the campaign configuration in cronjob, make sure campaign is assigned unable to create the tree!");
+//            //actionResult.setActionResult(locator.getIdentifier(), locator.getDescription() + " : Missing the campaign configuration in cronjob, make sure campaign is assigned unable to create the tree!", null, Status.FAIL);
+//            return actionResult;
+//        }
+//        WebElement element = null;
+//
+//        if (shopNavigation == null) {
+//            //actionResult.setActionResult(locator.getIdentifier(), locator.getDescription() + " : missing the dom tree! aborting the process!", null, Status.FAIL);
+//            return actionResult;
+//        }
+//        if (isDebug) {
+//            reportAction(context, element, shopNavigation != null && MapUtils.isNotEmpty(shopNavigation.getNavigationTree()) ? shopNavigation.getNavigationTree().toString() : "", locator.getIdentifier(), false);
+//        }
+//
+//        String itemSite = TestDataUtils.getString(testDataJson, TestDataUtils.Field.SITE_ISOCODE);
+//        LocatorSelectorDto locatorSelectorDto = locator.getUiLocatorSelector(itemSite);
+//        actionResult = crawlerFactory.performAction(context, shopNavigation, getSelectorType(locatorSelectorDto), locatorGroupData.isTakeAScreenshot());
+//        reportAction(context, element, locator.getDescription(), locator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
+//        return actionResult;
+//    }
+//
+//    private ShopNavigation getNavigationTree(ThreadTestContext threadTestContext, JSONObject testDataJson, String shopCampaign) {
+//        String sku = testDataJson.getString(TestDataUtils.Field.SKU.toString());
+//        String itemSite = TestDataUtils.getString(testDataJson, TestDataUtils.Field.SITE_ISOCODE);
+//        String subsidiary = TestDataUtils.getString(testDataJson, TestDataUtils.Field.SUBSIDIARY);
+//        List<ShopNavigation> shopNavigationList = shopNavigationRepository.findBySubsidiaryAndSiteAndVariantAndShopCampaignOrderByCreationTimeDesc(subsidiary, itemSite, sku, shopCampaign);
+//        Optional<ShopNavigation> shopNavigationOptional = shopNavigationList.stream().findFirst();
+//        return shopNavigationOptional.orElse(null);
+//    }
 
     private String getSelectorType(LocatorSelectorDto locatorSelectorDto) {
         if (StringUtils.isNotEmpty(locatorSelectorDto.getCssSelector())) {
@@ -91,5 +89,10 @@ public class TreeAction implements ElementActionService {
             return "id";
         }
         return "other";
+    }
+
+    @Override
+    public ActionResult performAction(ActionRequest actionRequest) {
+        return null;
     }
 }

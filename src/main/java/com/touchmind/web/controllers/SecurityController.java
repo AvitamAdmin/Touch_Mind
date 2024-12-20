@@ -5,13 +5,13 @@ import com.touchmind.core.mongo.dto.UserDto;
 import com.touchmind.core.mongo.dto.UserWsDto;
 import com.touchmind.core.mongo.model.User;
 import com.touchmind.core.mongo.repository.UserRepository;
-import com.touchmind.core.service.SecurityService;
 import com.touchmind.core.service.UserService;
 import com.touchmind.mail.service.EMail;
 import com.touchmind.mail.service.MailService;
 import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.modelmapper.ModelMapper;
+import org.springdoc.core.service.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.core.env.Environment;
@@ -128,7 +128,7 @@ public class SecurityController extends BaseController {
         String otp = userDto.getOtp();
         User user = userService.findByUsername(email);
         if (otp.equals(user.getOtp())) {
-            securityService.autoLogin(user.getUsername(), password, request);
+          //  securityService.autoLogin(user.getUsername(), password, request);
             return "Success";
         } else {
             return "Invalid OTP. Please try again";

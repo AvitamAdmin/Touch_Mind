@@ -3,9 +3,7 @@ package com.touchmind.web.controllers;
 import com.touchmind.core.mongo.dto.DashboardWsDto;
 import com.touchmind.core.mongo.model.Dashboard;
 import com.touchmind.core.mongo.model.Node;
-import com.touchmind.core.mongo.model.Subsidiary;
 import com.touchmind.core.mongo.repository.NodeRepository;
-import com.touchmind.core.mongo.repository.SubsidiaryRepository;
 import com.touchmind.core.service.DashboardService;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -29,29 +27,29 @@ public class DashboardController extends BaseController {
     @Autowired
     private DashboardService dashboardService;
 
-    @Autowired
-    private SubsidiaryRepository subsidiaryRepository;
+//    @Autowired
+//    private SubsidiaryRepository subsidiaryRepository;
 
     @Autowired
     private NodeRepository nodeRepository;
 
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    @ResponseBody
-    public DashboardWsDto qaSummary(@PathVariable(required = true) String id, Model model, @RequestParam(required = false) String subsidiaryId, @RequestParam(defaultValue = "0") String days, @RequestParam(required = false) String runner) {
-        DashboardWsDto dashboardWsDto = new DashboardWsDto();
-        Node node = nodeRepository.findByPath(DASHBOARD + id);
-        Dashboard dashboard = dashboardService.getByNode(String.valueOf(node.getId()));
-        QaSummaryData qaSummaryData = dashboardService.getDashBoard(dashboard, subsidiaryId, days, runner);
-        if (CollectionUtils.isNotEmpty(qaSummaryData.getSubsidiaryData())) {
-            List<Subsidiary> subsidiaries = new ArrayList<>();
-            for (DashboardTableData subData : qaSummaryData.getSubsidiaryData()) {
-                if (StringUtils.isNotEmpty(subData.getSubsidiary())) {
-                    subsidiaries.add(subsidiaryRepository.findByIdentifier(subData.getSubsidiary()));
-                }
-            }
-            dashboardWsDto.setSubsidiaries(subsidiaries);
-        }
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public DashboardWsDto qaSummary(@PathVariable(required = true) String id, Model model, @RequestParam(required = false) String subsidiaryId, @RequestParam(defaultValue = "0") String days, @RequestParam(required = false) String runner) {
+//        DashboardWsDto dashboardWsDto = new DashboardWsDto();
+//        Node node = nodeRepository.findByPath(DASHBOARD + id);
+//        Dashboard dashboard = dashboardService.getByNode(String.valueOf(node.getId()));
+//        com.touchmind.web.controllers.QaSummaryData qaSummaryData = dashboardService.getDashBoard(dashboard, subsidiaryId, days, runner);
+//        if (CollectionUtils.isNotEmpty(qaSummaryData.getSubsidiaryData())) {
+//            List<Subsidiary> subsidiaries = new ArrayList<>();
+//            for (DashboardTableData subData : qaSummaryData.getSubsidiaryData()) {
+//                if (StringUtils.isNotEmpty(subData.getSubsidiary())) {
+//                    subsidiaries.add(subsidiaryRepository.findByIdentifier(subData.getSubsidiary()));
+//                }
+//            }
+//            dashboardWsDto.setSubsidiaries(subsidiaries);
+//        }
         // TODO
         /*dashboardWsDto.setDashboard(dashboard);
         dashboardWsDto.setDashboardPath(node.getPath());
@@ -70,6 +68,6 @@ public class DashboardController extends BaseController {
         if (StringUtils.isNotEmpty(runner)) {
             dashboardWsDto.setRunner(Arrays.stream(runner.split(",")).collect(Collectors.toList()));
         }*/
-        return dashboardWsDto;
+       // return dashboardWsDto;
     }
-}
+

@@ -1,10 +1,8 @@
 package com.touchmind.core.service.impl;
 
-import com.touchmind.core.mongo.dto.ProfileLocatorDto;
 import com.touchmind.core.mongo.dto.TestProfileDto;
 import com.touchmind.core.mongo.dto.TestProfileWsDto;
-import com.touchmind.core.mongo.model.TestDataType;
-import com.touchmind.core.mongo.model.TestLocator;
+
 import com.touchmind.core.mongo.model.TestProfile;
 import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.TestDataTypeRepository;
@@ -13,7 +11,6 @@ import com.touchmind.core.mongo.repository.TestProfileRepository;
 import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.TestProfileService;
-import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,29 +38,29 @@ public class TestProfileServiceImpl implements TestProfileService {
     @Autowired
     private TestDataTypeRepository testDataTypeRepository;
 
-    @Override
-    public List<ProfileLocatorDto> getProfileLocators() {
-        List<ProfileLocatorDto> profileLocators = new ArrayList<>();
-        testLocatorRepository.findByMethodName(ENTER_TEXT).stream().forEach(testLocator -> {
-            profileLocators.add(getProfileLocator(testLocator));
-        });
-        return profileLocators;
+//    @Override
+//    public List<ProfileLocatorDto> getProfileLocators() {
+//        List<ProfileLocatorDto> profileLocators = new ArrayList<>();
+//        testLocatorRepository.findByMethodName(ENTER_TEXT).stream().forEach(testLocator -> {
+//            profileLocators.add(getProfileLocator(testLocator));
+//        });
+//        return profileLocators;
+//
+//    }
 
-    }
-
-    private ProfileLocatorDto getProfileLocator(TestLocator testLocator) {
-        ProfileLocatorDto profileLocator = new ProfileLocatorDto();
-        profileLocator.setLocatorId(testLocator.getIdentifier());
-        profileLocator.setDescription(testLocator.getDescription());
-        if (StringUtils.isNotEmpty(testLocator.getTestDataType())) {
-            TestDataType testDataType = testDataTypeRepository.findByRecordId(testLocator.getTestDataType());
-            if (testDataType != null) {
-                profileLocator.setTestDataType(testDataType.getIdentifier());
-            }
-        }
-        profileLocator.setInputValue("");
-        return profileLocator;
-    }
+//    private ProfileLocatorDto getProfileLocator(TestLocator testLocator) {
+//        ProfileLocatorDto profileLocator = new ProfileLocatorDto();
+//        profileLocator.setLocatorId(testLocator.getIdentifier());
+//        profileLocator.setDescription(testLocator.getDescription());
+//        if (StringUtils.isNotEmpty(testLocator.getTestDataType())) {
+//            TestDataType testDataType = testDataTypeRepository.findByRecordId(testLocator.getTestDataType());
+//            if (testDataType != null) {
+//                profileLocator.setTestDataType(testDataType.getIdentifier());
+//            }
+//        }
+//        profileLocator.setInputValue("");
+//        return profileLocator;
+//    }
 
     @Override
     public void deleteTestProfile(String id) {

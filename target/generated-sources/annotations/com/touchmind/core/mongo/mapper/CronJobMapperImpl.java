@@ -1,7 +1,6 @@
 package com.touchmind.core.mongo.mapper;
 
 import com.touchmind.core.mongo.dto.CronJobDto;
-import com.touchmind.core.mongo.dto.CronTestPlanDto;
 import com.touchmind.core.mongo.model.CronJob;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-12-10T16:13:09+0530",
+    date = "2024-12-19T16:41:47+0530",
     comments = "version: 1.6.2, compiler: javac, environment: Java 22.0.2 (Amazon.com Inc.)"
 )
 @Component
@@ -44,10 +43,6 @@ public class CronJobMapperImpl implements CronJobMapper {
         if ( list != null ) {
             cronJob.setEnvProfiles( new ArrayList<String>( list ) );
         }
-        List<CronTestPlanDto> list1 = cronJobDto.getCronTestPlanDtoList();
-        if ( list1 != null ) {
-            cronJob.setCronTestPlanDtoList( new ArrayList<CronTestPlanDto>( list1 ) );
-        }
         cronJob.setCampaign( cronJobDto.getCampaign() );
 
         return cronJob;
@@ -80,10 +75,6 @@ public class CronJobMapperImpl implements CronJobMapper {
         List<String> list = cronJob.getEnvProfiles();
         if ( list != null ) {
             cronJobDto.setEnvProfiles( new ArrayList<String>( list ) );
-        }
-        List<CronTestPlanDto> list1 = cronJob.getCronTestPlanDtoList();
-        if ( list1 != null ) {
-            cronJobDto.setCronTestPlanDtoList( new ArrayList<CronTestPlanDto>( list1 ) );
         }
         cronJobDto.setCampaign( cronJob.getCampaign() );
 

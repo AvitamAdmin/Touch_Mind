@@ -1,20 +1,15 @@
-package com.touchmind.web.controllers.admin.role;
+package com.touchmind.web.controllers.role;
 
 import com.touchmind.core.mongo.dto.RoleDto;
 import com.touchmind.core.mongo.dto.RoleWsDto;
-import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.model.Role;
-import com.touchmind.core.mongo.repository.EntityConstants;
+
 import com.touchmind.core.mongo.repository.NodeRepository;
 import com.touchmind.core.mongo.repository.RoleRepository;
 import com.touchmind.core.service.RoleService;
-import com.touchmind.fileimport.service.FileExportService;
-import com.touchmind.fileimport.service.FileImportService;
-import com.touchmind.fileimport.strategies.EntityType;
 import com.touchmind.form.RoleForm;
 import com.touchmind.web.controllers.BaseController;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,10 +25,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,11 +41,11 @@ public class RoleController extends BaseController {
     @Autowired
     private NodeRepository nodeRepository;
 
-    @Autowired
-    private FileImportService fileImportService;
-
-    @Autowired
-    private FileExportService fileExportService;
+//    @Autowired
+//    private FileImportService fileImportService;
+//
+//    @Autowired
+//    private FileExportService fileExportService;
 
     @Autowired
     private RoleService roleService;
@@ -74,15 +66,15 @@ public class RoleController extends BaseController {
         roleWsDto.setBaseUrl(ADMIN_ROLE);
         roleWsDto.setTotalPages(page.getTotalPages());
         roleWsDto.setTotalRecords(page.getTotalElements());
-        roleWsDto.setAttributeList(getConfiguredAttributes(roleWsDto.getNode()));
+      //  roleWsDto.setAttributeList(getConfiguredAttributes(roleWsDto.getNode()));
         return roleWsDto;
     }
 
-    @GetMapping("/getAdvancedSearch")
-    @ResponseBody
-    public List<SearchDto> getSearchAttributes() {
-        return getGroupedParentAndChildAttributes(new Role());
-    }
+//    @GetMapping("/getAdvancedSearch")
+//    @ResponseBody
+//    public List<SearchDto> getSearchAttributes() {
+//        return getGroupedParentAndChildAttributes(new Role());
+//    }
 
     @GetMapping("/get")
     public RoleWsDto getActiveRoles() {
@@ -137,30 +129,30 @@ public class RoleController extends BaseController {
         return roleWsDto;
     }
 
-    @PostMapping("/upload")
-    public RoleWsDto uploadFile(@RequestBody MultipartFile file) {
-        RoleWsDto roleWsDto = new RoleWsDto();
-        try {
-            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.ROLE, EntityConstants.ROLE, roleWsDto);
-            if (StringUtils.isEmpty(roleWsDto.getMessage())) {
-                roleWsDto.setMessage("File uploaded successfully!!");
-            }
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-        }
-        return roleWsDto;
-    }
-
-    @GetMapping("/export")
-    @ResponseBody
-    public RoleWsDto uploadFile() {
-        RoleWsDto roleWsDto = new RoleWsDto();
-        try {
-            roleWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.ROLE));
-            return roleWsDto;
-        } catch (IOException e) {
-            logger.error(e.getMessage());
-            return null;
-        }
-    }
+//    @PostMapping("/upload")
+//    public RoleWsDto uploadFile(@RequestBody MultipartFile file) {
+//        RoleWsDto roleWsDto = new RoleWsDto();
+//        try {
+//            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.ROLE, EntityConstants.ROLE, roleWsDto);
+//            if (StringUtils.isEmpty(roleWsDto.getMessage())) {
+//                roleWsDto.setMessage("File uploaded successfully!!");
+//            }
+//        } catch (IOException e) {
+//            logger.error(e.getMessage());
+//        }
+//        return roleWsDto;
+//    }
+//
+//    @GetMapping("/export")
+//    @ResponseBody
+//    public RoleWsDto uploadFile() {
+//        RoleWsDto roleWsDto = new RoleWsDto();
+//        try {
+//            roleWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.ROLE));
+//            return roleWsDto;
+//        } catch (IOException e) {
+//            logger.error(e.getMessage());
+//            return null;
+//        }
+//    }
 }

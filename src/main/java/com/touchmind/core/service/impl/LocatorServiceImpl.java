@@ -2,14 +2,12 @@ package com.touchmind.core.service.impl;
 
 import com.touchmind.core.mongo.dto.LocatorGroupDto;
 import com.touchmind.core.mongo.model.LocatorPriority;
-import com.touchmind.core.mongo.model.Site;
 import com.touchmind.core.mongo.model.TestLocator;
 import com.touchmind.core.mongo.model.TestLocatorGroup;
 import com.touchmind.core.mongo.repository.TestLocatorGroupRepository;
 import com.touchmind.core.mongo.repository.TestLocatorRepository;
 import com.touchmind.core.service.LocatorGroupService;
 import com.touchmind.core.service.LocatorService;
-import com.touchmind.core.service.SiteService;
 import com.touchmind.form.LocatorForm;
 import com.touchmind.form.LocatorSelectorDto;
 import com.touchmind.qa.strategies.ActionType;
@@ -36,8 +34,8 @@ public class LocatorServiceImpl implements LocatorService {
     private TestLocatorRepository testLocatorRepository;
     @Autowired
     private ModelMapper modelMapper;
-    @Autowired
-    private SiteService siteService;
+//    @Autowired
+//    private SiteService siteService;
 
     @Autowired
     private LocatorGroupService locatorGroupService;
@@ -64,7 +62,7 @@ public class LocatorServiceImpl implements LocatorService {
         TestLocator testLocator = testLocatorRepository.findByRecordId(locatorId);
         if (testLocator != null) {
             LocatorForm locatorForm = modelMapper.map(testLocator, LocatorForm.class);
-            updateFormWithSiteMap(locatorForm);
+            //updateFormWithSiteMap(locatorForm);
             //TODO check if this is correctly fetched
             locatorForm.setTestLocatorGroups(getLocatorGroups(String.valueOf(locatorForm.getId())));
             return locatorForm;
@@ -141,32 +139,37 @@ public class LocatorServiceImpl implements LocatorService {
 
     @Override
     public void getFormWithSiteMap(LocatorForm locatorForm) {
-        List<Site> sites = siteService.findBySubsidiaryAndStatusOrderBySiteId(true);
-        SortedMap<String, LocatorSelectorDto> locatorSelectorFormSortedMap = new TreeMap<>();
-        locatorSelectorFormSortedMap.put("default", new LocatorSelectorDto());
-        sites.stream().forEach(site -> {
-            locatorSelectorFormSortedMap.put(site.getIdentifier(), new LocatorSelectorDto());
-        });
-        locatorForm.setUiLocatorSelector(locatorSelectorFormSortedMap);
+
     }
 
-    public void updateFormWithSiteMap(LocatorForm locatorForm) {
-        List<Site> sites = siteService.findBySubsidiaryAndStatusOrderBySiteId(true);
-        SortedMap<String, LocatorSelectorDto> siteMapForUiSelector = locatorForm.getUiLocatorSelector();
-        if (siteMapForUiSelector == null) {
-            siteMapForUiSelector = new TreeMap<>();
-        }
-        SortedMap<String, LocatorSelectorDto> finalSiteMapForUiSelector = siteMapForUiSelector;
-        sites.stream().forEach(site -> {
-            LocatorSelectorDto locatorSelectorDto = new LocatorSelectorDto();
-            String siteId = site.getIdentifier();
-            if (!finalSiteMapForUiSelector.containsKey(siteId)) {
-                finalSiteMapForUiSelector.put(siteId, locatorSelectorDto);
-            }
-        });
-        locatorForm.setUiLocatorSelector(siteMapForUiSelector);
-        //locatorForm.setTestLocatorGroupList(getLocatorGroups());
-    }
+//    @Override
+//    public void getFormWithSiteMap(LocatorForm locatorForm) {
+//        List<Site> sites = siteService.findBySubsidiaryAndStatusOrderBySiteId(true);
+//        SortedMap<String, LocatorSelectorDto> locatorSelectorFormSortedMap = new TreeMap<>();
+//        locatorSelectorFormSortedMap.put("default", new LocatorSelectorDto());
+//        sites.stream().forEach(site -> {
+//            locatorSelectorFormSortedMap.put(site.getIdentifier(), new LocatorSelectorDto());
+//        });
+//        locatorForm.setUiLocatorSelector(locatorSelectorFormSortedMap);
+//    }
+//
+//    public void updateFormWithSiteMap(LocatorForm locatorForm) {
+//        List<Site> sites = siteService.findBySubsidiaryAndStatusOrderBySiteId(true);
+//        SortedMap<String, LocatorSelectorDto> siteMapForUiSelector = locatorForm.getUiLocatorSelector();
+//        if (siteMapForUiSelector == null) {
+//            siteMapForUiSelector = new TreeMap<>();
+//        }
+//        SortedMap<String, LocatorSelectorDto> finalSiteMapForUiSelector = siteMapForUiSelector;
+//        sites.stream().forEach(site -> {
+//            LocatorSelectorDto locatorSelectorDto = new LocatorSelectorDto();
+//            String siteId = site.getIdentifier();
+//            if (!finalSiteMapForUiSelector.containsKey(siteId)) {
+//                finalSiteMapForUiSelector.put(siteId, locatorSelectorDto);
+//            }
+//        });
+//        locatorForm.setUiLocatorSelector(siteMapForUiSelector);
+//        //locatorForm.setTestLocatorGroupList(getLocatorGroups());
+//    }
 
     @Override
     public List<LocatorGroupDto> getLocatorGroups(String locatorIdentifier) {

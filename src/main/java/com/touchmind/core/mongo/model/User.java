@@ -20,9 +20,9 @@ public class User extends CommonFields {
     private String node;
     private String passwordConfirm;
     private Locale locale;
-    @DBRef(lazy = true)
-    private Set<Subsidiary> subsidiaries;
-    @DBRef(lazy = true)
+//    @DBRef(lazy = true)
+//   // private Set<Subsidiary> subsidiaries;
+//    @DBRef(lazy = true)
     private Set<Role> roles;
     private String resetPasswordToken;
 }

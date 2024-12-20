@@ -1,6 +1,5 @@
 package com.touchmind.form;
 
-import com.touchmind.core.mongo.model.ConditionGroup;
 import com.touchmind.core.mongo.model.LocatorPriority;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +13,7 @@ import java.util.List;
 public class LocatorGroupData extends BaseForm {
     private List<LocatorPriority> locatorPriorityList;
     private String groupId;
-    private List<ConditionGroup> conditionGroupList;
+ //   private List<ConditionGroup> conditionGroupList;
     private boolean checkEppSso;
     private boolean takeAScreenshot;
 }

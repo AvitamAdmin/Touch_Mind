@@ -52,13 +52,15 @@ import java.util.TimeZone;
                 "com.touchmind.tookit.service",
                 "com.touchmind.mail",
                 "com.touchmind.listener",
-                //"com.touchmind.core.mongo.repository",
-                //"com.touchmind.core.mongo.model",
+                "com.touchmind.core.mongo.repository",
+                "com.touchmind.core.mongo.model",
                 "com.touchmind.data",
-                //"com.touchmind.data.service.impl",
+                "com.touchmind.data.service.impl",
                 "com.touchmind.fileimport.service",
                 "com.touchmind.fileimport.strategies",
                 "com.touchmind.fileimport.actions",
+                "com.touchmind.core.service"
+
         }
 )
 @EnableScheduling
@@ -68,7 +70,7 @@ public class HealthcheckMvpApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(HealthcheckMvpApplication.class, args);
-        context.getBean(ApplicationCronJobs.class).scheduleJobs();
+       // context.getBean(ApplicationCronJobs.class).scheduleJobs();
     }
 
     @Bean
