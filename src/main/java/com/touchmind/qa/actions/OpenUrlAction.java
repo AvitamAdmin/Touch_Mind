@@ -47,6 +47,7 @@ public class OpenUrlAction implements ElementActionService {
             //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription(), null, Status.FAIL);
             return actionResult;
         }
+
         Map<String, String> params = new HashMap<>();
         params.put("temSite", TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE));
         url = StringSubstitutor.replace(url, params, "$[", "]");

@@ -14,7 +14,6 @@
                       <th class="th-sm">Id</th>
                       <th class="th-sm">Identifier</th>
                       <th class="th-sm">Short Desc</th>
-                      <th class="th-sm">Subsidiary</th>
                       <th class="th-sm">Status</th>
                     </tr>
               </thead>
@@ -24,7 +23,6 @@
                         <td class="td-sm">${model.id}</td>
                         <td class="td-sm">${model.identifier}</td>
                         <td class="td-sm">${model.shortDescription}</td>
-                        <td class="td-sm">${model.subsidiaries}</td>
                         <c:choose>
                             <c:when test="${model.status}">
                                  <c:set var="varChecked" value="Active"></c:set>

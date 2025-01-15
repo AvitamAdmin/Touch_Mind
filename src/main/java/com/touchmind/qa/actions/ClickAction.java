@@ -25,6 +25,7 @@ public class ClickAction implements ElementActionService {
 
     @Autowired
     private SelectorService selectorService;
+
     @Autowired
     private QaLocatorResultReportRepository qaLocatorResultReportRepository;
 

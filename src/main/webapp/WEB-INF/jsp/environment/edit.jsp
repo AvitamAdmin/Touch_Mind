@@ -27,21 +27,6 @@
                 <span>Enter Description</span>
                 <form:errors path="shortDescription" class="text-danger"></form:errors>
             </div>
-            <div class="col-sm-4">
-                 <select class="cheil-select" name="subsidiaries[]" placeholder="Select subsidiaries" multiple id="selectpicker" required="required">
-                     <span>Select subsidiaries</span>
-                     <c:forEach items="${subsidiaries}" var="child">
-                         <c:choose>
-                             <c:when test="${fn:contains( editForm.subsidiaries, child.identifier ) }">
-                               <option value="${child.identifier}" selected>${child.identifier}</option>
-                             </c:when>
-                             <c:otherwise>
-                                <option value="${child.identifier}" >${child.identifier}</option>
-                             </c:otherwise>
-                         </c:choose>
-                     </c:forEach>
-                 </select>
-            </div>
         </div>
         <br/><br/>
         <c:forEach items="${editForm.configs}" var="configs" varStatus="loop">
