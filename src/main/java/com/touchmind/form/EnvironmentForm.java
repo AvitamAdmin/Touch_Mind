@@ -14,7 +14,6 @@ public class EnvironmentForm extends BaseForm {
     private String modifier;
     private String identifier;
     private String shortDescription;
-    private List<String> subsidiaries;
     private List<EnvironmentConfig> configs;
 }
 

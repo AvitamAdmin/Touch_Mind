@@ -25,8 +25,6 @@ public class EnvironmentServiceImpl implements EnvironmentService {
     @Autowired
     private CoreService coreService;
 
-//    @Autowired
-//    private SubsidiaryService subsidiaryService;
 
     @Autowired
     private ModelMapper modelMapper;

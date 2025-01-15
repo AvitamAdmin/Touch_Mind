@@ -13,6 +13,5 @@ import java.util.List;
 @ToString
 public class EnvironmentDto extends CommonDto {
     private String modifier;
-    private List<String> subsidiaries;
     private List<EnvironmentConfigDto> configs;
 }

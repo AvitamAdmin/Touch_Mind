@@ -1,4 +1,4 @@
-package com.touchmind.core.service.impl;
+package com.touchmind.core.service;
 
 import com.touchmind.core.mongo.model.Role;
 import com.touchmind.core.mongo.model.User;
