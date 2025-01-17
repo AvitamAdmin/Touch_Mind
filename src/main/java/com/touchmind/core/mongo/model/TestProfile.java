@@ -13,5 +13,5 @@ import java.util.List;
 @NoArgsConstructor
 public class TestProfile extends CommonFields {
  //   List<ProfileLocatorDto> profileLocators;
-    private String subsidiary;
+  //  private String subsidiary;
 }

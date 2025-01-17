@@ -56,7 +56,7 @@ public class TestDataTypeController extends BaseController {
         testDataTypeWsDto.setBaseUrl(ADMIN_TEST_DATA_TYPE);
         testDataTypeWsDto.setTotalPages(page.getTotalPages());
         testDataTypeWsDto.setTotalRecords(page.getTotalElements());
-       // testDataTypeWsDto.setAttributeList(getConfiguredAttributes(testDataTypeWsDto.getNode()));
+        testDataTypeWsDto.setAttributeList(getConfiguredAttributes(testDataTypeWsDto.getNode()));
         return testDataTypeWsDto;
     }
 

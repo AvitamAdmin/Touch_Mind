@@ -29,7 +29,7 @@ public class CommonQaFields extends CommonFields implements Serializable {
     private String modifier;
     private String identifier;
     private String shortDescription;
-    @DBRef(lazy = true)
+  //  @DBRef(lazy = true)
     //private List<ParamInput> paramInput;
-    private List<String> subsidiaries;
+   // private List<String> subsidiaries;
 }

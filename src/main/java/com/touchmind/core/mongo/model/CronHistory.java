@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 public class CronHistory extends CommonFields {
-    private String subsidiary;
+  //  private String subsidiary;
     private String jobTime;
     private Integer processedSkus;
     private String scheduler;

@@ -16,6 +16,6 @@ public class DashboardForm extends BaseForm {
     private String themeColor;
     private String template;
     private String chart;
-    private String subsidiary;
+  //  private String subsidiary;
     private Long dashboardProfile;
 }

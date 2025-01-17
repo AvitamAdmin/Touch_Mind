@@ -17,6 +17,6 @@ public class TestPlanForm extends BaseForm {
     private String identifier;
     private String shortDescription;
     private List<ObjectId> testLocatorGroups;
-    private String subsidiary;
+   // private String subsidiary;
     private List<TestPlanForm> testPlanFormList;
 }

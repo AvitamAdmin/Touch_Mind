@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class TestLocatorGroup extends CommonFields {
     private List<LocatorPriority> testLocators;
-    private String subsidiary;
+   // private String subsidiary;
     //private List<ConditionGroup> conditionGroupList;
     private Boolean checkEppSso;
     private Boolean published;

@@ -15,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class QATestResultDto extends CommonDto {
     private String sessionId;
-    private String subsidiary;
+   // private String subsidiary;
     private String user;
     private String testName;
     private String testNameDescription;

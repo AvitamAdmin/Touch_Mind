@@ -28,21 +28,21 @@ public interface QARepository extends GenericImportRepository<QATestResult> {
 
     List<QATestResult> findAllByCreationTimeBeforeAndResultStatus(LocalDateTime startDate, int i);
 
-     List<QATestResult> findBySubsidiaryAndUserAndDashboardOrderByIdDesc(String subId, String user, String dashBoardId);
+ //    List<QATestResult> findBySubsidiaryAndUserAndDashboardOrderByIdDesc(String subId, String user, String dashBoardId);
 
     List<QATestResult> findByUserAndDashboardOrderByIdDesc(String user, String dashBoardId);
 
-    List<QATestResult> findBySessionIdAndDashboardAndSubsidiaryOrderByIdDesc(String sessionId, String dashBoardId, String subId);
+  //  List<QATestResult> findBySessionIdAndDashboardAndSubsidiaryOrderByIdDesc(String sessionId, String dashBoardId, String subId);
 
     List<QATestResult> findBySessionIdAndDashboardAndUserOrderByIdDesc(String sessionId, String dashBoardId, String user);
 
-    List<QATestResult> findBySessionIdAndDashboardAndSubsidiaryAndUserOrderByIdDesc(String sessionId, String dashBoardId, String subId, String user);
+ //   List<QATestResult> findBySessionIdAndDashboardAndSubsidiaryAndUserOrderByIdDesc(String sessionId, String dashBoardId, String subId, String user);
 
     List<QATestResult> findAllByDashboardOrderByIdDesc(String dashBoardId);
 
-    List<QATestResult> findBySubsidiaryAndDashboardOrderByIdDesc(String subId, String dashBoardId);
+   // List<QATestResult> findBySubsidiaryAndDashboardOrderByIdDesc(String subId, String dashBoardId);
 
-    List<QATestResult> findBySessionIdAndSubsidiaryAndTestName(String sessionId, String subsidiary, String testPlan);
+   // List<QATestResult> findBySessionIdAndSubsidiaryAndTestName(String sessionId, String subsidiary, String testPlan);
 
     void deleteById(String id);
 }

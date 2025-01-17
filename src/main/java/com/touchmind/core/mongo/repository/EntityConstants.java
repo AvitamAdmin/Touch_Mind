@@ -14,7 +14,7 @@ public interface EntityConstants {
     String CATEGORY = "Category";
     String USER = "User";
     String ROLE = "Role";
-    String SUBSIDIARY = "Subsidiary";
+   // String SUBSIDIARY = "Subsidiary";
     String SITE = "Site";
     String LIBRARY = "Library";
     String SYSTEM = "System";

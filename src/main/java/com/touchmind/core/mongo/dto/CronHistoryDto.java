@@ -10,7 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class CronHistoryDto extends CommonDto {
-    private String subsidiary;
+  //  private String subsidiary;
     private String jobTime;
     private Integer processedSkus;
     private String scheduler;

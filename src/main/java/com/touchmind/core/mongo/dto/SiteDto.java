@@ -15,5 +15,5 @@ public class SiteDto extends CommonDto {
     private String affiliateName;
     private String siteChannel;
     private String secretKey;
-    private String subsidiary;
+   // private String subsidiary;
 }

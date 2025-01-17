@@ -15,7 +15,7 @@ public class TestPlanWsDto extends CommonWsDto {
     private List<TestPlanDto> testPlans;
     private List<CronJobProfileDto> cronJobProfiles;
     private Boolean enableBtn;
-    private String subsidiary;
+    //private String subsidiary;
     private String fileName;
     private String emailSubject;
     private String siteIsoCode;

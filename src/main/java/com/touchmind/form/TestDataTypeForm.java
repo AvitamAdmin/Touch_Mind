@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class TestDataTypeForm extends BaseForm {
     private String shortDescription;
-    private List<String> subsidiaries;
+  //  private List<String> subsidiaries;
     private String identifier;
 
 }

@@ -13,7 +13,7 @@ import java.util.List;
 @ToString
 public class TestLocatorGroupDto extends CommonDto {
     private List<LocatorPriorityDto> testLocators;
-    private String subsidiary;
+  //  private String subsidiary;
    // private List<ConditionGroupDto> conditionGroupList;
     private Boolean checkEppSso;
     private Boolean published;

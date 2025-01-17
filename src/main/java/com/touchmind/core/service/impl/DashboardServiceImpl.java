@@ -1,11 +1,14 @@
 package com.touchmind.core.service.impl;
 
+import com.touchmind.core.mongo.dto.DashboardDto;
 import com.touchmind.core.mongo.dto.DashboardLabelDto;
 import com.touchmind.core.mongo.dto.DashboardWsDto;
 import com.touchmind.core.mongo.model.*;
 import com.touchmind.core.mongo.repository.DashboardRepository;
+import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongotemplate.QATestResult;
 import com.touchmind.core.mongotemplate.repository.QARepository;
+import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.DashboardProfileService;
 import com.touchmind.core.service.DashboardService;
@@ -57,8 +60,8 @@ public class DashboardServiceImpl implements DashboardService {
 //    private SubsidiaryRepository subsidiaryRepository;
 //    @Autowired
 //    private ImpactConfigRepository impactConfigRepository;
-//    @Autowired
-//    private BaseService baseService;
+    @Autowired
+    private BaseService baseService;
 
     private static void populateIssueChartData(QaSummaryData qaSummaryData, Map<String, Map<String, Set<String>>> issuesMap, Map<String, Integer> issuesChartMap) {
         double totalCount = 0;
@@ -128,40 +131,36 @@ public class DashboardServiceImpl implements DashboardService {
 
     @Override
     public DashboardWsDto handleEdit(DashboardWsDto request) {
-        return null;
-    }
 
-    //  @Override
-//    public DashboardWsDto handleEdit(DashboardWsDto request) {
-//        DashboardWsDto dashboardWsDto = new DashboardWsDto();
-//        List<DashboardDto> dashboards = request.getDashboards();
-//        List<Dashboard> dashboardList = new ArrayList<>();
-//        Dashboard requestData = null;
-//        for (DashboardDto dashboard : dashboards) {
-//            if (dashboard.getRecordId() != null) {
-//                requestData = dashboardRepository.findByRecordId(dashboard.getRecordId());
-//                modelMapper.map(dashboard, requestData);
-//            } else {
-//                if (baseService.validateIdentifier(EntityConstants.DASHBOARD, dashboard.getIdentifier()) != null) {
-//                    request.setSuccess(false);
-//                    request.setMessage("Identifier already present");
-//                    return request;
-//                }
-//                requestData = modelMapper.map(dashboard, Dashboard.class);
-//
-//            }
-//            baseService.populateCommonData(requestData);
-//            dashboardRepository.save(requestData);
-//            if (dashboard.getRecordId() == null) {
-//                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
-//            }
-//            dashboardWsDto.setBaseUrl(ADMIN_DASHBOARD);
-//            dashboardRepository.save(requestData);
-//            dashboardList.add(requestData);
-//        }
-//        dashboardWsDto.setDashboards(modelMapper.map(dashboardList, List.class));
-        //return dashboardWsDto;
-   // }
+        DashboardWsDto dashboardWsDto = new DashboardWsDto();
+        List<DashboardDto> dashboards = request.getDashboards();
+        List<Dashboard> dashboardList = new ArrayList<>();
+        Dashboard requestData = null;
+        for (DashboardDto dashboard : dashboards) {
+            if (dashboard.getRecordId() != null) {
+                requestData = dashboardRepository.findByRecordId(dashboard.getRecordId());
+                modelMapper.map(dashboard, requestData);
+            } else {
+                if (baseService.validateIdentifier(EntityConstants.DASHBOARD, dashboard.getIdentifier()) != null) {
+                    request.setSuccess(false);
+                    request.setMessage("Identifier already present");
+                    return request;
+                }
+                requestData = modelMapper.map(dashboard, Dashboard.class);
+
+            }
+            baseService.populateCommonData(requestData);
+            dashboardRepository.save(requestData);
+            if (dashboard.getRecordId() == null) {
+                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
+            }
+            dashboardWsDto.setBaseUrl(ADMIN_DASHBOARD);
+            dashboardRepository.save(requestData);
+            dashboardList.add(requestData);
+        }
+        dashboardWsDto.setDashboards(modelMapper.map(dashboardList, List.class));
+        return dashboardWsDto;
+    }
 
     /**
      * This method prepare the dashboard for last N days of test runs
@@ -174,7 +173,7 @@ public class DashboardServiceImpl implements DashboardService {
         List<QATestResult> qaTestResultList = new ArrayList<>();
 //        List<DashboardTableData> dashboardTableDataList = new ArrayList<>();
 //        Set<DashboardTableData> subsidiaryDataList = new HashSet<>();
-        populateTestResults(subsidiaryId, days, runner, qaTestResultList, dashboard);
+       // populateTestResults(subsidiaryId, days, runner, qaTestResultList, dashboard);
         Map<String, Map<String, Set<String>>> issuesMap = new HashMap<>();
         List<Map<String, String>> skuErrorMapList = new ArrayList<>();
         Map<String, Integer> issuesChartMap = new HashMap<>();
@@ -367,15 +366,15 @@ public class DashboardServiceImpl implements DashboardService {
         issuesMap.put(key, mergedMap);
     }
 
-    private void populateTestResults(String subsidiaryId, String days, String runner, List<QATestResult> qaTestResultList, Dashboard dashboard) {
-        String dashBoardId = String.valueOf(dashboard.getId());
-        subsidiaryId = StringUtils.isEmpty(subsidiaryId) ? dashboard.getSubsidiary() : subsidiaryId;
-        if (days.equalsIgnoreCase("0")) {
-            populateQaResultForLastRun(subsidiaryId, runner, qaTestResultList, dashBoardId);
-        } else {
-            populateQAResultsForNDays(subsidiaryId, days, runner, qaTestResultList, dashBoardId);
-        }
-    }
+//    private void populateTestResults(String subsidiaryId, String days, String runner, List<QATestResult> qaTestResultList, Dashboard dashboard) {
+//        String dashBoardId = String.valueOf(dashboard.getId());
+//        subsidiaryId = StringUtils.isEmpty(subsidiaryId) ? dashboard.getSubsidiary() : subsidiaryId;
+//        if (days.equalsIgnoreCase("0")) {
+//            populateQaResultForLastRun(subsidiaryId, runner, qaTestResultList, dashBoardId);
+//        } else {
+//            populateQAResultsForNDays(subsidiaryId, days, runner, qaTestResultList, dashBoardId);
+//        }
+//    }
 
     private void populateQAResultsForNDays(String subsidiaryId, String days, String runner, List<QATestResult> qaTestResultList, String dashBoardId) {
         if (StringUtils.isNotEmpty(subsidiaryId)) {
@@ -406,10 +405,10 @@ public class DashboardServiceImpl implements DashboardService {
             for (String subId : subsidiaryIds) {
                 if (StringUtils.isNotEmpty(runner)) {
                     for (String user : runner.split(",")) {
-                        qaTestResultList.addAll(qaRepository.findBySubsidiaryAndUserAndDashboardOrderByIdDesc(subId, user, dashBoardId));
+                       // qaTestResultList.addAll(qaRepository.findBySubsidiaryAndUserAndDashboardOrderByIdDesc(subId, user, dashBoardId));
                     }
                 } else {
-                    qaTestResultList.addAll(qaRepository.findBySubsidiaryAndDashboardOrderByIdDesc(subId, dashBoardId));
+                  //  qaTestResultList.addAll(qaRepository.findBySubsidiaryAndDashboardOrderByIdDesc(subId, dashBoardId));
                 }
             }
             if (CollectionUtils.isNotEmpty(qaTestResultList)) {
@@ -419,10 +418,10 @@ public class DashboardServiceImpl implements DashboardService {
                 for (String subId : subsidiaryIds) {
                     if (StringUtils.isNotEmpty(runner)) {
                         for (String user : runner.split(",")) {
-                            qaTestResultList.addAll(qaRepository.findBySessionIdAndDashboardAndSubsidiaryAndUserOrderByIdDesc(sessionId, dashBoardId, subId, user));
+                         //   qaTestResultList.addAll(qaRepository.findBySessionIdAndDashboardAndSubsidiaryAndUserOrderByIdDesc(sessionId, dashBoardId, subId, user));
                         }
                     } else {
-                        qaTestResultList.addAll(qaRepository.findBySessionIdAndDashboardAndSubsidiaryOrderByIdDesc(sessionId, dashBoardId, subId));
+                       // qaTestResultList.addAll(qaRepository.findBySessionIdAndDashboardAndSubsidiaryOrderByIdDesc(sessionId, dashBoardId, subId));
                     }
                 }
             }
@@ -478,11 +477,11 @@ public class DashboardServiceImpl implements DashboardService {
     }
 
     private void populateLast7DaysIssuesData(QaSummaryData qaSummaryData, Dashboard dashboard, String subsidiaryId) {
-        subsidiaryId = StringUtils.isEmpty(subsidiaryId) ? dashboard.getSubsidiary() : subsidiaryId;
+       // subsidiaryId = StringUtils.isEmpty(subsidiaryId) ? dashboard.getSubsidiary() : subsidiaryId;
         Map<String, Map<String, Integer>> issueChartDateMap = new HashMap<>();
         List<QATestResult> qaTestResultList = new ArrayList<>();
 
-        populateTestResults(subsidiaryId, "7", null, qaTestResultList, dashboard);
+       // populateTestResults(subsidiaryId, "7", null, qaTestResultList, dashboard);
         if (CollectionUtils.isNotEmpty(qaTestResultList)) {
             Set<String> users = new HashSet<>();
             for (QATestResult qaTestResult : qaTestResultList) {

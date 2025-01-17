@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class TestProfileObject extends QABaseEntity {
-    private String subsidiary;
+   // private String subsidiary;
     private String identifier;
     private String shortDescription;
 }
