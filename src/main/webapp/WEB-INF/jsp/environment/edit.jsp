@@ -110,23 +110,3 @@
     </div
   </div>
 </div>
-<script type="text/javascript">
-      function removeRow(countVal) {
-        $('#environment'+countVal).remove();
-      }
-        $(document).ready(function() {
-        var multipleCancelButton = new Choices('#selectpicker', {
-                  removeItemButton: true,
-                  maxItemCount:-1,
-                  searchResultLimit:20,
-                  renderChoiceLimit:-1
-                });
-
-            var count = $('#existingEnvironmentCount').val();
-            $(".add-input-more").click(function(){
-                var html = '<div class="row" id="environment"'+count+'"><div class="col-sm-5"><p style="font-weight: bold;font-size:20px;">Configure Url</p><input type="text" class="inputbox-cheil-mini" name="configs['+count+'].url" value="" title="Enter the environment URL" placeholder="Enter the environment URL"/>&nbsp;&nbsp;<input type="checkbox" style="width: 20px;transform : scale(1.5);" name="configs['+count+'].waitBeforeUrl"  title="Wait before url" placeholder="Wait before url" />&nbsp;&nbsp;<input type="checkbox" style="width: 20px;transform : scale(1.5);" name="configs['+count+'].waitAfterUrl"  title="Wait after Url" placeholder="wait after url" /><p style="font-weight: bold;font-size:20px;margin-top:10px;">Short description</p><input type="text" class="inputbox-cheil-small" name="configs['+count+'].shortDescription" value="" title="Short description" placeholder="Short description"/><p style="font-weight: bold;font-size:20px;margin-top:10px;">UI action element (Optional)</p><input type="text" class="inputbox-cheil-mini" name="configs['+count+'].actionElement" value="" title="UI selector should be By xPath, or By Id or By selector" placeholder="Enter UI element selector "/>&nbsp;&nbsp;<input type="checkbox" style="width: 20px;transform : scale(1.5);" name="configs['+count+'].waitBeforeClick"  title="Wait before submit" placeholder="wait before submit" />&nbsp;&nbsp;<input type="checkbox" style="width: 20px;transform : scale(1.5);" name="configs['+count+'].waitAfterClick"  title="Wait after submit" placeholder="wait after submit "/></div><div class="col-sm-5"><p style="font-weight: bold;font-size:20px;">Configure credentials (Optional) </p><div id="div1" style="height: 200px;"><div id="div2" style="height: inherit; overflow: auto; border:1px solid gray;"><div class="row"><div class="col-sm-4" style="margin-top:15px;"><b style="padding-left: 10px;">User login</b></div><div class="col-sm-8"><input type="text" class="inputbox-cheil-mini" name="configs['+count+'].loginName" value="" title="Enter login name" placeholder="Enter login name" class="inputbox-cheil-mini" />&nbsp;&nbsp;&nbsp;<input type="text" class="inputbox-cheil-mini" name="configs['+count+'].loginNameUiSelector" value="" title="Enter UI selector (ID/CSS/Xpath)" placeholder="Enter UI selector (ID/CSS/Xpath)" /></div></div><br/><div class="row"><div class="col-sm-4" style="margin-top:15px;"><b style="padding-left: 10px;">Enter password</b></div><div class="col-sm-8"><input type="password" class="inputbox-cheil-mini" name="configs['+count+'].loginPassword" value="" title="Enter login password " placeholder="Enter login password "/>&nbsp;&nbsp;&nbsp;<input type="text" class="inputbox-cheil-mini" name="configs['+count+'].loginPasswordSelector" value="" title="Enter UI selector (ID/CSS/Xpath)" placeholder="Enter UI selector (ID/CSS/Xpath)" /></div></div><br/></div></div></div><div class="col-sm-2"><img style="width:32px;height:32px;margin-left:25px;margin-top:100px;" onclick="javascript:removeRow(' + count + ')" src="${contextPath}/images/remove.png" /></div></div><br/><br/>';
-                $(".after-add-input-more").before(html);
-                count++;
-            });
-        });
-</script>

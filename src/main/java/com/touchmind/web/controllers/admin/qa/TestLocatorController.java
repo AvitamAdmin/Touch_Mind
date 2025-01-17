@@ -2,7 +2,9 @@ package com.touchmind.web.controllers.admin.qa;
 
 import com.touchmind.core.mongo.dto.TestLocatorDto;
 import com.touchmind.core.mongo.dto.TestLocatorWsDto;
+import com.touchmind.core.mongo.model.Site;
 import com.touchmind.core.mongo.model.TestLocator;
+import com.touchmind.core.mongo.repository.SiteRepository;
 import com.touchmind.core.mongo.repository.TestLocatorRepository;
 import com.touchmind.core.service.LocatorService;
 import com.touchmind.core.service.TestLocatorService;
@@ -47,8 +49,8 @@ public class TestLocatorController extends BaseController {
     @Autowired
     private TestLocatorRepository testLocatorRepository;
 
-//    @Autowired
-//    private SiteRepository siteRepository;
+    @Autowired
+    private SiteRepository siteRepository;
 
 //    @Autowired
 //    private FileImportService fileImportService;
@@ -74,7 +76,7 @@ public class TestLocatorController extends BaseController {
         testLocatorWsDto.setBaseUrl(ADMIN_LOCATOR);
         testLocatorWsDto.setTotalPages(page.getTotalPages());
         testLocatorWsDto.setTotalRecords(page.getTotalElements());
-       // testLocatorWsDto.setAttributeList(getConfiguredAttributes(testLocatorWsDto.getNode()));
+        testLocatorWsDto.setAttributeList(getConfiguredAttributes(testLocatorWsDto.getNode()));
         return testLocatorWsDto;
     }
 
@@ -92,23 +94,23 @@ public class TestLocatorController extends BaseController {
         return testLocatorWsDto;
     }
 
-//    @GetMapping("/migrate")
-//    @ResponseBody
-//    public void migrateData() {
-//        List<TestLocator> testLocators = testLocatorRepository.findAll();
-//        for (TestLocator locator : testLocators) {
-//            List<Site> sites = siteRepository.findByStatusOrderByIdentifier(true);
-//            SortedMap<String, LocatorSelectorDto> locatorSelectorFormMap = new TreeMap<>();
-//            for (Site site : sites) {
-//                LocatorSelectorDto locatorSelectorDto = new LocatorSelectorDto();
-//                //locatorSelectorDto.setXpathSelector(locator.getUiSelector(site.getIdentifier()));
-//                //locatorSelectorDto.setInputData(locator.getInputData(site.getIdentifier()));
-//                locatorSelectorFormMap.put(site.getIdentifier(), locatorSelectorDto);
-//                locator.setUiLocatorSelector(locatorSelectorFormMap);
-//            }
-//            testLocatorRepository.save(locator);
-//        }
-//    }
+    @GetMapping("/migrate")
+    @ResponseBody
+    public void migrateData() {
+        List<TestLocator> testLocators = testLocatorRepository.findAll();
+        for (TestLocator locator : testLocators) {
+            List<Site> sites = siteRepository.findByStatusOrderByIdentifier(true);
+            SortedMap<String, LocatorSelectorDto> locatorSelectorFormMap = new TreeMap<>();
+            for (Site site : sites) {
+                LocatorSelectorDto locatorSelectorDto = new LocatorSelectorDto();
+                //locatorSelectorDto.setXpathSelector(locator.getUiSelector(site.getIdentifier()));
+                //locatorSelectorDto.setInputData(locator.getInputData(site.getIdentifier()));
+                locatorSelectorFormMap.put(site.getIdentifier(), locatorSelectorDto);
+                locator.setUiLocatorSelector(locatorSelectorFormMap);
+            }
+            testLocatorRepository.save(locator);
+        }
+    }
 
     @GetMapping("/add")
     @ResponseBody

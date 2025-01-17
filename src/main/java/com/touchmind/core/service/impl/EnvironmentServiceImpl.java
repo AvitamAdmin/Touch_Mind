@@ -5,6 +5,7 @@ import com.touchmind.core.mongo.dto.EnvironmentWsDto;
 import com.touchmind.core.mongo.model.Environment;
 import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.EnvironmentRepository;
+import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.EnvironmentService;
 import org.modelmapper.ModelMapper;
@@ -25,49 +26,47 @@ public class EnvironmentServiceImpl implements EnvironmentService {
     @Autowired
     private CoreService coreService;
 
+    @Autowired
+    private BaseService baseService;
+
 
     @Autowired
     private ModelMapper modelMapper;
 
     @Override
     public EnvironmentWsDto handelEdit(EnvironmentWsDto request) {
-        return null;
+
+
+
+
+        EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
+        environmentWsDto.setExistingEnvironmentCount(0);
+        Environment requestData = null;
+        List<EnvironmentDto> environments = request.getEnvironments();
+        List<Environment> environmentList = new ArrayList<>();
+        for (EnvironmentDto environment : environments) {
+            if (environment.getRecordId() != null) {
+                requestData = environmentRepository.findByRecordId(environment.getRecordId());
+                modelMapper.map(environment, requestData);
+            } else {
+                if (baseService.validateIdentifier(EntityConstants.ENVIRONMENT, environment.getIdentifier()) != null) {
+                    request.setSuccess(false);
+                    request.setMessage("Identifier already present");
+                    return request;
+                }
+                requestData = modelMapper.map(environment, Environment.class);
+            }
+            baseService.populateCommonData(requestData);
+            environmentRepository.save(requestData);
+            if (environment.getRecordId() == null) {
+                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
+            }
+            environmentRepository.save(requestData);
+            environmentList.add(requestData);
+            environmentWsDto.setMessage("Environment was updated successfully!!");
+            environmentWsDto.setBaseUrl(ADMIN_ENVIRONMENT);
+        }
+        environmentWsDto.setEnvironments(modelMapper.map(environmentList, List.class));
+        return environmentWsDto;
     }
 }
-
-//    @Autowired
-//    private BaseService baseService;
-
-//    @Override
-//    public EnvironmentWsDto handelEdit(EnvironmentWsDto request) {
-//        EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
-//        environmentWsDto.setExistingEnvironmentCount(0);
-//        Environment requestData = null;
-//        List<EnvironmentDto> environments = request.getEnvironments();
-//        List<Environment> environmentList = new ArrayList<>();
-//        for (EnvironmentDto environment : environments) {
-//            if (environment.getRecordId() != null) {
-//                requestData = environmentRepository.findByRecordId(environment.getRecordId());
-//                modelMapper.map(environment, requestData);
-//            } else {
-//                if (baseService.validateIdentifier(EntityConstants.ENVIRONMENT, environment.getIdentifier()) != null) {
-//                    request.setSuccess(false);
-//                    request.setMessage("Identifier already present");
-//                    return request;
-//                }
-//                requestData = modelMapper.map(environment, Environment.class);
-//            }
-//            baseService.populateCommonData(requestData);
-//            environmentRepository.save(requestData);
-//            if (environment.getRecordId() == null) {
-//                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
-//            }
-//            environmentRepository.save(requestData);
-//            environmentList.add(requestData);
-//            environmentWsDto.setMessage("Environment was updated successfully!!");
-//            environmentWsDto.setBaseUrl(ADMIN_ENVIRONMENT);
-//        }
-//        environmentWsDto.setEnvironments(modelMapper.map(environmentList, List.class));
-//        return environmentWsDto;
-//    }
-//}

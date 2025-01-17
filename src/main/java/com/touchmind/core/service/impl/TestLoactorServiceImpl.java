@@ -30,7 +30,7 @@ public class TestLoactorServiceImpl implements TestLocatorService {
     private BaseService baseService;
 
     @Override
-    public TestLocatorWsDto handleEdit(TestLocatorWsDto request) {
+    public TestLocatorWsDto  handleEdit(TestLocatorWsDto request) {
         TestLocatorWsDto testLocatorWsDto = new TestLocatorWsDto();
         TestLocator requestData = null;
         List<TestLocatorDto> testLocators = request.getTestLocators();

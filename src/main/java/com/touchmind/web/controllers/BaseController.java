@@ -1,7 +1,10 @@
 package com.touchmind.web.controllers;
 
 import com.touchmind.core.mongo.dto.CommonDto;
+import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.model.CommonBasicFields;
+import com.touchmind.core.mongo.model.InterfaceConfig;
+import com.touchmind.core.mongo.repository.InterfaceConfigRepository;
 import com.touchmind.core.service.CommonService;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
@@ -29,15 +32,15 @@ public class BaseController {
     @Autowired
     private CommonService commonService;
 
-//    @Autowired
-//    private InterfaceConfigRepository interfaceConfigRepository;
+    @Autowired
+    private InterfaceConfigRepository interfaceConfigRepository;
 
     Logger logger = LoggerFactory.getLogger(BaseController.class);
 
-//    protected List<SearchDto> getConfiguredAttributes(String node) {
-//        InterfaceConfig interfaceConfig = interfaceConfigRepository.findByNode(node);
-//        return interfaceConfig != null ? interfaceConfig.getAttributes() : Collections.emptyList();
-//    }
+    protected List<SearchDto> getConfiguredAttributes(String node) {
+        InterfaceConfig interfaceConfig = interfaceConfigRepository.findByNode(node);
+        return interfaceConfig != null ? interfaceConfig.getAttributes() : Collections.emptyList();
+    }
 
     protected ExampleMatcher getMatcher(CommonDto commonDto, String condition) {
         ExampleMatcher matcher = null;

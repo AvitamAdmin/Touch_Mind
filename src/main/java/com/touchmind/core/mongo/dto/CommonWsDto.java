@@ -21,7 +21,7 @@ public class CommonWsDto extends PaginationDto {
     private String recordId;
     private boolean success = true;
     private String operator;
-  //  private List<SearchDto> attributeList;
+    private List<SearchDto> attributeList;
     private String node;
   //  private List<SavedQueryDto> savedQuery;
 }

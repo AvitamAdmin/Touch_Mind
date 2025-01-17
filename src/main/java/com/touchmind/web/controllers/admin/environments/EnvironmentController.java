@@ -84,14 +84,14 @@ public class EnvironmentController extends BaseController {
         return environmentService.handelEdit(request);
     }
 
-    @GetMapping("/add")
-    @ResponseBody
-    public EnvironmentWsDto add() {
-        EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
-        environmentWsDto.setExistingEnvironmentCount(0);
-        environmentWsDto.setBaseUrl(ADMIN_ENVIRONMENT);
-        return environmentWsDto;
-    }
+//    @PostMapping("/add")
+//    @ResponseBody
+//    public EnvironmentWsDto add() {
+//        EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
+//        environmentWsDto.setExistingEnvironmentCount(0);
+//        environmentWsDto.setBaseUrl(ADMIN_ENVIRONMENT);
+//        return environmentWsDto;
+//    }
 
     @PostMapping("/getedits")
     @ResponseBody
