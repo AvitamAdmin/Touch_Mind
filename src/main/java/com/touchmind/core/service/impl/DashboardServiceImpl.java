@@ -1,7 +1,6 @@
 package com.touchmind.core.service.impl;
 
 import com.touchmind.core.mongo.dto.DashboardDto;
-import com.touchmind.core.mongo.dto.DashboardLabelDto;
 import com.touchmind.core.mongo.dto.DashboardWsDto;
 import com.touchmind.core.mongo.model.*;
 import com.touchmind.core.mongo.repository.DashboardRepository;
@@ -31,10 +30,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
 
 @Service
 public class DashboardServiceImpl implements DashboardService {
@@ -382,10 +379,10 @@ public class DashboardServiceImpl implements DashboardService {
             for (String subId : subsidiaryIds) {
                 if (StringUtils.isNotEmpty(runner)) {
                     for (String user : runner.split(",")) {
-                        qaTestResultList.addAll(qaRepository.findByCreationTimeBetweenAndSubsidiaryAndUserAndDashboard(LocalDateTime.now().minusDays(Integer.parseInt(days)), LocalDateTime.now(), subId, user, dashBoardId));
+                      //  qaTestResultList.addAll(qaRepository.findByCreationTimeBetweenAndSubsidiaryAndUserAndDashboard(LocalDateTime.now().minusDays(Integer.parseInt(days)), LocalDateTime.now(), subId, user, dashBoardId));
                     }
                 } else {
-                    qaTestResultList.addAll(qaRepository.findByCreationTimeBetweenAndSubsidiaryEqualsAndDashboard(LocalDateTime.now().minusDays(Integer.parseInt(days)), LocalDateTime.now(), subId, dashBoardId));
+                   // qaTestResultList.addAll(qaRepository.findByCreationTimeBetweenAndSubsidiaryEqualsAndDashboard(LocalDateTime.now().minusDays(Integer.parseInt(days)), LocalDateTime.now(), subId, dashBoardId));
                 }
             }
         } else {

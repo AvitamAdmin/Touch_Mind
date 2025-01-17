@@ -8,6 +8,7 @@ import com.touchmind.core.mongo.model.Role;
 import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.NodeRepository;
 import com.touchmind.core.mongo.repository.RoleRepository;
+import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.RoleService;
 import org.apache.commons.collections4.CollectionUtils;
@@ -37,8 +38,8 @@ public class RoleServiceImpl implements RoleService {
     @Autowired
     private NodeRepository nodeRepository;
 
-//    @Autowired
-//    private BaseService baseService;
+    @Autowired
+    private BaseService baseService;
 
     @Autowired
     private CoreService coreService;
@@ -65,46 +66,44 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public RoleWsDto handleEdit(RoleWsDto request) {
-        return null;
-    }
 
-//    @Override
-//    public RoleWsDto handleEdit(RoleWsDto request) {
-//        RoleWsDto roleWsDto = new RoleWsDto();
-//        List<RoleDto> roles = request.getRoles();
-//        List<Role> roleList = new ArrayList<>();
-//        Role requestData = null;
-//        for (RoleDto role : roles) {
-//            String userName = coreService.getCurrentUser().getUsername();
-//            if (role.getRecordId() != null) {
-//                requestData = roleRepository.findByRecordId(role.getRecordId());
-//                modelMapper.map(role, requestData);
-//            } else {
-//                if (baseService.validateIdentifier(EntityConstants.ROLE, role.getIdentifier()) != null) {
-//                    request.setSuccess(false);
-//                    request.setMessage("Identifier already present");
-//                    return request;
-//                }
-//                requestData = modelMapper.map(role, Role.class);
-//                requestData.setCreationTime(new Date());
-//                requestData.setCreator(userName);
-//            }
-//            populatePermissions(role, requestData);
-//            baseService.populateCommonData(requestData);
-//            roleRepository.save(requestData);
-//            if (requestData.getRecordId() == null) {
-//                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
-//            }
-//            requestData.setLastModified(new Date());
-//            requestData.setModifiedBy(userName);
-//            roleRepository.save(requestData);
-//            roleList.add(requestData);
-//            roleWsDto.setMessage("Role was updated successfully!");
-//            roleWsDto.setBaseUrl(ADMIN_ROLE);
-//        }
-//        roleWsDto.setRoles(modelMapper.map(roleList, List.class));
-//        return roleWsDto;
-//    }
+
+
+        RoleWsDto roleWsDto = new RoleWsDto();
+        List<RoleDto> roles = request.getRoles();
+        List<Role> roleList = new ArrayList<>();
+        Role requestData = null;
+        for (RoleDto role : roles) {
+            String userName = coreService.getCurrentUser().getUsername();
+            if (role.getRecordId() != null) {
+                requestData = roleRepository.findByRecordId(role.getRecordId());
+                modelMapper.map(role, requestData);
+            } else {
+                if (baseService.validateIdentifier(EntityConstants.ROLE, role.getIdentifier()) != null) {
+                    request.setSuccess(false);
+                    request.setMessage("Identifier already present");
+                    return request;
+                }
+                requestData = modelMapper.map(role, Role.class);
+                requestData.setCreationTime(new Date());
+                requestData.setCreator(userName);
+            }
+            populatePermissions(role, requestData);
+            baseService.populateCommonData(requestData);
+            roleRepository.save(requestData);
+            if (requestData.getRecordId() == null) {
+                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
+            }
+            requestData.setLastModified(new Date());
+            requestData.setModifiedBy(userName);
+            roleRepository.save(requestData);
+            roleList.add(requestData);
+            roleWsDto.setMessage("Role was updated successfully!");
+            roleWsDto.setBaseUrl(ADMIN_ROLE);
+        }
+        roleWsDto.setRoles(modelMapper.map(roleList, List.class));
+        return roleWsDto;
+    }
 
     private void populatePermissions(RoleDto role, Role requestData) {
         if (CollectionUtils.isNotEmpty(role.getPermissions())) {

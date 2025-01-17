@@ -18,9 +18,9 @@ public interface TestPlanService {
 
     TestPlan getTestPlanByObjectId(ObjectId id);
 
-    List<TestPlan> findBySubsidiary(String id);
+  //  List<TestPlan> findBySubsidiary(String id);
 
-    List<TestPlan> findBySubsidiaryAndStatus(String id, boolean status);
+  //  List<TestPlan> findBySubsidiaryAndStatus(String id, boolean status);
 
     TestPlan getTestPlanByRecordId(String id);
 

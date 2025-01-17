@@ -111,7 +111,7 @@ public class AdminController extends BaseController {
 //                }
 //            }
             userDto1.setRoles(roles);
-            userDto1.setSubsidiaries(subs);
+          //  userDto1.setSubsidiaries(subs);
             userDtos.add(userDto1);
         }
         userWsDto.setUsers(userDtos);

@@ -81,7 +81,7 @@ public class EnvironmentController extends BaseController {
     @PostMapping("/edit")
     @ResponseBody
     public EnvironmentWsDto handleEdit(@RequestBody EnvironmentWsDto request) {
-        return environmentService.handelEdit(request);
+        return environmentService.handleEdit(request);
     }
 
 //    @PostMapping("/add")

@@ -6,6 +6,7 @@ import com.touchmind.core.mongo.model.TestDataSubtype;
 import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.TestDataSubtypeRepository;
 import com.touchmind.core.mongo.repository.TestDataTypeRepository;
+import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.TestDataSubTypeService;
 import org.modelmapper.ModelMapper;
@@ -35,42 +36,42 @@ public class TestDataSubTypeServiceImpl implements TestDataSubTypeService {
     @Autowired
     private ModelMapper modelMapper;
 
-    @Override
-    public TestDataSubtypeWsDto handleEdit(TestDataSubtypeWsDto request) {
-        return null;
-    }
-
-//    @Autowired
-//    private BaseService baseService;
-
 //    @Override
 //    public TestDataSubtypeWsDto handleEdit(TestDataSubtypeWsDto request) {
-//        TestDataSubtypeWsDto testDataSubtypeWsDto = new TestDataSubtypeWsDto();
-//        TestDataSubtype requestData = null;
-//        List<TestDataSubtypeDto> testDataSubtypes = request.getTestDataSubtypes();
-//        List<TestDataSubtype> testDataSubtypeList = new ArrayList<>();
-//        for (TestDataSubtypeDto testDataSubtype : testDataSubtypes) {
-//            if (testDataSubtype.getRecordId() != null) {
-//                requestData = testDataSubtypeRepository.findByRecordId(testDataSubtype.getRecordId());
-//                modelMapper.map(testDataSubtype, requestData);
-//            } else {
-//                if (baseService.validateIdentifier(EntityConstants.TEST_DATA_SUB_TYPE, testDataSubtype.getIdentifier()) != null) {
-//                    request.setSuccess(false);
-//                    request.setMessage("Identifier already present");
-//                    return request;
-//                }
-//                requestData = modelMapper.map(testDataSubtype, TestDataSubtype.class);
-//            }
-//            baseService.populateCommonData(requestData);
-//            testDataSubtypeRepository.save(requestData);
-//            if (testDataSubtype.getRecordId() == null) {
-//                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
-//            }
-//            testDataSubtypeWsDto.setBaseUrl(ADMIN_TEST_DATA_TYPE);
-//            testDataSubtypeRepository.save(requestData);
-//            testDataSubtypeList.add(requestData);
-//        }
-//        testDataSubtypeWsDto.setTestDataSubtypes(modelMapper.map(testDataSubtypeList, List.class));
-//        return testDataSubtypeWsDto;
+//        return null;
 //    }
+
+    @Autowired
+    private BaseService baseService;
+
+    @Override
+    public TestDataSubtypeWsDto handleEdit(TestDataSubtypeWsDto request) {
+        TestDataSubtypeWsDto testDataSubtypeWsDto = new TestDataSubtypeWsDto();
+        TestDataSubtype requestData = null;
+        List<TestDataSubtypeDto> testDataSubtypes = request.getTestDataSubtypes();
+        List<TestDataSubtype> testDataSubtypeList = new ArrayList<>();
+        for (TestDataSubtypeDto testDataSubtype : testDataSubtypes) {
+            if (testDataSubtype.getRecordId() != null) {
+                requestData = testDataSubtypeRepository.findByRecordId(testDataSubtype.getRecordId());
+                modelMapper.map(testDataSubtype, requestData);
+            } else {
+                if (baseService.validateIdentifier(EntityConstants.TEST_DATA_SUB_TYPE, testDataSubtype.getIdentifier()) != null) {
+                    request.setSuccess(false);
+                    request.setMessage("Identifier already present");
+                    return request;
+                }
+                requestData = modelMapper.map(testDataSubtype, TestDataSubtype.class);
+            }
+            baseService.populateCommonData(requestData);
+            testDataSubtypeRepository.save(requestData);
+            if (testDataSubtype.getRecordId() == null) {
+                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
+            }
+            testDataSubtypeWsDto.setBaseUrl(ADMIN_TEST_DATA_TYPE);
+            testDataSubtypeRepository.save(requestData);
+            testDataSubtypeList.add(requestData);
+        }
+        testDataSubtypeWsDto.setTestDataSubtypes(modelMapper.map(testDataSubtypeList, List.class));
+        return testDataSubtypeWsDto;
+    }
 }

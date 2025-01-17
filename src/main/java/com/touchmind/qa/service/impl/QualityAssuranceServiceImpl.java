@@ -188,7 +188,7 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
         qaTestResult.setEndTime(endTime);
         qaTestResult.setTimeTaken(endTime.getTime() - startTime.getTime());
         qaTestResult.setUser(currentUser);
-        qaTestResult.setSubsidiary(subsidiary);
+       // qaTestResult.setSubsidiary(subsidiary);
         qaTestResult.setPaymentType(TestDataUtils.getString(testData, Field.PAYMENT_TYPE));
         qaTestResult.setDeliveryType(TestDataUtils.getString(testData, Field.DELIVERY_TYPE));
         qaTestResult.setSite(TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE));

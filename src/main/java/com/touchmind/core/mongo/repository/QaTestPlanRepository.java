@@ -12,9 +12,9 @@ public interface QaTestPlanRepository extends GenericImportRepository<TestPlan> 
 
     void deleteByRecordId(String recordId);
 
-    List<TestPlan> findBySubsidiary(String id);
+  //  List<TestPlan> findBySubsidiary(String id);
 
-    List<TestPlan> findBySubsidiaryAndStatus(String id, boolean status);
+  //  List<TestPlan> findBySubsidiaryAndStatus(String id, boolean status);
 
     List<TestPlan> findByStatusOrderByIdentifier(Boolean status);
 

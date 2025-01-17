@@ -113,12 +113,12 @@ public class TestPlanServiceImpl implements TestPlanService {
         return testPlanWsDto;
     }
 
-    public List<TestPlan> findBySubsidiary(String id) {
-        return qaTestPlanRepository.findBySubsidiary(id);
-    }
-
-    @Override
-    public List<TestPlan> findBySubsidiaryAndStatus(String id, boolean status) {
-        return qaTestPlanRepository.findBySubsidiaryAndStatus(id, status);
-    }
+//    public List<TestPlan> findBySubsidiary(String id) {
+//        return qaTestPlanRepository.findBySubsidiary(id);
+//    }
+//
+//    @Override
+//    public List<TestPlan> findBySubsidiaryAndStatus(String id, boolean status) {
+//        return qaTestPlanRepository.findBySubsidiaryAndStatus(id, status);
+//    }
 }

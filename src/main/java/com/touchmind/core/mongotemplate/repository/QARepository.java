@@ -12,7 +12,7 @@ public interface QARepository extends GenericImportRepository<QATestResult> {
 
     List<QATestResult> findByCreationTimeBetweenAndDashboard(LocalDateTime startDate, LocalDateTime endDate, String dashBoard);
 
-    List<QATestResult> findByCreationTimeBetweenAndSubsidiaryEqualsAndDashboard(LocalDateTime startDate, LocalDateTime endDate, String subsidiary, String dashBoard);
+   // List<QATestResult> findByCreationTimeBetweenAndSubsidiaryEqualsAndDashboard(LocalDateTime startDate, LocalDateTime endDate, String subsidiary, String dashBoard);
 
     List<QATestResult> findBySessionId(String sessionId);
 
@@ -22,7 +22,7 @@ public interface QARepository extends GenericImportRepository<QATestResult> {
 
     List<QATestResult> findBySessionIdAndLocatorGroupIdentifierAndTestName(String sessionId, Object locatorGroupIdentifier, String testName);
 
-    List<QATestResult> findByCreationTimeBetweenAndSubsidiaryAndUserAndDashboard(LocalDateTime startDate, LocalDateTime endDate, String subsidiary, String user, String dashBoard);
+  //  List<QATestResult> findByCreationTimeBetweenAndSubsidiaryAndUserAndDashboard(LocalDateTime startDate, LocalDateTime endDate, String subsidiary, String user, String dashBoard);
 
     List<QATestResult> findByCreationTimeBetweenAndUserAndDashboard(LocalDateTime startDate, LocalDateTime endDate, String user, String dashBoard);
 

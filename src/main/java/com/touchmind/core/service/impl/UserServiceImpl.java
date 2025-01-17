@@ -6,6 +6,7 @@ import com.touchmind.core.mongo.model.Role;
 import com.touchmind.core.mongo.model.User;
 import com.touchmind.core.mongo.repository.RoleRepository;
 import com.touchmind.core.mongo.repository.UserRepository;
+import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.UserService;
 import org.apache.commons.collections4.CollectionUtils;
@@ -47,8 +48,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private ModelMapper modelMapper;
 
-//    @Autowired
-//    private BaseService baseService;
+    @Autowired
+    private BaseService baseService;
 
     @Autowired
     private CoreService coreService;

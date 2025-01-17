@@ -34,11 +34,7 @@ public class EnvironmentServiceImpl implements EnvironmentService {
     private ModelMapper modelMapper;
 
     @Override
-    public EnvironmentWsDto handelEdit(EnvironmentWsDto request) {
-
-
-
-
+    public EnvironmentWsDto handleEdit(EnvironmentWsDto request) {
         EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
         environmentWsDto.setExistingEnvironmentCount(0);
         Environment requestData = null;

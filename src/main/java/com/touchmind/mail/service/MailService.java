@@ -55,8 +55,8 @@ public class MailService {
     Logger logger = LoggerFactory.getLogger(MailService.class);
     @Autowired
     private JavaMailSenderImpl mailSender;
-    @Autowired
-    private QARepository qaRepository;
+//    @Autowired
+//    private QARepository qaRepository;
     @Autowired
     private CronJobProfileRepository cronJobProfileRepository;
     @Autowired
@@ -200,7 +200,7 @@ public class MailService {
             String sessionId = data.get(TestDataUtils.Field.SESSION_ID.toString());
             if (StringUtils.isNotEmpty(testPlan)) {
                 String testPlanIdentifier = qaTestPlanRepository.findByRecordId(testPlan).getIdentifier();
-                eMail.setContent(getMailContentForSub("qa-report.html", data, sessionId, testPlanIdentifier, eMail));
+                //eMail.setContent(getMailContentForSub("qa-report.html", data, sessionId, testPlanIdentifier, eMail));
             }
             sendCheilEmail(eMail);
         }
@@ -290,20 +290,20 @@ public class MailService {
         }
     }
 
-    public String getMailContentForSub(String template, Map<String, String> data, String sessionId, String testPlan, EMail eMail) {
-        Map<String, Object> context = new HashMap<>();
-        data.forEach((key, value) -> {
-            context.put(key, value);
-        });
-        String serverUrl = env.getProperty("server.url");
-        String subsidiary = data.get("subsidiary");
-        List<QATestResult> qaTestResult = qaRepository.findBySessionIdAndSubsidiaryAndTestName(sessionId, subsidiary, testPlan);
-        eMail.setAttachment(createAttachment(qaTestResult));
-        context.put(TestDataUtils.Field.SERVER_URL.toString(), serverUrl);
-        context.put("qaTestResults", qaTestResult);
-        populateCampaign(qaTestResult, context);
-        return geContentFromTemplate(template, context);
-    }
+//    public String getMailContentForSub(String template, Map<String, String> data, String sessionId, String testPlan, EMail eMail) {
+//        Map<String, Object> context = new HashMap<>();
+//        data.forEach((key, value) -> {
+//            context.put(key, value);
+//        });
+//        String serverUrl = env.getProperty("server.url");
+//        String subsidiary = data.get("subsidiary");
+//       // List<QATestResult> qaTestResult = qaRepository.findBySessionIdAndSubsidiaryAndTestName(sessionId, subsidiary, testPlan);
+//        eMail.setAttachment(createAttachment(qaTestResult));
+//        context.put(TestDataUtils.Field.SERVER_URL.toString(), serverUrl);
+//        context.put("qaTestResults", qaTestResult);
+//        populateCampaign(qaTestResult, context);
+//        return geContentFromTemplate(template, context);
+//    }
 
 //    public void sendToolkitEmail(ReportDto reportDto, List<Map<String, Object>> data, List<String> headers, List<String> params, Map<String, String> pivotHeaders) {
 //        String[] subjectArray = reportDto.getNodePath().split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])");
