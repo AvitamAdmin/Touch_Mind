@@ -18,8 +18,8 @@ public class TestLocatorDto extends CommonDto {
     private String methodName;
     private SortedMap<String, LocatorSelectorDto> uiLocatorSelector;
     private Map<String, String> inputData;
-    private String testDataType;
-    private String testDataSubtype;
+//    private String testDataType;
+//    private String testDataSubtype;
     private Set<String> labels;
     private String errorMsg;
 }

@@ -48,6 +48,7 @@ public class TestLocatorServiceImpl implements TestLocatorService {
                 requestData = modelMapper.map(testLocator, TestLocator.class);
             }
             baseService.populateCommonData(requestData);
+            requestData.setStatus(true);
             testLocatorRepository.save(requestData);
             if (testLocator.getRecordId() == null) {
                 requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));

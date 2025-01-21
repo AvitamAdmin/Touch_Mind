@@ -22,12 +22,12 @@ public class TestLocator extends CommonFields {
     private String methodName;
     // this should be attachable similar to dom path
     private SortedMap<String, LocatorSelectorDto> uiLocatorSelector;
-    @Deprecated
-    // this should be attachable similar to dom path
-    private String testDataType;
-    @Deprecated
-    // this should be attachable similar to dom path
-    private String testDataSubtype;
+//    @Deprecated
+//    // this should be attachable similar to dom path
+//    private String testDataType;
+//    @Deprecated
+//    // this should be attachable similar to dom path
+//    private String testDataSubtype;
     @Deprecated
     //This should not be part of the locator it will attached to the locator
     private Set<String> labels;
