@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TestLoactorServiceImpl implements TestLocatorService {
+public class TestLocatorServiceImpl implements TestLocatorService {
 
     public static final String ADMIN_LOCATOR = "/admin/locator";
 
