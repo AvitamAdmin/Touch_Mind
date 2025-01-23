@@ -9,6 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CrawlerElementAttributes {
     private String locator;
+    private String rootLocator;
     private String methodType;
     private String crawlerLocatorType;
     private boolean isTakeAScreenshot;

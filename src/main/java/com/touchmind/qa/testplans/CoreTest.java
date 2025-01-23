@@ -4,14 +4,17 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.touchmind.core.SpringContext;
 import com.touchmind.core.mongo.model.TestLocatorGroup;
+import com.touchmind.core.mongo.model.TestPlan;
+import com.touchmind.core.mongotemplate.QATestResult;
 import com.touchmind.core.service.LocatorGroupService;
 import com.touchmind.form.LocatorGroupData;
 import com.touchmind.qa.framework.ThreadTestContext;
 import com.touchmind.qa.pages.concretepages.testPlans.AbstractTestPlan;
-import static com.touchmind.qa.service.impl.QualityAssuranceServiceImpl.REPORT_FILE_NAME;
+import com.touchmind.qa.service.ActionRequest;
 import com.touchmind.qa.utils.QaConstants;
 import com.touchmind.qa.utils.ReportUtils;
 import com.touchmind.qa.utils.TestDataUtils;
+import com.touchmind.utils.BeanUtils;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
@@ -31,6 +34,8 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static com.touchmind.qa.service.impl.QualityAssuranceServiceImpl.REPORT_FILE_NAME;
 
 
 @AllArgsConstructor
@@ -56,10 +61,16 @@ public class CoreTest extends AbstractTestPlan {
             ExtentTest extentTest = getExtentManager(context).startNewTest(MISSING_LOCATOR_GROUPS, "Nothing to test !!");
             threadTestContext.setExtentTest(extentTest);
             ReportUtils.fail(context, WAS_NO_LOCATOR_GROUP_FOUND_TO_EXECUTE_THE_TEST_PLAN, StringUtils.EMPTY, false);
-            getQualityAssuranceService().saveTestResult(context, testData, MISSING_LOCATOR_GROUPS, new AtomicBoolean(false), context.getStartDate(), Calendar.getInstance().getTime(), sessionId, String.valueOf(testData.get("currentUser")), StringUtils.EMPTY);
+            QATestResult qaTestResult = new QATestResult();
+            getQualityAssuranceService().saveTestResult(qaTestResult, context, testData, new AtomicBoolean(false), context.getStartDate(), Calendar.getInstance().getTime(), sessionId, String.valueOf(testData.get("currentUser")), StringUtils.EMPTY, "");
             return;
         }
         testPlans.stream().forEach(locatorGroupData -> {
+            String testPlanId = testData.getString(TestDataUtils.Field.TEST_PLAN.toString());
+            TestPlan testPlan = testPlanService.getTestPlanByRecordId(testPlanId);
+            List<QATestResult> testResultList = BeanUtils.getQaRepository().findBySessionIdAndLocatorGroupIdentifierAndTestName(sessionId, locatorGroupData.getIdentifier(), testPlan.getIdentifier());
+            QATestResult qaTestResult = CollectionUtils.isNotEmpty(testResultList) ? testResultList.stream().findFirst().get() : new QATestResult();
+            BeanUtils.getQaRepository().save(qaTestResult);
             TestLocatorGroup testLocatorGroup = locatorGroupService.findLocatorByGroupId(locatorGroupData.getGroupId());
             String reportFileName = getReportFileName(testLocatorGroup.getIdentifier(), sessionId);
             testData.put(REPORT_FILE_NAME, reportFileName);
@@ -73,7 +84,12 @@ public class CoreTest extends AbstractTestPlan {
                 ReportUtils.logMessage(context, isDebug, "=== Test case: " + testLocatorGroup.getIdentifier());
                 ReportUtils.logMessage(context, isDebug, "=== New Test: " + testLocatorGroup.getIdentifier() + " > " + sku);
                 try {
-                    wasTestPassed.set(getActionFactory().performAction(context, locatorGroupData, sku).getStepStatus().equals(Status.PASS));
+                    ActionRequest actionRequest = new ActionRequest();
+                    actionRequest.setContext(context);
+                    actionRequest.setLocatorGroupData(locatorGroupData);
+                    actionRequest.setSku(sku);
+                    actionRequest.setQaTestResultId(qaTestResult.getId());
+                    wasTestPassed.set(getActionFactory().performAction(actionRequest).getStepStatus().equals(Status.PASS));
                 } catch (Exception exp) {
                     wasTestPassed.set(false);
                     ReportUtils.logMessage(context, isDebug, "=== Test failed: " + exp.getMessage());
@@ -86,7 +102,7 @@ public class CoreTest extends AbstractTestPlan {
                 ReportUtils.logMessage(context, isDebug, "=== driver closed test status : " + (wasTestPassed.get() ? ITestResult.SUCCESS : ITestResult.FAILURE));
                 Reporter.getCurrentTestResult().setStatus(wasTestPassed.get() ? ITestResult.SUCCESS : ITestResult.FAILURE);
                 ReportUtils.logMessage(context, isDebug, "=== save result started: ");
-                getQualityAssuranceService().saveTestResult(context, testData, testLocatorGroup.getIdentifier(), wasTestPassed, context.getStartDate(), Calendar.getInstance().getTime(), sessionId, String.valueOf(testData.get("currentUser")), sku);
+                getQualityAssuranceService().saveTestResult(qaTestResult, context, testData, wasTestPassed, context.getStartDate(), Calendar.getInstance().getTime(), sessionId, String.valueOf(testData.get("currentUser")), sku, StringUtils.EMPTY);
                 ReportUtils.logMessage(context, isDebug, "=== save result end: ");
             });
         });
@@ -94,7 +110,6 @@ public class CoreTest extends AbstractTestPlan {
         String processType = TestDataUtils.getString(testData, TestDataUtils.Field.JOB_TYPE);
         if (StringUtils.isNotEmpty(processType) && "cronJob".equals(processType)) {
             ReportUtils.logMessage(context, isDebug, "=== Notification : " + testData);
-//            getMessageResourceService().processNotifications(testData);
             ReportUtils.logMessage(context, isDebug, "=== Notification processed : " + testData);
         }
     }

@@ -14,7 +14,10 @@ public interface EntityConstants {
     String CATEGORY = "Category";
     String USER = "User";
     String ROLE = "Role";
-   // String SUBSIDIARY = "Subsidiary";
+    String SUBSIDIARY = "Subsidiary";
+    String WIDGET_DISPLAY_TYPE = "WidgetDisplayType";
+    String DASHBOARD_REPORT = "DashboardReport";
+    String WIDGET_MANAGEMENT = "WidgetManagement";
     String SITE = "Site";
     String LIBRARY = "Library";
     String SYSTEM = "System";
@@ -39,5 +42,9 @@ public interface EntityConstants {
     String DASHBOARD_PROFILE = "DashboardProfile";
     String IMPACT_CONFIG = "ImpactConfig";
     String LOCATOR_GROUP_PRIORITY = "LocatorsGroupPriority";
-
+    String LOCATOR_GROUP = "LocatorGroup";
+    String REPORT_MAPPER = "ReportsMapper";
+    String CRAWLER_PATH="CrawlerPath";
+    String SHOP_NAVIGATION ="ShopNavigation";
+    String CAMPAIGN = "Campaign";
 }

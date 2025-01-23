@@ -12,10 +12,11 @@ import org.testng.ITestContext;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ActionRequest {
+public class ActionRequest extends BaseRequest {
     private ITestContext context;
     private LocatorGroupData locatorGroupData;
     private TestLocator testLocator;
+    private Object sku;
     private LocatorPriority locatorPriority;
     private ObjectId qaTestResultId;
 }

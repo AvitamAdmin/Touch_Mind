@@ -5,7 +5,6 @@ import com.touchmind.qa.crawler.selector.CrawlerElementAttributes;
 import com.touchmind.qa.framework.ThreadTestContext;
 import com.touchmind.qa.service.ActionResult;
 import com.touchmind.qa.service.CrawlerService;
-import static com.touchmind.qa.utils.ReportUtils.reportAction;
 import com.touchmind.qa.utils.TestDataUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebElement;
@@ -19,6 +18,8 @@ import org.testng.ITestContext;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+
+import static com.touchmind.qa.utils.ReportUtils.reportAction;
 
 @Service(CrawlerLocatorType.CRAWLER_MOVE_TO)
 public class CrawlerMoveAction implements CrawlerLocatorAction {

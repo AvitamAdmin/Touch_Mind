@@ -3,7 +3,6 @@ package com.touchmind.core.mongo.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -29,7 +28,5 @@ public class CommonQaFields extends CommonFields implements Serializable {
     private String modifier;
     private String identifier;
     private String shortDescription;
-  //  @DBRef(lazy = true)
-    //private List<ParamInput> paramInput;
-   // private List<String> subsidiaries;
+    private List<String> subsidiaries;
 }

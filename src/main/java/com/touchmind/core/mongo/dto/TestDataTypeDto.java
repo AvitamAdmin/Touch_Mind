@@ -12,5 +12,5 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class TestDataTypeDto extends CommonDto {
-  //  private List<String> subsidiaries;
+    private List<String> subsidiaries;
 }

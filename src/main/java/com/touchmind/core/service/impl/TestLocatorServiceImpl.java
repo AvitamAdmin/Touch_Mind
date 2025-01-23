@@ -30,7 +30,7 @@ public class TestLocatorServiceImpl implements TestLocatorService {
     private BaseService baseService;
 
     @Override
-    public TestLocatorWsDto  handleEdit(TestLocatorWsDto request) {
+    public TestLocatorWsDto handleEdit(TestLocatorWsDto request) {
         TestLocatorWsDto testLocatorWsDto = new TestLocatorWsDto();
         TestLocator requestData = null;
         List<TestLocatorDto> testLocators = request.getTestLocators();
@@ -48,7 +48,6 @@ public class TestLocatorServiceImpl implements TestLocatorService {
                 requestData = modelMapper.map(testLocator, TestLocator.class);
             }
             baseService.populateCommonData(requestData);
-            requestData.setStatus(true);
             testLocatorRepository.save(requestData);
             if (testLocator.getRecordId() == null) {
                 requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
@@ -58,6 +57,7 @@ public class TestLocatorServiceImpl implements TestLocatorService {
             testLocatorWsDto.setBaseUrl(ADMIN_LOCATOR);
         }
         testLocatorWsDto.setTestLocators(modelMapper.map(testLocatorList, List.class));
+        testLocatorWsDto.setMessage("Locator updated successfully");
         return testLocatorWsDto;
     }
 }

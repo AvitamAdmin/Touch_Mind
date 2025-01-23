@@ -20,13 +20,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -106,8 +100,6 @@ public class NodeServiceImpl implements NodeService {
         return allNodes;
     }
 
-
-
     @Override
     public NodeWsDto handleEdit(@RequestBody NodeWsDto request) {
         NodeWsDto nodeWsDto = new NodeWsDto();
@@ -140,7 +132,7 @@ public class NodeServiceImpl implements NodeService {
             nodes.add(node);
         }
         nodeWsDto.setNodes(modelMapper.map(nodes, List.class));
-        nodeWsDto.setMessage("Nodes are updated successfully!!");
+        nodeWsDto.setMessage("Nodes updated successfully!!");
         nodeWsDto.setBaseUrl(ADMIN_INTERFACE);
         return nodeWsDto;
     }

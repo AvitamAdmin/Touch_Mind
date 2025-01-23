@@ -11,13 +11,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 @NoArgsConstructor
-public class QaLocatorResultReport extends CommonFields  {
+public class QaLocatorResultReport extends CommonFields {
     private ObjectId qaTestResultId;
     private String locatorIdentifier;
     private String imgUrl;
     private Status stepStatus;
     private String message;
-    public QaLocatorResultReport getQaLocatorResultReport(ObjectId qaTestResultId,String locatorIdentifier,String shortDescription,String imgUrl,Status stepStatus,String message) {
+    private String errorType;
+    private String method;
+    private String component;
+
+
+    public QaLocatorResultReport getQaLocatorResultReport(ObjectId qaTestResultId, String locatorIdentifier, String shortDescription, String imgUrl, Status stepStatus, String message, String method) {
         QaLocatorResultReport qaLocatorResultReport = new QaLocatorResultReport();
         qaLocatorResultReport.setQaTestResultId(qaTestResultId);
         qaLocatorResultReport.setLocatorIdentifier(locatorIdentifier);
@@ -25,6 +30,7 @@ public class QaLocatorResultReport extends CommonFields  {
         qaLocatorResultReport.setImgUrl(imgUrl);
         qaLocatorResultReport.setStepStatus(stepStatus);
         qaLocatorResultReport.setMessage(message);
+        qaLocatorResultReport.setMethod(method);
         return qaLocatorResultReport;
     }
 }

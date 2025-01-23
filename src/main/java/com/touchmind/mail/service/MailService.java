@@ -1,6 +1,7 @@
 package com.touchmind.mail.service;
 
 import com.touchmind.core.HotFolderConstants;
+import com.touchmind.core.mongo.dto.ReportDto;
 import com.touchmind.core.mongo.model.CronJob;
 import com.touchmind.core.mongo.repository.CronJobProfileRepository;
 import com.touchmind.core.mongo.repository.CronRepository;
@@ -10,11 +11,7 @@ import com.touchmind.core.mongotemplate.repository.QARepository;
 import com.touchmind.qa.utils.TestDataUtils;
 import com.opencsv.CSVWriter;
 import freemarker.template.Configuration;
-import jakarta.mail.Authenticator;
-import jakarta.mail.MessagingException;
-import jakarta.mail.PasswordAuthentication;
-import jakarta.mail.Session;
-import jakarta.mail.Transport;
+import jakarta.mail.*;
 import jakarta.mail.internet.MimeMessage;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections4.MultiValuedMap;
@@ -36,12 +33,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 @Service
 public class MailService {
@@ -55,8 +47,8 @@ public class MailService {
     Logger logger = LoggerFactory.getLogger(MailService.class);
     @Autowired
     private JavaMailSenderImpl mailSender;
-//    @Autowired
-//    private QARepository qaRepository;
+    @Autowired
+    private QARepository qaRepository;
     @Autowired
     private CronJobProfileRepository cronJobProfileRepository;
     @Autowired
@@ -178,10 +170,6 @@ public class MailService {
         }
     }
 
-    private String getMailContent(String s, Map<String, String> data, String sessionId, EMail eMail) {
-        return s;
-    }
-
     public void sendMailBulkResults(String subject, String emails, List<QATestResult> qaTestResults) {
         if (StringUtils.isNotEmpty(emails)) {
             EMail eMail = getMailInstance(emails);
@@ -200,7 +188,7 @@ public class MailService {
             String sessionId = data.get(TestDataUtils.Field.SESSION_ID.toString());
             if (StringUtils.isNotEmpty(testPlan)) {
                 String testPlanIdentifier = qaTestPlanRepository.findByRecordId(testPlan).getIdentifier();
-                //eMail.setContent(getMailContentForSub("qa-report.html", data, sessionId, testPlanIdentifier, eMail));
+                eMail.setContent(getMailContentForSub("qa-report.html", data, sessionId, testPlanIdentifier, eMail));
             }
             sendCheilEmail(eMail);
         }
@@ -231,54 +219,50 @@ public class MailService {
         String serverUrl = env.getProperty("server.url");
         context.put(TestDataUtils.Field.SERVER_URL.toString(), serverUrl);
         context.put("qaTestResults", qaTestResult);
-        eMail.setAttachment(createAttachment(qaTestResult));
+        //eMail.setAttachment(createAttachment(qaTestResult));
         populateCampaign(qaTestResult, context);
         return geContentFromTemplate(template, context);
     }
 
-    private File createAttachment(List<QATestResult> qaTestResult) {
-        return null;
+    public String getMailContent(String template, Map<String, String> data, String sessionId, EMail eMail) {
+        Map<String, Object> context = new HashMap<>();
+        data.forEach((key, value) -> {
+            context.put(key, value);
+        });
+        String serverUrl = env.getProperty("server.url");
+        List<QATestResult> qaTestResult = qaRepository.findBySessionId(sessionId);
+        //eMail.setAttachment(createAttachment(qaTestResult));
+        populateCampaign(qaTestResult, context);
+        context.put(TestDataUtils.Field.SERVER_URL.toString(), serverUrl);
+        context.put("qaTestResults", qaTestResult);
+        return geContentFromTemplate(template, context);
     }
 
-//    public String getMailContent(String template, Map<String, String> data, String sessionId, EMail eMail) {
-//        Map<String, Object> context = new HashMap<>();
-//        data.forEach((key, value) -> {
-//            context.put(key, value);
-//        });
-//        String serverUrl = env.getProperty("server.url");
-//        List<QATestResult> qaTestResult = qaRepository.findBySessionId(sessionId);
-//        eMail.setAttachment(createAttachment(qaTestResult));
-//        populateCampaign(qaTestResult, context);
-//        context.put(TestDataUtils.Field.SERVER_URL.toString(), serverUrl);
-//        context.put("qaTestResults", qaTestResult);
-//        return geContentFromTemplate(template, context);
-//    }
-
-//    private File createAttachment(List<QATestResult> qaTestResult) {
-//        String currentTimeInMills = String.valueOf(System.currentTimeMillis());
-//        String fileName = currentTimeInMills + "_failedSKUs.xlsx";
-//        Path path = Paths.get(HotFolderConstants.DEFAULT_HOT_FOLDER_LOCATION + "/" + fileName);
-//        File file = path.toFile();
-//        List<MultiValuedMap<String, String>> failedErrorMap = new ArrayList<>();
-//        for (QATestResult result : qaTestResult) {
-//            MultiValuedMap<String, String> errorMap = new ArrayListValuedHashMap<>();
-//            if (result.getFailedSkusError() != null) {
-//                Map<String, String> skuErrorMap = result.getFailedSkusError();
-//                for (String keySet : skuErrorMap.keySet()) {
-//                    errorMap.put(keySet, skuErrorMap.get(keySet));
-//                }
-//                failedErrorMap.add(errorMap);
-//            }
-//        }
-//        try {
-//            if (CollectionUtils.isNotEmpty(failedErrorMap)) {
-//                excelFileService.writeDataToExcel(file, failedErrorMap);
-//            }
-//        } catch (IOException e) {
-//            LOG.error("Exception while creating attachment ", e);
-//        }
-//        return file;
-//    }
+    /*private File createAttachment(List<QATestResult> qaTestResult) {
+        String currentTimeInMills = String.valueOf(System.currentTimeMillis());
+        String fileName = currentTimeInMills + "_failedSKUs.xlsx";
+        Path path = Paths.get(HotFolderConstants.DEFAULT_HOT_FOLDER_LOCATION + "/" + fileName);
+        File file = path.toFile();
+        List<MultiValuedMap<String, String>> failedErrorMap = new ArrayList<>();
+        for (QATestResult result : qaTestResult) {
+            MultiValuedMap<String, String> errorMap = new ArrayListValuedHashMap<>();
+            if (result.getFailedSkusError() != null) {
+                Map<String, String> skuErrorMap = result.getFailedSkusError();
+                for (String keySet : skuErrorMap.keySet()) {
+                    errorMap.put(keySet, skuErrorMap.get(keySet));
+                }
+                failedErrorMap.add(errorMap);
+            }
+        }
+        try {
+            if (CollectionUtils.isNotEmpty(failedErrorMap)) {
+                excelFileService.writeDataToExcel(file, failedErrorMap);
+            }
+        } catch (IOException e) {
+            LOG.error("Exception while creating attachment ", e);
+        }
+        return file;
+    }*/
 
     private void populateCampaign(List<QATestResult> qaTestResult, Map<String, Object> context) {
         if (CollectionUtils.isNotEmpty(qaTestResult)) {
@@ -290,40 +274,40 @@ public class MailService {
         }
     }
 
-//    public String getMailContentForSub(String template, Map<String, String> data, String sessionId, String testPlan, EMail eMail) {
-//        Map<String, Object> context = new HashMap<>();
-//        data.forEach((key, value) -> {
-//            context.put(key, value);
-//        });
-//        String serverUrl = env.getProperty("server.url");
-//        String subsidiary = data.get("subsidiary");
-//       // List<QATestResult> qaTestResult = qaRepository.findBySessionIdAndSubsidiaryAndTestName(sessionId, subsidiary, testPlan);
-//        eMail.setAttachment(createAttachment(qaTestResult));
-//        context.put(TestDataUtils.Field.SERVER_URL.toString(), serverUrl);
-//        context.put("qaTestResults", qaTestResult);
-//        populateCampaign(qaTestResult, context);
-//        return geContentFromTemplate(template, context);
-//    }
+    public String getMailContentForSub(String template, Map<String, String> data, String sessionId, String testPlan, EMail eMail) {
+        Map<String, Object> context = new HashMap<>();
+        data.forEach((key, value) -> {
+            context.put(key, value);
+        });
+        String serverUrl = env.getProperty("server.url");
+        String subsidiary = data.get("subsidiary");
+        List<QATestResult> qaTestResult = qaRepository.findBySessionIdAndSubsidiaryAndTestName(sessionId, subsidiary, testPlan);
+        //eMail.setAttachment(createAttachment(qaTestResult));
+        context.put(TestDataUtils.Field.SERVER_URL.toString(), serverUrl);
+        context.put("qaTestResults", qaTestResult);
+        populateCampaign(qaTestResult, context);
+        return geContentFromTemplate(template, context);
+    }
 
-//    public void sendToolkitEmail(ReportDto reportDto, List<Map<String, Object>> data, List<String> headers, List<String> params, Map<String, String> pivotHeaders) {
-//        String[] subjectArray = reportDto.getNodePath().split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])");
-//        StringBuilder builder = new StringBuilder();
-//        for (String subject : subjectArray) {
-//            builder.append(subject);
-//            builder.append("_");
-//        }
-//        String reportName = builder.toString().replaceAll("_$", "").replaceAll(StringUtils.SPACE, "");
-//        EMail eMail = new EMail();
-//        Map<String, Integer> pivotData = new HashMap<>();
-//        eMail.setAttachment(createAttachment(data, headers, params, reportName, pivotData, pivotHeaders));
-//        eMail.setTo(reportDto.getEmail());
-//        eMail.setFrom(env.getProperty("javax.mail.username"));
-//        eMail.setSubject(df.format(new Date()) + " - " + reportName.replaceAll("_", StringUtils.SPACE) + "!");
-//        Map<String, Object> context = new HashMap<>();
-//        context.put("toolkitResult", pivotData);
-//        eMail.setContent(geContentFromTemplate("toolkit-report.html", context));
-//        sendCheilEmail(eMail);
-//    }
+    public void sendToolkitEmail(ReportDto reportDto, List<Map<String, Object>> data, List<String> headers, List<String> params, Map<String, String> pivotHeaders) {
+        String[] subjectArray = reportDto.getNodePath().split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])");
+        StringBuilder builder = new StringBuilder();
+        for (String subject : subjectArray) {
+            builder.append(subject);
+            builder.append("_");
+        }
+        String reportName = builder.toString().replaceAll("_$", "").replaceAll(StringUtils.SPACE, "");
+        EMail eMail = new EMail();
+        Map<String, Integer> pivotData = new HashMap<>();
+        eMail.setAttachment(createAttachment(data, headers, params, reportName, pivotData, pivotHeaders));
+        eMail.setTo(reportDto.getEmail());
+        eMail.setFrom(env.getProperty("javax.mail.username"));
+        eMail.setSubject(df.format(new Date()) + " - " + reportName.replaceAll("_", StringUtils.SPACE) + "!");
+        Map<String, Object> context = new HashMap<>();
+        context.put("toolkitResult", pivotData);
+        eMail.setContent(geContentFromTemplate("toolkit-report.html", context));
+        sendCheilEmail(eMail);
+    }
 
     private File createAttachment(List<Map<String, Object>> data, List<String> headers, List<String> params, String fileName, Map<String, Integer> pivotData, Map<String, String> pivotHeaders) {
         File file = new File(fileName + ".csv");

@@ -39,7 +39,6 @@ import java.util.List;
 @EnableWebSecurity
 public class WebSecurityConfig {
     @Qualifier("userDetailsServiceImpl")
-
     @Autowired
     private UserDetailsService userDetailsService;
     @Autowired
@@ -69,10 +68,6 @@ public class WebSecurityConfig {
                                 throw new RuntimeException(e);
                             }
                         }
-                )
-                .formLogin((form) -> form
-                        .loginPage("/login").permitAll()
-                        .loginProcessingUrl("/login")
                 )
                 .logout((logout) -> logout.permitAll());
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

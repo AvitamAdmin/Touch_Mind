@@ -1,17 +1,15 @@
 package com.touchmind.qa.actions;
 
+import com.aventstack.extentreports.Status;
 import com.touchmind.core.mongo.model.Environment;
 import com.touchmind.core.mongo.model.EnvironmentConfig;
+import com.touchmind.core.mongo.model.QaLocatorResultReport;
 import com.touchmind.core.mongo.repository.EnvironmentRepository;
+import com.touchmind.core.mongo.repository.QaLocatorResultReportRepository;
 import com.touchmind.form.LocatorGroupData;
 import com.touchmind.form.LocatorSelectorDto;
 import com.touchmind.qa.framework.ThreadTestContext;
-import com.touchmind.qa.service.ActionRequest;
-import com.touchmind.qa.service.ActionResult;
-import com.touchmind.qa.service.ElementActionService;
-import com.touchmind.qa.service.QualityAssuranceService;
-import com.touchmind.qa.service.SelectorService;
-import com.touchmind.qa.service.UrlService;
+import com.touchmind.qa.service.*;
 import com.touchmind.qa.strategies.ActionType;
 import com.touchmind.qa.strategies.UrlFactory;
 import com.touchmind.qa.utils.ReportUtils;
@@ -34,6 +32,8 @@ import org.testng.ITestContext;
 
 import java.net.MalformedURLException;
 import java.util.List;
+
+import static com.touchmind.qa.utils.ReportUtils.reportAction;
 
 @Service(ActionType.ENVIRONMENT_ACTION)
 public class EnvironmentAction implements ElementActionService {
@@ -61,6 +61,8 @@ public class EnvironmentAction implements ElementActionService {
     private SelectorService selectorService;
     @Autowired
     private QualityAssuranceService qualityAssuranceService;
+    @Autowired
+    private QaLocatorResultReportRepository qaLocatorResultReportRepository;
 
     @Override
     public ActionResult performAction(ActionRequest actionRequest) {
@@ -95,10 +97,14 @@ public class EnvironmentAction implements ElementActionService {
             LOG.error("errorMsg :" + e.getMessage());
             ReportUtils.logMessage(context, isDebug, "=== Environment Error message save  : " + errorMsg);
             qualityAssuranceService.saveErrorData(null, testData, null, errorMsg);
-            //actionResult.setActionResult(ActionType.ENVIRONMENT_ACTION, errorMsg, null, Status.FAIL);
+            actionResult.setStepStatus(Status.FAIL);
             return actionResult;
         }
-        //actionResult.setActionResult(ActionType.ENVIRONMENT_ACTION, ActionType.ENVIRONMENT_ACTION, null, Status.INFO);
+        //Media media = reportAction(context, element, testLocator.getDescription(), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
+        QaLocatorResultReport qaLocatorResultReport = new QaLocatorResultReport();
+        qaLocatorResultReport = qaLocatorResultReport.getQaLocatorResultReport(actionRequest.getQaTestResultId(), StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, Status.INFO, null, ActionType.ENVIRONMENT_ACTION);
+        qaLocatorResultReportRepository.save(qaLocatorResultReport);
+        actionResult.setStepStatus(Status.PASS);
         return actionResult;
     }
 

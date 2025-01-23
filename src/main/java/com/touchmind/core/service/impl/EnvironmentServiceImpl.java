@@ -27,14 +27,13 @@ public class EnvironmentServiceImpl implements EnvironmentService {
     private CoreService coreService;
 
     @Autowired
-    private BaseService baseService;
-
-
-    @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private BaseService baseService;
+
     @Override
-    public EnvironmentWsDto handleEdit(EnvironmentWsDto request) {
+    public EnvironmentWsDto handelEdit(EnvironmentWsDto request) {
         EnvironmentWsDto environmentWsDto = new EnvironmentWsDto();
         environmentWsDto.setExistingEnvironmentCount(0);
         Environment requestData = null;
@@ -59,7 +58,7 @@ public class EnvironmentServiceImpl implements EnvironmentService {
             }
             environmentRepository.save(requestData);
             environmentList.add(requestData);
-            environmentWsDto.setMessage("Environment was updated successfully!!");
+            environmentWsDto.setMessage("Environment updated successfully!!");
             environmentWsDto.setBaseUrl(ADMIN_ENVIRONMENT);
         }
         environmentWsDto.setEnvironments(modelMapper.map(environmentList, List.class));

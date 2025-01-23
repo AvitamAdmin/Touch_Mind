@@ -13,5 +13,5 @@ import java.util.List;
 @NoArgsConstructor
 public class TestDataSubtype extends CommonFields {
     private String testDataType;
-   // private List<String> subsidiaries;
+    private List<String> subsidiaries;
 }

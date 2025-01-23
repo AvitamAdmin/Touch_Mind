@@ -14,6 +14,6 @@ public class DashboardDto extends CommonDto {
     private String themeColor;
     private String template;
     private String chart;
-  //  private String subsidiary;
+    private String subsidiary;
     private String dashboardProfile;
 }

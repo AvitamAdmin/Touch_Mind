@@ -1,6 +1,6 @@
 package com.touchmind.HealthcheckMvp;
 
-
+import com.touchmind.web.filter.RequestResponseLoggingFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,8 +59,6 @@ import java.util.TimeZone;
                 "com.touchmind.fileimport.service",
                 "com.touchmind.fileimport.strategies",
                 "com.touchmind.fileimport.actions",
-                "com.touchmind.core.service"
-
         }
 )
 @EnableScheduling
@@ -70,7 +68,7 @@ public class HealthcheckMvpApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(HealthcheckMvpApplication.class, args);
-       // context.getBean(ApplicationCronJobs.class).scheduleJobs();
+        context.getBean(ApplicationCronJobs.class).scheduleJobs();
     }
 
     @Bean
@@ -99,7 +97,8 @@ public class HealthcheckMvpApplication {
     @Bean
     public ThreadPoolTaskScheduler threadPoolTaskScheduler() {
         ThreadPoolTaskScheduler scheduler = new ThreadPoolTaskScheduler();
-        scheduler.setPoolSize(20);
+        scheduler.setPoolSize(40);
+        scheduler.initialize();
         scheduler.setRemoveOnCancelPolicy(true);
         return scheduler;
     }
@@ -130,11 +129,11 @@ public class HealthcheckMvpApplication {
     }
 
     @Bean
-    public FilterRegistrationBean<com.touchmind.web.filter.RequestResponseLoggingFilter> loggingFilter() {
-        FilterRegistrationBean<com.touchmind.web.filter.RequestResponseLoggingFilter> registrationBean
+    public FilterRegistrationBean<RequestResponseLoggingFilter> loggingFilter() {
+        FilterRegistrationBean<RequestResponseLoggingFilter> registrationBean
                 = new FilterRegistrationBean<>();
 
-        registrationBean.setFilter(new com.touchmind.web.filter.RequestResponseLoggingFilter());
+        registrationBean.setFilter(new RequestResponseLoggingFilter());
         registrationBean.addUrlPatterns("/*");
         registrationBean.setOrder(2);
 

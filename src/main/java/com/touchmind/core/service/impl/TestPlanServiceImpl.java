@@ -8,7 +8,6 @@ import com.touchmind.core.mongo.repository.QaTestPlanRepository;
 import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.TestPlanService;
-import com.touchmind.form.TestPlanForm;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.modelmapper.ModelMapper;
@@ -35,29 +34,6 @@ public class TestPlanServiceImpl implements TestPlanService {
     @Override
     public List<TestPlan> findByStatusOrderByIdentifier(Boolean status) {
         return qaTestPlanRepository.findByStatusOrderByIdentifier(status);
-    }
-
-    @Override
-    public TestPlanForm editTestPlan(String id) {
-        TestPlan optionalTestPlan = qaTestPlanRepository.findByRecordId(id);
-        return modelMapper.map(optionalTestPlan, TestPlanForm.class);
-    }
-
-    @Override
-    public boolean addTestPlan(TestPlanForm testPlanForm) {
-        TestPlan testPlan = modelMapper.map(testPlanForm, TestPlan.class);
-        if (testPlanForm.getRecordId() != null) {
-            TestPlan testPlanRecord = qaTestPlanRepository.findByRecordId(testPlanForm.getRecordId());
-            if (testPlanRecord != null) {
-                testPlan.setId(testPlanRecord.getId());
-            }
-        }
-        qaTestPlanRepository.save(testPlan);
-        if (StringUtils.isEmpty(testPlan.getRecordId())) {
-            testPlan.setRecordId(String.valueOf(testPlan.getId().getTimestamp()));
-        }
-        qaTestPlanRepository.save(testPlan);
-        return true;
     }
 
     @Override
@@ -110,15 +86,16 @@ public class TestPlanServiceImpl implements TestPlanService {
             qaTestPlanRepository.save(testPlan);
             testPlanWsDto.setBaseUrl(ADMIN_QA);
         }
+        testPlanWsDto.setMessage("Test plan updated successfully");
         return testPlanWsDto;
     }
 
-//    public List<TestPlan> findBySubsidiary(String id) {
-//        return qaTestPlanRepository.findBySubsidiary(id);
-//    }
-//
-//    @Override
-//    public List<TestPlan> findBySubsidiaryAndStatus(String id, boolean status) {
-//        return qaTestPlanRepository.findBySubsidiaryAndStatus(id, status);
-//    }
+    public List<TestPlan> findBySubsidiary(String id) {
+        return qaTestPlanRepository.findBySubsidiary(id);
+    }
+
+    @Override
+    public List<TestPlan> findBySubsidiaryAndStatus(String id, boolean status) {
+        return qaTestPlanRepository.findBySubsidiaryAndStatus(id, status);
+    }
 }

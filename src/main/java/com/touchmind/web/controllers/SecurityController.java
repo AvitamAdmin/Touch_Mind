@@ -18,12 +18,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 import java.text.DecimalFormat;
@@ -128,7 +123,7 @@ public class SecurityController extends BaseController {
         String otp = userDto.getOtp();
         User user = userService.findByUsername(email);
         if (otp.equals(user.getOtp())) {
-          //  securityService.autoLogin(user.getUsername(), password, request);
+            //securityService.autoLogin(user.getUsername(), password, request);
             return "Success";
         } else {
             return "Invalid OTP. Please try again";

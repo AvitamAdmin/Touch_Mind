@@ -1,24 +1,22 @@
 package com.touchmind.form;
 
+import com.touchmind.core.mongo.dto.CommonDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
-public class LocatorSelectorDto extends BaseForm {
+public class LocatorSelectorDto extends CommonDto {
     private String xpathSelector;
     private String cssSelector;
     private String idSelector;
     private String othersSelector;
     private String inputData;
     private String errorMsg;
-
-    @Override
-    public String toString() {
-        return "xpathSelector=" + xpathSelector + " , cssSelector=" + cssSelector +
-                " , idSelector=" + idSelector + " , othersSelector=" + othersSelector + " , inputData=" + inputData;
-    }
-
+    private String expression;
+    private List<String> subLocators;
 }

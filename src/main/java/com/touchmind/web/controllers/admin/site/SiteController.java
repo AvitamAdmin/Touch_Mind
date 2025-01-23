@@ -1,6 +1,7 @@
 package com.touchmind.web.controllers.admin.site;
 
-
+import com.touchmind.core.mongo.dto.SavedQueryDto;
+import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.dto.SiteDto;
 import com.touchmind.core.mongo.dto.SiteWsDto;
 import com.touchmind.core.mongo.model.Site;
@@ -8,8 +9,12 @@ import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.SiteRepository;
 import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.SiteService;
+import com.touchmind.fileimport.service.FileExportService;
+import com.touchmind.fileimport.service.FileImportService;
+import com.touchmind.fileimport.strategies.EntityType;
 import com.touchmind.web.controllers.BaseController;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +24,10 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +39,16 @@ public class SiteController extends BaseController {
     Logger logger = LoggerFactory.getLogger(SiteController.class);
     @Autowired
     private SiteRepository siteRepository;
+
     @Autowired
     private SiteService siteService;
+
+    @Autowired
+    private FileImportService fileImportService;
+
+    @Autowired
+    private FileExportService fileExportService;
+
     @Autowired
     private ModelMapper modelMapper;
     @Autowired
@@ -50,22 +66,22 @@ public class SiteController extends BaseController {
         siteWsDto.setBaseUrl(ADMIN_SITE);
         siteWsDto.setTotalPages(page.getTotalPages());
         siteWsDto.setTotalRecords(page.getTotalElements());
-        //siteWsDto.setAttributeList(getConfiguredAttributes(siteWsDto.getNode()));
-        //siteWsDto.setSavedQuery(baseService.getSavedQuery(EntityConstants.SITE));
+        siteWsDto.setAttributeList(getConfiguredAttributes(siteWsDto.getNode()));
+        siteWsDto.setSavedQuery(baseService.getSavedQuery(EntityConstants.SITE));
         return siteWsDto;
     }
 
-//    @PostMapping("/saveSearchQuery")
-//    @ResponseBody
-//    public String savedQuery(@RequestBody SavedQueryDto savedQueryDto) {
-//        return baseService.saveSearchQuery(savedQueryDto, EntityConstants.SITE);
-//    }
+    @PostMapping("/saveSearchQuery")
+    @ResponseBody
+    public String savedQuery(@RequestBody SavedQueryDto savedQueryDto) {
+        return baseService.saveSearchQuery(savedQueryDto, EntityConstants.SITE);
+    }
 
-//    @GetMapping("/getAdvancedSearch")
-//    @ResponseBody
-//    public List<SearchDto> getSearchAttributes() {
-//        return getGroupedParentAndChildAttributes(new Site());
-//    }
+    @GetMapping("/getAdvancedSearch")
+    @ResponseBody
+    public List<SearchDto> getSearchAttributes() {
+        return getGroupedParentAndChildAttributes(new Site());
+    }
 
     @GetMapping("/get")
     @ResponseBody
@@ -74,6 +90,11 @@ public class SiteController extends BaseController {
         siteWsDto.setSites(modelMapper.map(siteRepository.findByStatusOrderByIdentifier(true), List.class));
         siteWsDto.setBaseUrl(ADMIN_SITE);
         return siteWsDto;
+    }
+
+    @RequestMapping(value = "/getByRecordId", method = RequestMethod.GET)
+    public @ResponseBody SiteDto getByRecordId(@RequestParam("recordId") String recordId) {
+        return modelMapper.map(siteRepository.findByRecordId(recordId), SiteDto.class);
     }
 
     @PostMapping("/edit")
@@ -117,31 +138,31 @@ public class SiteController extends BaseController {
     }
 
 
-//    @PostMapping("/upload")
-//    @ResponseBody
-//    public SiteWsDto uploadFile(@RequestParam("file") MultipartFile file) {
-//        SiteWsDto siteWsDto = new SiteWsDto();
-//        try {
-//            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.SITE, EntityConstants.SITE, siteWsDto);
-//            if (StringUtils.isEmpty(siteWsDto.getMessage())) {
-//                siteWsDto.setMessage("File uploaded successfully!!");
-//            }
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//        }
-//        return siteWsDto;
-//    }
-//
-//    @GetMapping("/export")
-//    @ResponseBody
-//    public SiteWsDto uploadFile() {
-//        SiteWsDto siteWsDto = new SiteWsDto();
-//        try {
-//            siteWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.SITE));
-//            return siteWsDto;
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//            return null;
-//        }
-//    }
+    @PostMapping("/upload")
+    @ResponseBody
+    public SiteWsDto uploadFile(@RequestParam("file") MultipartFile file) {
+        SiteWsDto siteWsDto = new SiteWsDto();
+        try {
+            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.SITE, EntityConstants.SITE, siteWsDto);
+            if (StringUtils.isEmpty(siteWsDto.getMessage())) {
+                siteWsDto.setMessage("File uploaded successfully!!");
+            }
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+        return siteWsDto;
+    }
+
+    @GetMapping("/export")
+    @ResponseBody
+    public SiteWsDto uploadFile() {
+        SiteWsDto siteWsDto = new SiteWsDto();
+        try {
+            siteWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.SITE));
+            return siteWsDto;
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+            return null;
+        }
+    }
 }

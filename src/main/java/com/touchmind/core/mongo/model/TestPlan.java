@@ -15,5 +15,5 @@ import java.util.List;
 @NoArgsConstructor
 public class TestPlan extends CommonFields {
     private List<String> testLocatorGroups;
-   // private String subsidiary;
+    private String subsidiary;
 }

@@ -12,7 +12,6 @@ import com.touchmind.qa.service.ActionResult;
 import com.touchmind.qa.service.ElementActionService;
 import com.touchmind.qa.service.SelectorService;
 import com.touchmind.qa.strategies.ActionType;
-import static com.touchmind.qa.utils.ReportUtils.reportAction;
 import com.touchmind.qa.utils.ScrollUtils;
 import com.touchmind.qa.utils.TestDataUtils;
 import org.openqa.selenium.WebElement;
@@ -20,12 +19,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.testng.ITestContext;
 
+import static com.touchmind.qa.utils.ReportUtils.reportAction;
+
 @Service(ActionType.CLICK_ACTION)
 public class ClickAction implements ElementActionService {
 
     @Autowired
     private SelectorService selectorService;
-
     @Autowired
     private QaLocatorResultReportRepository qaLocatorResultReportRepository;
 
@@ -42,12 +42,13 @@ public class ClickAction implements ElementActionService {
         }
         Media media = reportAction(context, element, testLocator.getDescription(), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
         QaLocatorResultReport qaLocatorResultReport = new QaLocatorResultReport();
-        qaLocatorResultReport = qaLocatorResultReport.getQaLocatorResultReport(actionRequest.getQaTestResultId(),testLocator.getIdentifier(), testLocator.getDescription(), media != null ? media.getPath() : null, Status.INFO,null);
+        qaLocatorResultReport = qaLocatorResultReport.getQaLocatorResultReport(actionRequest.getQaTestResultId(), testLocator.getIdentifier(), testLocator.getDescription(), media != null ? media.getPath() : null, Status.INFO, null, ActionType.CLICK_ACTION);
         qaLocatorResultReportRepository.save(qaLocatorResultReport);
         ScrollUtils.scrollIntoView(threadTestContext, element);
-        qaLocatorResultReport = qaLocatorResultReport.getQaLocatorResultReport(actionRequest.getQaTestResultId(),testLocator.getIdentifier(), testLocator.getDescription(), media != null ? media.getPath() : null, Status.PASS,null);
+        qaLocatorResultReport = qaLocatorResultReport.getQaLocatorResultReport(actionRequest.getQaTestResultId(), testLocator.getIdentifier(), testLocator.getDescription(), media != null ? media.getPath() : null, Status.PASS, null, ActionType.CLICK_ACTION);
         qaLocatorResultReportRepository.save(qaLocatorResultReport);
         element.click();
+        actionResult.setStepStatus(Status.INFO);
         return actionResult;
     }
 }

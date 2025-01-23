@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Environment extends CommonFields {
     private String modifier;
+    private List<String> subsidiaries;
     private List<EnvironmentConfig> configs;
 }
 

@@ -1,7 +1,7 @@
 package com.touchmind.core.service.impl;
 
-import com.google.gson.Gson;
 import com.touchmind.core.service.CommonService;
+import com.google.gson.Gson;
 import org.apache.commons.lang3.ObjectUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -26,30 +26,32 @@ public class CommonServiceImpl implements CommonService {
     @Override
     public Map<String, String> toMap(Object object) {
         Map<String, String> map = new LinkedHashMap<>();
-        modelMapper.map(object, map);
-        try {
-            for (Field field : object.getClass().getDeclaredFields()) {
-                field.setAccessible(true);
-                Object value = field.get(object);
-                if (value instanceof String) {
-                    map.put(field.getName(), ObjectUtils.isNotEmpty(value) ? value.toString() : "");
-                } else {
-                    String jsonObject = gson.toJson(value);
-                    map.put(field.getName(), ObjectUtils.isNotEmpty(jsonObject) ? jsonObject : "");
+        if (null != object) {
+            modelMapper.map(object, map);
+            try {
+                for (Field field : object.getClass().getDeclaredFields()) {
+                    field.setAccessible(true);
+                    Object value = field.get(object);
+                    if (value instanceof String) {
+                        map.put(field.getName(), ObjectUtils.isNotEmpty(value) ? value.toString() : "");
+                    } else {
+                        String jsonObject = gson.toJson(value);
+                        map.put(field.getName(), ObjectUtils.isNotEmpty(jsonObject) ? jsonObject : "");
+                    }
                 }
-            }
-            for (Field field : object.getClass().getSuperclass().getDeclaredFields()) {
-                field.setAccessible(true);
-                Object value = field.get(object);
-                if (value instanceof String) {
-                    map.put(field.getName(), ObjectUtils.isNotEmpty(value) ? value.toString() : "");
-                } else {
-                    String jsonObject = gson.toJson(value);
-                    map.put(field.getName(), ObjectUtils.isNotEmpty(jsonObject) ? jsonObject : "");
+                for (Field field : object.getClass().getSuperclass().getDeclaredFields()) {
+                    field.setAccessible(true);
+                    Object value = field.get(object);
+                    if (value instanceof String) {
+                        map.put(field.getName(), ObjectUtils.isNotEmpty(value) ? value.toString() : "");
+                    } else {
+                        String jsonObject = gson.toJson(value);
+                        map.put(field.getName(), ObjectUtils.isNotEmpty(jsonObject) ? jsonObject : "");
+                    }
                 }
+            } catch (Exception exp) {
+                LOG.error(exp.getMessage());
             }
-        } catch (Exception exp) {
-            LOG.error(exp.getMessage());
         }
         return map;
     }

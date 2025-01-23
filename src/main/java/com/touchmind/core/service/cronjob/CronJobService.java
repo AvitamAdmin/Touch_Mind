@@ -1,9 +1,9 @@
 package com.touchmind.core.service.cronjob;
 
+import com.touchmind.core.mongo.dto.CronJobDto;
 import com.touchmind.core.mongo.dto.CronJobWsDto;
 import com.touchmind.core.mongo.model.CronJob;
 import com.touchmind.core.service.impl.CronService;
-import com.touchmind.form.CronForm;
 import com.touchmind.qa.service.impl.CronDefinition;
 
 import java.util.List;
@@ -14,7 +14,7 @@ public interface CronJobService {
 
     CronJob findCronJobById(String objectId);
 
-    CronJob save(CronForm cronForm);
+    CronJob save(CronJobDto cronForm);
 
     void deleteCronJobById(String id);
 

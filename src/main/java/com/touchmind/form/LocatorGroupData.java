@@ -1,5 +1,6 @@
 package com.touchmind.form;
 
+import com.touchmind.core.mongo.dto.CommonDto;
 import com.touchmind.core.mongo.model.LocatorPriority;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class LocatorGroupData extends BaseForm {
+public class LocatorGroupData extends CommonDto {
     private List<LocatorPriority> locatorPriorityList;
     private String groupId;
- //   private List<ConditionGroup> conditionGroupList;
-    private boolean checkEppSso;
     private boolean takeAScreenshot;
 }

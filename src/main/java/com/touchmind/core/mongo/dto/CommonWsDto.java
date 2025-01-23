@@ -23,5 +23,5 @@ public class CommonWsDto extends PaginationDto {
     private String operator;
     private List<SearchDto> attributeList;
     private String node;
-  //  private List<SavedQueryDto> savedQuery;
+    private List<SavedQueryDto> savedQuery;
 }

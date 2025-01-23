@@ -36,7 +36,8 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Configuration
-public class QaConfig {
+public class
+QaConfig {
     public static final String WEBDRIVER_CHROME_OPTION_EXTENSION = "webdriver.chrome.option.extension";
     public static final String EXTENT_REPORT_TITLE = "extent.report.title";
     public static final String REGEX_WHITESPACE = "\\s+";

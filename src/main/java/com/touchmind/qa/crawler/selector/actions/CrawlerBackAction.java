@@ -5,7 +5,6 @@ import com.touchmind.qa.crawler.selector.CrawlerElementAttributes;
 import com.touchmind.qa.framework.ThreadTestContext;
 import com.touchmind.qa.service.ActionResult;
 import com.touchmind.qa.service.CrawlerService;
-import static com.touchmind.qa.utils.ReportUtils.reportAction;
 import com.touchmind.qa.utils.TestDataUtils;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
@@ -14,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.testng.ITestContext;
+
+import static com.touchmind.qa.utils.ReportUtils.reportAction;
 
 @Service(CrawlerLocatorType.CRAWLER_BACK)
 public class CrawlerBackAction implements CrawlerLocatorAction {

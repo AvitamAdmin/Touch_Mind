@@ -8,11 +8,11 @@ import java.util.List;
 
 @Repository("TestProfileRepository")
 public interface TestProfileRepository extends GenericImportRepository<TestProfile> {
-  //  List<TestProfile> findBySubsidiary(String subsidiary);
+    List<TestProfile> findBySubsidiary(String subsidiary);
 
     TestProfile findByRecordId(String id);
 
-  //  List<TestProfile> findBySubsidiaryOrderByIdentifier(String subsidiary, boolean status);
+    List<TestProfile> findBySubsidiaryOrderByIdentifier(String subsidiary, boolean status);
 
     List<TestProfile> findByStatusOrderByIdentifier(Boolean status);
 

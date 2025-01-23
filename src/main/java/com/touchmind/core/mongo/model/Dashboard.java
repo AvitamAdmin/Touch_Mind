@@ -14,6 +14,6 @@ public class Dashboard extends CommonFields {
     private String themeColor;
     private String template;
     private String chart;
-   // private String subsidiary;
+    private String subsidiary;
     private String dashboardProfile;
 }

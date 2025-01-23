@@ -5,10 +5,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Map;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 public class CronJobProfileDto extends CommonDto {
-    private String recipients;
+    Map<String, Object> properties;
+    //private String recipients;
 }

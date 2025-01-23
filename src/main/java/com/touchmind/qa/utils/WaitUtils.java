@@ -1,8 +1,6 @@
 package com.touchmind.qa.utils;
 
 import com.touchmind.qa.framework.ThreadTestContext;
-import static com.touchmind.qa.utils.ReportUtils.ACTION_DESCRIPTION;
-
 import com.touchmind.utils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
@@ -22,6 +20,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import static com.touchmind.qa.utils.ReportUtils.ACTION_DESCRIPTION;
 
 public class WaitUtils {
     public static final String EXPECTED_TEXT_IS = "expected.text.is";

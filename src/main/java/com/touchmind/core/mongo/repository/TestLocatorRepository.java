@@ -16,5 +16,7 @@ public interface TestLocatorRepository extends GenericImportRepository<TestLocat
 
     List<TestLocator> findAllByOrderByIdentifier();
 
+    TestLocator findByIdentifier(String identifier);
+
     List<TestLocator> findByStatusOrderByIdentifier(Boolean status);
 }

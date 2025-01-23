@@ -13,5 +13,5 @@ import java.util.List;
 @ToString
 public class TestPlanDto extends CommonDto {
     private List<String> testLocatorGroups;
-   // private String subsidiary;
+    private String subsidiary;
 }

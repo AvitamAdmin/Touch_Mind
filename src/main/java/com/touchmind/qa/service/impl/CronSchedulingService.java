@@ -59,7 +59,7 @@ public class CronSchedulingService {
         logger.info("==Clean cron task " + id + " started");
         for (CronTask task : tasks) {
             CronDefinitionBean taskBean = (CronDefinitionBean) task.getRunnable();
-            if (taskBean.getCronDefinition().getId().equalsIgnoreCase(String.valueOf(id))) {
+            if (taskBean.getCronDefinition().getId().equalsIgnoreCase(id)) {
                 if (!taskBean.getScheduledFuture().isCancelled()) {
                     logger.info("Clean cron task " + id + " in progress");
                     taskBean.getScheduledFuture().cancel(true);

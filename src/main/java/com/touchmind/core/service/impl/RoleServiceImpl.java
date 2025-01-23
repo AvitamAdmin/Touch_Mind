@@ -18,11 +18,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 @Service
@@ -66,9 +62,6 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public RoleWsDto handleEdit(RoleWsDto request) {
-
-
-
         RoleWsDto roleWsDto = new RoleWsDto();
         List<RoleDto> roles = request.getRoles();
         List<Role> roleList = new ArrayList<>();
@@ -102,6 +95,7 @@ public class RoleServiceImpl implements RoleService {
             roleWsDto.setBaseUrl(ADMIN_ROLE);
         }
         roleWsDto.setRoles(modelMapper.map(roleList, List.class));
+        roleWsDto.setMessage("Role updated successfully");
         return roleWsDto;
     }
 

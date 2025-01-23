@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class SearchDto{
+public class SearchDto {
     private String label;
     private String attribute;
     private boolean dynamicAttr;

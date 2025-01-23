@@ -10,7 +10,6 @@ import java.util.Date;
 @Getter
 @Setter
 public class CommonFields extends CommonBasicFields implements Serializable {
-
     private String recordId;
     private String creator;
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")

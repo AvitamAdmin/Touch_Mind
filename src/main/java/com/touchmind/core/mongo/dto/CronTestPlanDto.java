@@ -11,7 +11,7 @@ public class CronTestPlanDto extends CommonDto {
     private String testProfile;
     private String categoryId;
     private String environment;
-   // private String subsidiary;
+    private String subsidiary;
     private String testPlan;
     private String siteIsoCode;
     //private String subEmails;

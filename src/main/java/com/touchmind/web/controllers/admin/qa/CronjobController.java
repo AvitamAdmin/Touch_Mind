@@ -2,17 +2,21 @@ package com.touchmind.web.controllers.admin.qa;
 
 import com.touchmind.core.mongo.dto.CronJobDto;
 import com.touchmind.core.mongo.dto.CronJobWsDto;
+import com.touchmind.core.mongo.dto.SavedQueryDto;
+import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.model.CronJob;
 import com.touchmind.core.mongo.repository.*;
 import com.touchmind.core.service.*;
-
 import com.touchmind.core.service.cronjob.CronJobService;
-import com.touchmind.form.CronForm;
+import com.touchmind.fileimport.service.FileExportService;
+import com.touchmind.fileimport.service.FileImportService;
+import com.touchmind.fileimport.strategies.EntityType;
 import com.touchmind.qa.service.QualityAssuranceService;
 import com.touchmind.qa.utils.TestDataUtils;
 import com.touchmind.web.controllers.BaseController;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,21 +28,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping("/admin/qaCronJob")
@@ -57,16 +54,10 @@ public class CronjobController extends BaseController {
     private CronJobService cronJobService;
     @Autowired
     private QualityAssuranceService qualityAssuranceService;
-//    @Autowired
-//    private SiteService siteService;
-//    @Autowired
-//    private SubsidiaryRepository subsidiaryRepository;
-//    @Autowired
-//    private SubsidiaryService subsidiaryService;
+    @Autowired
+    private SiteService siteService;
     @Autowired
     private TestProfileRepository testProfileRepository;
-//    @Autowired
-//    private CategoryRepository categoryRepository;
     @Autowired
     private DashboardRepository dashboardRepository;
     @Autowired
@@ -77,10 +68,12 @@ public class CronjobController extends BaseController {
     private CommonService commonService;
     @Autowired
     private CoreService coreService;
-//    @Autowired
-//    private FileImportService fileImportService;
-//    @Autowired
-//    private FileExportService fileExportService;
+    @Autowired
+    private FileImportService fileImportService;
+    @Autowired
+    private FileExportService fileExportService;
+    @Autowired
+    private BaseService baseService;
 
     @PostMapping
     @ResponseBody
@@ -94,7 +87,8 @@ public class CronjobController extends BaseController {
         cronJobWsDto.setBaseUrl(ADMIN_QA_CRONJOB);
         cronJobWsDto.setTotalPages(page.getTotalPages());
         cronJobWsDto.setTotalRecords(page.getTotalElements());
-       // cronJobWsDto.setAttributeList(getConfiguredAttributes(cronJobWsDto.getNode()));
+        cronJobWsDto.setAttributeList(getConfiguredAttributes(cronJobWsDto.getNode()));
+        cronJobWsDto.setSavedQuery(baseService.getSavedQuery(EntityConstants.CRONJOB));
         return cronJobWsDto;
     }
 
@@ -106,11 +100,22 @@ public class CronjobController extends BaseController {
         return cronJobWsDto;
     }
 
-//    @GetMapping("/getAdvancedSearch")
-//    @ResponseBody
-//    public List<SearchDto> getSearchAttributes() {
-//        return getGroupedParentAndChildAttributes(new CronJob());
-//    }
+    @GetMapping("/getAdvancedSearch")
+    @ResponseBody
+    public List<SearchDto> getSearchAttributes() {
+        return getGroupedParentAndChildAttributes(new CronJob());
+    }
+
+    @PostMapping("/saveSearchQuery")
+    @ResponseBody
+    public String savedQuery(@RequestBody SavedQueryDto savedQueryDto) {
+        return baseService.saveSearchQuery(savedQueryDto, EntityConstants.CRONJOB);
+    }
+
+    @RequestMapping(value = "/getByRecordId", method = RequestMethod.GET)
+    public @ResponseBody CronJobDto getByRecordId(@RequestParam("recordId") String recordId) {
+        return modelMapper.map(cronRepository.findByRecordId(recordId), CronJobDto.class);
+    }
 
     @PostMapping("/edit")
     @ResponseBody
@@ -161,7 +166,7 @@ public class CronjobController extends BaseController {
 
     @PostMapping("/run")
     @ResponseBody
-    public String runCronJob(HttpServletRequest httpRequest, @Validated @ModelAttribute("editForm") CronForm cronForm, Model model, BindingResult result) {
+    public String runCronJob(HttpServletRequest httpRequest, @Validated @ModelAttribute("editForm") CronJobDto cronForm, Model model, BindingResult result) {
         CronJob cronJob = cronRepository.findByRecordId(cronForm.getRecordId());
         Map<String, String> data = commonService.toMap(cronJob);
         UUID uuid = UUID.randomUUID();
@@ -172,31 +177,31 @@ public class CronjobController extends BaseController {
         return "Success";
     }
 
-//    @PostMapping("/upload")
-//    @ResponseBody
-//    public CronJobWsDto uploadFile(@RequestBody MultipartFile file) {
-//        CronJobWsDto cronJobWsDto = new CronJobWsDto();
-//        try {
-//            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.CRONJOB, EntityConstants.CRONJOB_MODEL, cronJobWsDto);
-//            if (StringUtils.isEmpty(cronJobWsDto.getMessage())) {
-//                cronJobWsDto.setMessage("File uploaded successfully!!");
-//            }
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//        }
-//        return cronJobWsDto;
-//    }
-//
-//    @GetMapping("/export")
-//    @ResponseBody
-//    public CronJobWsDto uploadFile() {
-//        CronJobWsDto cronJobWsDto = new CronJobWsDto();
-//        try {
-//            cronJobWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.CRONJOB));
-//            return cronJobWsDto;
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//            return null;
-//        }
-//    }
+    @PostMapping("/upload")
+    @ResponseBody
+    public CronJobWsDto uploadFile(@RequestBody MultipartFile file) {
+        CronJobWsDto cronJobWsDto = new CronJobWsDto();
+        try {
+            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.CRONJOB, EntityConstants.CRONJOB_MODEL, cronJobWsDto);
+            if (StringUtils.isEmpty(cronJobWsDto.getMessage())) {
+                cronJobWsDto.setMessage("File uploaded successfully!!");
+            }
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+        return cronJobWsDto;
+    }
+
+    @GetMapping("/export")
+    @ResponseBody
+    public CronJobWsDto uploadFile() {
+        CronJobWsDto cronJobWsDto = new CronJobWsDto();
+        try {
+            cronJobWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.CRONJOB));
+            return cronJobWsDto;
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+            return null;
+        }
+    }
 }

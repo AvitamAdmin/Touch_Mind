@@ -20,4 +20,6 @@ public interface CronRepository extends GenericImportRepository<CronJob> {
 
     void deleteByRecordId(String recordId);
 
+    List<CronJob> findAllByOrderByIdentifier();
+
 }

@@ -6,18 +6,16 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 @Repository("InterfaceConfigRepository")
 public interface InterfaceConfigRepository extends GenericImportRepository<InterfaceConfig> {
+    InterfaceConfig findByRecordId(String id);
 
-        InterfaceConfig findByRecordId(String id);
+    InterfaceConfig findByNode(String node);
 
-        InterfaceConfig findByNode(String node);
+    List<InterfaceConfig> findByStatusOrderByIdentifier(boolean status);
 
-        List<InterfaceConfig> findByStatusOrderByIdentifier(boolean status);
+    List<InterfaceConfig> findAllByOrderByIdentifier();
 
-        List<InterfaceConfig> findAllByOrderByIdentifier();
-
-        void deleteByRecordId(String id);
-
-
+    void deleteByRecordId(String id);
 }

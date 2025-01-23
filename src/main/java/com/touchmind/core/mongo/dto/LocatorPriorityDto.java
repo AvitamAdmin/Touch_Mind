@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 public class LocatorPriorityDto extends CommonDto {
     private Long priority;
-    private String locatorId;
+    private String locator;
     private Boolean enterKey;
     private Boolean waitForElementVisibleAndClickable;
     private Boolean checkIfElementPresentOnThePage;

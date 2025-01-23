@@ -6,4 +6,5 @@ public interface HotFolderConstants {
     String ERROR = "error";
     String UNSUPPORTED = "unsupported";
     String ARCHIVE = "archive";
+    String DOM_TREES = "dom-trees";
 }

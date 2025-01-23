@@ -14,5 +14,5 @@ public class Site extends CommonFields {
     private String affiliateName;
     private String siteChannel;
     private String secretKey;
-   // private String subsidiary;
+    private String subsidiary;
 }

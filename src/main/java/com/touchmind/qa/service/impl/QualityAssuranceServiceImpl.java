@@ -1,12 +1,13 @@
 package com.touchmind.qa.service.impl;
 
 import com.touchmind.core.SpringContext;
+import com.touchmind.core.mongo.dto.CronTestPlanDto;
 import com.touchmind.core.mongo.model.*;
-import com.touchmind.core.mongo.repository.CronJobProfileRepository;
-import com.touchmind.core.mongo.repository.QaTestPlanRepository;
+import com.touchmind.core.mongo.repository.*;
 import com.touchmind.core.mongotemplate.QATestResult;
 import com.touchmind.core.mongotemplate.repository.QARepository;
 import com.touchmind.core.service.BaseService;
+import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.TestPlanService;
 import com.touchmind.form.LocatorSelectorDto;
 import com.touchmind.mail.service.MailService;
@@ -15,14 +16,17 @@ import com.touchmind.qa.service.QualityAssuranceService;
 import com.touchmind.qa.utils.ReportUtils;
 import com.touchmind.qa.utils.TestDataUtils;
 import com.touchmind.qa.utils.TestDataUtils.Field;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.json.JSONObject;
+import org.modelmapper.ModelMapper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.slf4j.Logger;
@@ -34,8 +38,10 @@ import org.testng.ITestContext;
 import org.testng.TestNG;
 
 import java.lang.System;
+import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -50,7 +56,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 
 @Service
-public class QualityAssuranceServiceImpl implements QualityAssuranceService, BaseService {
+public class QualityAssuranceServiceImpl implements QualityAssuranceService {
     public static final String DATE_FORMAT = "yyyy-MM-dd";
     public static final String REPORT_PATH = "/reports/";
     public static final String ENVIRONMENT = "environment";
@@ -60,28 +66,40 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
     public static final String VALIDATION = "Validation";
     private static final Logger LOG = LoggerFactory.getLogger(QualityAssuranceServiceImpl.class);
     private static final String DELIM = " \n\r\t,.;";
+    private static final String TEST_PLAN = "testPlan";
     @Autowired
-    private MailService mailService;
+    MailService mailService;
     @Autowired
-    private Gson gson;
-//    @Autowired
-//    private VariantRepository variantRepository;
-//    @Autowired
-//    private ModelService modelService;
-  @Autowired
+    Gson gson;
+    @Autowired
+    private TestLocatorRepository testLocatorRepository;
+    @Autowired
+    private TestLocatorGroupRepository testLocatorGroupRepository;
+    @Autowired
     private Environment env;
     @Autowired
     private QARepository qaRepository;
-//    @Autowired
-//    private SubsidiaryRepository subsidiaryRepository;
     @Autowired
     private QaTestPlanRepository qaTestPlanRepository;
+    @Autowired
+    private ModelMapper modelMapper;
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
     private CronJobProfileRepository cronJobProfileRepository;
     @Autowired
     private TestPlanService testPlanService;
+
+    @Autowired
+    private QaResultErrorMapperRepository qaResultErrorMapperRepository;
+    @Autowired
+    private QaResultReportRepository qaResultReportRepository;
+
+    @Autowired
+    private CoreService coreService;
+
+    @Autowired
+    private CronHistoryRepository cronHistoryRepository;
 
     private static void populateErrorData(QATestResult qaTestResult, Map<String, Set<String>> errorMsg) {
         if (!errorMsg.isEmpty()) {
@@ -124,6 +142,21 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
         return orderNumber;
     }
 
+    private void runQaProcess(Map<String, String> testMapData) {
+        try {
+            TestNG testNG = SpringContext.getBean(TestNG.class, objectMapper.writeValueAsString(testMapData));
+            testNG.run();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void populateTestData(Map<String, String> testMapData) {
+        String testPlan = testMapData.get(TEST_PLAN);
+        testMapData.put(Field.TEST_NAME.toString(), qaTestPlanRepository.findByRecordId(testPlan).getIdentifier());
+        populateSkuData(testMapData);
+    }
+
     @Override
     public void runTest(String testMapData) {
         try {
@@ -135,7 +168,7 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
     }
 
     @Override
-    public void saveTestResult(ITestContext context, final JSONObject testData, Object locatorGroupIdentifier, AtomicBoolean wasTestPassed, Date startTime, Date endTime, String sessionId, String currentUser, Object sku) {
+    public void saveTestResult(QATestResult qaTestResult, ITestContext context, final JSONObject testData, AtomicBoolean wasTestPassed, Date startTime, Date endTime, String sessionId, String currentUser, Object sku, String locatorGroupIdentifier) {
         LOG.debug("Inside saveTestResult" + testData);
         boolean isDebug = BooleanUtils.toBoolean(TestDataUtils.getString(testData, TestDataUtils.Field.IS_DEBUG));
         String testPlanId = testData.getString(TestDataUtils.Field.TEST_PLAN.toString());
@@ -145,12 +178,12 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
         int totalTestCount = testData.optInt(Field.TEST_COUNT.toString(), 0);
         String subsidiary = testData.getString(Field.SUBSIDIARY.toString());
         List<QATestResult> testResultList = qaRepository.findBySessionIdAndLocatorGroupIdentifierAndTestName(sessionId, locatorGroupIdentifier, testPlan.getIdentifier());
-        //TODO move to ActionFactor
-        QATestResult qaTestResult = CollectionUtils.isNotEmpty(testResultList) ? testResultList.stream().findFirst().get() : new QATestResult();
+        qaTestResult = CollectionUtils.isNotEmpty(testResultList) ? testResultList.stream().findFirst().get() : new QATestResult();
         qaTestResult.setTestName(testData.getString(Field.TEST_NAME.toString()));
         qaTestResult.setTestNameDescription(testPlan.getShortDescription());
         qaTestResult.setSku(populateSkuData(sku, qaTestResult));
         qaTestResult.setSessionId(sessionId);
+        qaTestResult.setReportFilePath(env.getProperty("server.url") + REPORT_PATH + fileName + ".html");
         qaTestResult.setReportFilePath(env.getProperty("server.url") + REPORT_PATH + fileName + ".html");
         qaTestResult.setLocatorGroupIdentifier(locatorGroupIdentifier);
         Object errorMsg = TestDataUtils.getMap(testData, Field.ERROR_DATA);
@@ -188,12 +221,12 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
         qaTestResult.setEndTime(endTime);
         qaTestResult.setTimeTaken(endTime.getTime() - startTime.getTime());
         qaTestResult.setUser(currentUser);
-       // qaTestResult.setSubsidiary(subsidiary);
+        qaTestResult.setSubsidiary(subsidiary);
         qaTestResult.setPaymentType(TestDataUtils.getString(testData, Field.PAYMENT_TYPE));
         qaTestResult.setDeliveryType(TestDataUtils.getString(testData, Field.DELIVERY_TYPE));
         qaTestResult.setSite(TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE));
         qaRepository.save(qaTestResult);
-       //TODO remove the recordId from QaTestResultTable and also from QaLocatorResultReport which is buggy
+        //TODO remove the recordId from QaTestResultTable and also from QaLocatorResultReport which is buggy
         qaTestResult.setRecordId(String.valueOf(qaTestResult.getId().getTimestamp()));
         qaRepository.save(qaTestResult);
         ReportUtils.logMessage(context, isDebug, "=== Saved Test Resul : " + qaTestResult);
@@ -245,75 +278,39 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
         String skus = testMapData.get(Field.SKUS.toString());
         if (StringUtils.isNotEmpty(skus)) {
             testMapData.put(Field.SKUS.toString(), getVariantAsCommaSeparatedList(skus));
-        } else {
-            String models = testMapData.get(SHORTCUTS);
-            if (StringUtils.isNotEmpty(models)) {
-               // List<String> skuList = modelService.getVariantsListForModels(Arrays.asList(models.split(TestDataUtils.COMMA)));
-              //  testMapData.put(Field.SKUS.toString(), StringUtils.join(skuList, TestDataUtils.COMMA));
-            }
         }
         testMapData.put(Field.TEST_COUNT.toString(), String.valueOf(testMapData.get(Field.SKUS.toString()).split(TestDataUtils.COMMA).length));
     }
 
-//    private void runTestPlan(Map<String, String> data) {
-//        String testPlans = data.get("cronTestPlanFormList");
-//        if (StringUtils.isNotEmpty(testPlans)) {
-//            Type listType = new TypeToken<ArrayList<CronTestPlanDto>>() {
-//            }.getType();
-//            List<CronTestPlanDto> cronTestPlans = gson.fromJson(testPlans, listType);
-//            if (CollectionUtils.isNotEmpty(cronTestPlans)) {
-//                cronTestPlans.forEach(cronTestPlanForm -> {
-//                    StringBuffer skus = new StringBuffer();
-//                    if (StringUtils.isNotEmpty(cronTestPlanForm.getCategoryId())) {
-//                        List<Variant> variants = variantRepository.findByCategory_identifier(cronTestPlanForm.getIdentifier());
-//                        variants.forEach(variant -> {
-//                            if (StringUtils.isNotEmpty(cronTestPlanForm.getSubsidiary()) && CollectionUtils.isNotEmpty(variant.getSubsidiaries())) {
-//                                //TODO check if the record is correctly fetched
-//                                Subsidiary subsidiary = subsidiaryRepository.findByRecordId(cronTestPlanForm.getSubsidiary());
-//                                if (subsidiary != null && variant.getSubsidiaries().contains(subsidiary.getIdentifier())) {
-//                                    skus.append(variant.getIdentifier() + ",");
-//                                }
-//                            } else {
-//                                LOG.debug("No subsidiary configured in cronjob or subsidiaries missing for variant - " + variant.getIdentifier());
-//                            }
-//                        });
-//                    }
-//                    if (StringUtils.isNotEmpty(skus.toString())) {
-//                        String skusData = skus.toString();
-//                        data.put("skus", skusData.substring(0, skusData.length() - 1));
-//                        LOG.debug("==SKU " + skusData + " TO BE PROCESSED FOR category " + cronTestPlanForm.getCategoryId());
-//                    }
-//                    data.put("testProfile", cronTestPlanForm.getTestProfile());
-//                    data.put("environment", cronTestPlanForm.getEnvironment());
-//                    data.put("subsidiary", cronTestPlanForm.getSubsidiary());
-//                    data.put("testPlan", cronTestPlanForm.getTestPlan());
-//                    data.put("siteIsoCode", cronTestPlanForm.getSiteIsoCode());
-//                    processDataInternal(data);
-//                    mailService.sendMailForSub(data, populateEmailForProfile(cronTestPlanForm.getCronProfileId()), cronTestPlanForm.getTestPlan());
-//                });
-//            }
-//        }
-//    }
-
-//    @Override
-//    public List<BaseEntity> getReport(ReportDto reportDto) {
-//        return null;
-//    }
-
-    @Override
-    public Map<String, List<String>> getHeaders(Node node, String subsidiary, String mapping) {
-        return null;
+    private void runTestPlan(Map<String, String> data) {
+        String testPlans = data.get("cronTestPlanFormList");
+        if (StringUtils.isNotEmpty(testPlans)) {
+            Type listType = new TypeToken<ArrayList<CronTestPlanDto>>() {
+            }.getType();
+            List<CronTestPlanDto> cronTestPlans = gson.fromJson(testPlans, listType);
+            if (CollectionUtils.isNotEmpty(cronTestPlans)) {
+                cronTestPlans.forEach(cronTestPlanForm -> {
+                    data.put("testProfile", cronTestPlanForm.getTestProfile());
+                    data.put("environment", cronTestPlanForm.getEnvironment());
+                    data.put("subsidiary", cronTestPlanForm.getSubsidiary());
+                    data.put("testPlan", cronTestPlanForm.getTestPlan());
+                    data.put("siteIsoCode", cronTestPlanForm.getSiteIsoCode());
+                    processDataInternal(data);
+                    mailService.sendMailForSub(data, populateEmailForProfile(cronTestPlanForm.getCronProfileId()), cronTestPlanForm.getTestPlan());
+                });
+            }
+        }
     }
 
-//    @Override
-//    public void processData(Map<String, String> data) {
-//        runTestPlan(data);
-//        String cronProfileId = data.get(Field.CRON_PROFILE_ID.toString());
-//        if (StringUtils.isNotEmpty(cronProfileId)) {
-//            data.put(Field.EMAILS.toString(), populateEmailForProfile(cronProfileId));
-//        }
-//        mailService.sendMail(data);
-//    }
+    @Override
+    public void processData(Map<String, String> data) {
+        runTestPlan(data);
+        String cronProfileId = data.get(Field.CRON_PROFILE_ID.toString());
+        if (StringUtils.isNotEmpty(cronProfileId)) {
+            data.put(Field.EMAILS.toString(), populateEmailForProfile(cronProfileId));
+        }
+        mailService.sendMail(data);
+    }
 
     private String populateEmailForProfile(String cronProfileId) {
         if (StringUtils.isNotEmpty(cronProfileId)) {
@@ -327,23 +324,35 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
         return null;
     }
 
-//    public void processDataInternal(Map<String, String> data) {
-//        data.put("currentUser", data.get(Field.CRON_CURRENT_USER.toString()));
-//        String subsidiaryId = data.get(Field.SUBSIDIARY.toString());
-//        //TODO check if the record is correctly fetched
-//        Subsidiary subsidiary = subsidiaryRepository.findByRecordId(subsidiaryId);
-//        if (subsidiary != null) {
-//            subsidiaryId = subsidiary.getIdentifier();
-//        }
-//        saveCronHistory(data.get(TestDataUtils.Field.SESSION_ID.toString()), subsidiaryId, data.get(Field.EMAILS.toString()), 0, data.get(Field.JOB_TIME.toString()), "Running", "", data.get(Field.TEST_NAME.toString()));
-//        try {
-//            runTest(objectMapper.writeValueAsString(data));
-//        } catch (JsonProcessingException e) {
-//            LOG.error(e.getMessage());
-//        }
-//        int count = data.get("skus").split(",").length;
-//        saveCronHistory(data.get(TestDataUtils.Field.SESSION_ID.toString()), subsidiaryId, data.get(Field.EMAILS.toString()), count, data.get(Field.JOB_TIME.toString()), "Completed", "", data.get(Field.TEST_NAME.toString()));
-//    }
+    public void processDataInternal(Map<String, String> data) {
+        data.put("currentUser", data.get(Field.CRON_CURRENT_USER.toString()));
+
+        saveCronHistory(data.get(TestDataUtils.Field.SESSION_ID.toString()), data.get(Field.EMAILS.toString()), 0, data.get(Field.JOB_TIME.toString()), "Running", "", data.get(Field.TEST_NAME.toString()), String.valueOf(data.get("currentUser")));
+        try {
+            runTest(objectMapper.writeValueAsString(data));
+        } catch (JsonProcessingException e) {
+            LOG.error(e.getMessage());
+        }
+        int count = data.get("skus").split(",").length;
+        saveCronHistory(data.get(TestDataUtils.Field.SESSION_ID.toString()), data.get(Field.EMAILS.toString()), count, data.get(Field.JOB_TIME.toString()), "Completed", "", data.get(Field.TEST_NAME.toString()), String.valueOf(data.get("currentUser")));
+    }
+
+    public void saveCronHistory(String currentSessionId, String email, int processedSkus, String
+            jobTime, String status, String errorMsg, String schedulerId, String currentUser) {
+        CronHistory cronHistory = cronHistoryRepository.findBySessionId(currentSessionId);
+        if (null == cronHistory) {
+            cronHistory = new CronHistory();
+        }
+        cronHistory.setSessionId(currentSessionId);
+        cronHistory.setScheduler(schedulerId);
+        cronHistory.setEmail(email);
+        cronHistory.setProcessedSkus(processedSkus);
+        cronHistory.setJobTime(jobTime);
+        cronHistory.setCronStatus(status);
+        cronHistory.setErrorMsg(errorMsg);
+        cronHistory.setRunner(currentUser);
+        cronHistoryRepository.save(cronHistory);
+    }
 
     @Override
     public void initializeData(JSONObject testMapData, ThreadTestContext threadContext, ITestContext context) {
@@ -359,11 +368,6 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
         }
     }
 
-//    @Override
-//    public void saveErrorData(LocatorPriority locatorGroupData, JSONObject testData, TestLocator testLocator, String details) {
-//
-//    }
-
     @Override
     public void saveErrorData(LocatorPriority locatorPriority, JSONObject testData, TestLocator testLocator, String details) {
         Map<String, Set<String>> errorMap = new HashMap<>();
@@ -374,7 +378,7 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
         String itemSite = TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE);
         if (locatorPriority != null && testLocator != null) {
             LocatorSelectorDto locatorSelectorDto = testLocator.getUiLocatorSelector(itemSite);
-            String errorMessage = locatorSelectorDto !=null ? locatorSelectorDto.getErrorMsg():"";
+            String errorMessage = locatorSelectorDto != null ? locatorSelectorDto.getErrorMsg() : "";
             if ((StringUtils.isNotEmpty(locatorPriority.getErrorMsg()) || StringUtils.isNotEmpty(errorMessage)) && CollectionUtils.isNotEmpty(testLocator.getLabels())) {
                 String value = StringUtils.isNotEmpty(locatorPriority.getErrorMsg()) ? locatorPriority.getErrorMsg() : errorMessage;
                 testData.put(Field.ERROR_MSG.toString(), value);
@@ -400,30 +404,5 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService, Bas
             testData.put(Field.ERROR_DATA.toString(), errorMap);
         }
     }
-
-    @Override
-    public void processData(Map<String, String> data) {
-
-    }
-
-    @Override
-    public void populateCommonData(CommonFields requestData) {
-
-    }
-
-    @Override
-    public CommonFields validateIdentifier(String entityName, String identifier) {
-        return null;
-    }
-
-//    @Override
-//    public String saveSearchQuery(SavedQueryDto savedQueryDto, String source) {
-//        return null;
-//    }
-//
-//    @Override
-//    public List<SavedQueryDto> getSavedQuery(String source) {
-//        return null;
-//    }
 }
 

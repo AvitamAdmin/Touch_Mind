@@ -22,7 +22,8 @@ public class UserDto extends CommonDto {
     private String node;
     private String passwordConfirm;
     private Locale locale;
-  //  private Set<String> subsidiaries;
+    private Set<String> subsidiaries;
     private String resetPasswordToken;
     private String level;
+    private Boolean admin;
 }

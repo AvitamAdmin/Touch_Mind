@@ -14,6 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class CommonDto {
+    List<SavedQueryDto> savedQueries;
+    //TODO WARNING!!! recordId problematic while processing using streams do not use in future and if possible remove from old usages
     private String recordId;
     private String identifier;
     private Boolean status;
@@ -24,5 +26,4 @@ public class CommonDto {
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date lastModified;
     private String modifiedBy;
-   // List<SavedQueryDto> savedQueries;
 }

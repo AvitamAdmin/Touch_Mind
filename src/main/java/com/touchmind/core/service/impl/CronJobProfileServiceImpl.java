@@ -40,7 +40,7 @@ public class CronJobProfileServiceImpl implements CronJobProfileService {
         List<CronJobProfile> cronJobProfileList = new ArrayList<>();
         for (CronJobProfileDto cronJobProfile : cronJobProfiles) {
             if (cronJobProfile.getRecordId() != null) {
-                requestData = cronJobProfileRepository.findByRecordId(String.valueOf(cronJobProfile.getRecordId()));
+                requestData = cronJobProfileRepository.findByRecordId(cronJobProfile.getRecordId());
                 modelMapper.map(cronJobProfile, requestData);
 
             } else {
@@ -61,6 +61,7 @@ public class CronJobProfileServiceImpl implements CronJobProfileService {
             cronJobProfileList.add(requestData);
         }
         cronJobProfileWsDto.setCronJobProfiles(modelMapper.map(cronJobProfileList, List.class));
+        cronJobProfileWsDto.setMessage("Cronjob profile updated successfully");
         return cronJobProfileWsDto;
     }
 }

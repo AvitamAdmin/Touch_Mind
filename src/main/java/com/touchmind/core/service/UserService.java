@@ -3,6 +3,7 @@ package com.touchmind.core.service;
 
 import com.touchmind.core.mongo.dto.UserWsDto;
 import com.touchmind.core.mongo.model.User;
+import com.touchmind.core.mongo.model.VerificationToken;
 
 public interface UserService {
     void save(UserWsDto userWsDto);
@@ -11,7 +12,7 @@ public interface UserService {
 
     void createVerificationToken(User user, String token);
 
-   // VerificationToken getVerificationToken(String VerificationToken);
+    VerificationToken getVerificationToken(String VerificationToken);
 
     void saveRegisteredUser(User user);
 

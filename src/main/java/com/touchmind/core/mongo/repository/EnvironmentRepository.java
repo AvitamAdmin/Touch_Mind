@@ -13,6 +13,9 @@ public interface EnvironmentRepository extends GenericImportRepository<Environme
 
     List<Environment> findByStatusOrderByIdentifier(Boolean status);
 
+    List<Environment> findBySubsidiaries(String subsidiary);
+
+
     void deleteByRecordId(String recordId);
 
 }

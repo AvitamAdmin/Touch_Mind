@@ -18,4 +18,6 @@ public interface ActionType extends ImplicitActionType {
     String DOM_PARSE_ACTION = "DomParseAction";
     String CALCULATE_ACTION = "Calculate";
     String CRAWLER_ACTION = "TreeAction";
+    String GROUP_ACTION = "GroupAction";
+    String MAPPER_ACTION = "MapperAction";
 }

@@ -1,6 +1,7 @@
 package com.touchmind.core.service.impl;
 
 import com.touchmind.core.mongo.dto.LocatorGroupDto;
+import com.touchmind.core.mongo.dto.TestLocatorDto;
 import com.touchmind.core.mongo.model.LocatorPriority;
 import com.touchmind.core.mongo.model.TestLocator;
 import com.touchmind.core.mongo.model.TestLocatorGroup;
@@ -8,24 +9,15 @@ import com.touchmind.core.mongo.repository.TestLocatorGroupRepository;
 import com.touchmind.core.mongo.repository.TestLocatorRepository;
 import com.touchmind.core.service.LocatorGroupService;
 import com.touchmind.core.service.LocatorService;
-import com.touchmind.form.LocatorForm;
-import com.touchmind.form.LocatorSelectorDto;
+import com.touchmind.core.service.SiteService;
 import com.touchmind.qa.strategies.ActionType;
-import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.bson.types.ObjectId;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
 @Service
 public class LocatorServiceImpl implements LocatorService {
@@ -34,8 +26,8 @@ public class LocatorServiceImpl implements LocatorService {
     private TestLocatorRepository testLocatorRepository;
     @Autowired
     private ModelMapper modelMapper;
-//    @Autowired
-//    private SiteService siteService;
+    @Autowired
+    private SiteService siteService;
 
     @Autowired
     private LocatorGroupService locatorGroupService;
@@ -43,7 +35,7 @@ public class LocatorServiceImpl implements LocatorService {
     @Autowired
     private TestLocatorGroupRepository testLocatorGroupRepository;
 
-    private static void populateExistingData(LocatorForm locator, TestLocator testLocator, TestLocator testLocatorRecord) {
+    private static void populateExistingData(TestLocatorDto locator, TestLocator testLocator, TestLocator testLocatorRecord) {
         testLocator.setId(testLocatorRecord.getId());
         //testLocator.setTestDataType(testLocatorRecord.getTestDataType());
         //testLocator.setTestDataSubtype(testLocatorRecord.getTestDataSubtype());
@@ -58,20 +50,19 @@ public class LocatorServiceImpl implements LocatorService {
     }
 
     @Override
-    public LocatorForm editLocator(String locatorId) {
+    public TestLocatorDto editLocator(String locatorId) {
         TestLocator testLocator = testLocatorRepository.findByRecordId(locatorId);
         if (testLocator != null) {
-            LocatorForm locatorForm = modelMapper.map(testLocator, LocatorForm.class);
-            //updateFormWithSiteMap(locatorForm);
+            TestLocatorDto locatorForm = modelMapper.map(testLocator, TestLocatorDto.class);
             //TODO check if this is correctly fetched
-            locatorForm.setTestLocatorGroups(getLocatorGroups(String.valueOf(locatorForm.getId())));
+            //locatorForm.setTestLocatorGroups(getLocatorGroups(String.valueOf(locatorForm.getId())));
             return locatorForm;
         }
         return null;
     }
 
     @Override
-    public boolean addLocator(LocatorForm locator) {
+    public boolean addLocator(TestLocatorDto locator) {
         TestLocator testLocator = modelMapper.map(locator, TestLocator.class);
         if (locator.getRecordId() != null) {
             TestLocator testLocatorRecord = testLocatorRepository.findByRecordId(locator.getRecordId());
@@ -80,11 +71,12 @@ public class LocatorServiceImpl implements LocatorService {
             }
         }
         testLocatorRepository.save(testLocator);
-        if (StringUtils.isEmpty(testLocator.getRecordId())) {
+        if (StringUtils.isEmpty(String.valueOf(testLocator.getRecordId()))) {
             testLocator.setRecordId(String.valueOf(testLocator.getId().getTimestamp()));
         }
         testLocatorRepository.save(testLocator);
-        List<LocatorGroupDto> testLocatorGroupList = locator.getTestLocatorGroups();
+        List<LocatorGroupDto> testLocatorGroupList = null;
+        //List<LocatorGroupDto> testLocatorGroupList = locator.getTestLocatorGroups();
         if (null != testLocatorGroupList) {
             testLocatorGroupList.forEach(locatorGroup -> {
                 if (locatorGroup != null) {
@@ -92,7 +84,7 @@ public class LocatorServiceImpl implements LocatorService {
                     TestLocatorGroup testLocatorGroup = testLocatorGroupRepository.findByIdentifier(locatorGroup.getIdentifier());
                     List<LocatorPriority> locatorPriorities = testLocatorGroup.getTestLocators();
                     locatorPriorities.forEach(locatorPriority -> {
-                        if (testLocator.getId() != null && testLocator.getId().toString().equals(locatorPriority.getLocators())) {
+                        if (testLocator.getId() != null && testLocator.getId().toString().equals(locatorPriority.getLocatorId())) {
                             locatorPriority.setPriority(locatorGroup.getPriority());
                             locatorPriority.setErrorMsg(locatorGroup.getErrorMsg());
                             locatorPriorityList.add(locatorPriority);
@@ -114,12 +106,8 @@ public class LocatorServiceImpl implements LocatorService {
     }
 
     @Override
-    public TestLocator getLocatorById(ObjectId locatorId) {
-        Optional<TestLocator> testLocator = testLocatorRepository.findById(locatorId);
-        if (testLocator.isPresent()) {
-            return testLocator.get();
-        }
-        return null;
+    public TestLocator getLocatorById(String locatorId) {
+        return testLocatorRepository.findByRecordId(locatorId);
     }
 
     @Override
@@ -138,40 +126,6 @@ public class LocatorServiceImpl implements LocatorService {
     }
 
     @Override
-    public void getFormWithSiteMap(LocatorForm locatorForm) {
-
-    }
-
-//    @Override
-//    public void getFormWithSiteMap(LocatorForm locatorForm) {
-//        List<Site> sites = siteService.findBySubsidiaryAndStatusOrderBySiteId(true);
-//        SortedMap<String, LocatorSelectorDto> locatorSelectorFormSortedMap = new TreeMap<>();
-//        locatorSelectorFormSortedMap.put("default", new LocatorSelectorDto());
-//        sites.stream().forEach(site -> {
-//            locatorSelectorFormSortedMap.put(site.getIdentifier(), new LocatorSelectorDto());
-//        });
-//        locatorForm.setUiLocatorSelector(locatorSelectorFormSortedMap);
-//    }
-//
-//    public void updateFormWithSiteMap(LocatorForm locatorForm) {
-//        List<Site> sites = siteService.findBySubsidiaryAndStatusOrderBySiteId(true);
-//        SortedMap<String, LocatorSelectorDto> siteMapForUiSelector = locatorForm.getUiLocatorSelector();
-//        if (siteMapForUiSelector == null) {
-//            siteMapForUiSelector = new TreeMap<>();
-//        }
-//        SortedMap<String, LocatorSelectorDto> finalSiteMapForUiSelector = siteMapForUiSelector;
-//        sites.stream().forEach(site -> {
-//            LocatorSelectorDto locatorSelectorDto = new LocatorSelectorDto();
-//            String siteId = site.getIdentifier();
-//            if (!finalSiteMapForUiSelector.containsKey(siteId)) {
-//                finalSiteMapForUiSelector.put(siteId, locatorSelectorDto);
-//            }
-//        });
-//        locatorForm.setUiLocatorSelector(siteMapForUiSelector);
-//        //locatorForm.setTestLocatorGroupList(getLocatorGroups());
-//    }
-
-    @Override
     public List<LocatorGroupDto> getLocatorGroups(String locatorIdentifier) {
         List<LocatorGroupDto> locatorGroupsList = new ArrayList<>();
         List<TestLocatorGroup> locatorGroups = locatorGroupService.getLocatorsGroup();
@@ -180,7 +134,7 @@ public class LocatorServiceImpl implements LocatorService {
             if (null != locatorPriorities) {
                 locatorPriorities.stream().forEach(locatorPriority -> {
                     //TODO check if this works
-                    if (CollectionUtils.isNotEmpty(locatorPriority.getLocators()) && locatorPriority.getLocators().equals(locatorIdentifier)) {
+                    if (StringUtils.isNotEmpty(locatorPriority.getLocatorId()) && locatorPriority.getLocatorId().equals(locatorIdentifier)) {
                         LocatorGroupDto locatorGroupDto = modelMapper.map(locatorGroup, LocatorGroupDto.class);
                         locatorGroupDto.setPriority(locatorPriority.getPriority());
                         locatorGroupDto.setErrorMsg(locatorPriority.getErrorMsg());
@@ -202,10 +156,4 @@ public class LocatorServiceImpl implements LocatorService {
         return locatorGroupsWithPriority;
     }
 
-    @Override
-    public void saveLoctor(LocatorForm locatorForm) {
-        TestLocator testLocator = testLocatorRepository.findByRecordId(locatorForm.getRecordId());
-        testLocator.setUiLocatorSelector(locatorForm.getUiLocatorSelector());
-        testLocatorRepository.save(testLocator);
-    }
 }

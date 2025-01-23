@@ -1,7 +1,12 @@
 package com.touchmind.qa.actions;
 
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.model.Media;
 import com.touchmind.core.mongo.model.LocatorPriority;
+import com.touchmind.core.mongo.model.QaLocatorResultReport;
 import com.touchmind.core.mongo.model.TestLocator;
+import com.touchmind.core.mongo.repository.QaLocatorResultReportRepository;
+import com.touchmind.form.LocatorGroupData;
 import com.touchmind.qa.framework.ThreadTestContext;
 import com.touchmind.qa.service.ActionRequest;
 import com.touchmind.qa.service.ActionResult;
@@ -33,6 +38,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static com.touchmind.qa.utils.ReportUtils.reportAction;
+
 @Service(ActionType.WAIT_FOR_VISIBLE_AND_CLICKABLE)
 public class WaitForElementVisibleAndClickableAction implements ElementActionService {
     public static final String WAITING_FOR_THE_FOLLOWING_ELEMENTS = "waiting.for.the.following.elements";
@@ -41,6 +48,8 @@ public class WaitForElementVisibleAndClickableAction implements ElementActionSer
     int webDriverWaitTimeoutSeconds;
     @Autowired
     private SelectorService selectorService;
+    @Autowired
+    private QaLocatorResultReportRepository qaLocatorResultReportRepository;
 
     /**
      * Waits for any of the given elements to meet specified conditions and returns the index of the first one that does.
@@ -100,7 +109,8 @@ public class WaitForElementVisibleAndClickableAction implements ElementActionSer
         ITestContext context = actionRequest.getContext();
         TestLocator testLocator = actionRequest.getTestLocator();
         LocatorPriority locatorPriority = actionRequest.getLocatorPriority();
-
+        LocatorGroupData locatorGroupData = actionRequest.getLocatorGroupData();
+        WebElement element = selectorService.getUiElement(context, testLocator);
         ThreadTestContext threadTestContext = (ThreadTestContext) context.getAttribute(TestDataUtils.Field.THREAD_CONTEXT.toString());
         WebElement webElement = selectorService.getUiElement(context, testLocator);
         if (webElement == null) {
@@ -109,11 +119,15 @@ public class WaitForElementVisibleAndClickableAction implements ElementActionSer
         }
         ActionResult actionResult = new ActionResult();
         if (BooleanUtils.isTrue(locatorPriority.getCheckIfElementPresentOnThePage()) && null == webElement) {
-            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription(), null, Status.FAIL);
+            actionResult.setStepStatus(Status.FAIL);
             return actionResult;
         }
         conditionsBuilder(threadTestContext, webElement);
-        //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription(), null, Status.INFO);
+        actionResult.setStepStatus(Status.INFO);
+        Media media = reportAction(context, element, testLocator.getDescription(), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
+        QaLocatorResultReport qaLocatorResultReport = new QaLocatorResultReport();
+        qaLocatorResultReport = qaLocatorResultReport.getQaLocatorResultReport(actionRequest.getQaTestResultId(), testLocator.getIdentifier(), testLocator.getDescription(), media != null ? media.getPath() : null, Status.INFO, null, ActionType.WAIT_FOR_VISIBLE_AND_CLICKABLE);
+        qaLocatorResultReportRepository.save(qaLocatorResultReport);
         return actionResult;
     }
 

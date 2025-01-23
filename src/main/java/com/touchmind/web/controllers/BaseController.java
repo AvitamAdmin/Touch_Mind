@@ -18,28 +18,24 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
 public class BaseController {
 
+    Logger logger = LoggerFactory.getLogger(BaseController.class);
     @Autowired
     private CommonService commonService;
-
     @Autowired
     private InterfaceConfigRepository interfaceConfigRepository;
 
-    Logger logger = LoggerFactory.getLogger(BaseController.class);
-
     protected List<SearchDto> getConfiguredAttributes(String node) {
-        InterfaceConfig interfaceConfig = interfaceConfigRepository.findByNode(node);
-        return interfaceConfig != null ? interfaceConfig.getAttributes() : Collections.emptyList();
+        if (StringUtils.isNotEmpty(node)) {
+            InterfaceConfig interfaceConfig = interfaceConfigRepository.findByNode(node);
+            return interfaceConfig != null ? interfaceConfig.getAttributes() : Collections.emptyList();
+        }
+        return Collections.emptyList();
     }
 
     protected ExampleMatcher getMatcher(CommonDto commonDto, String condition) {
@@ -89,44 +85,44 @@ public class BaseController {
         return null;
     }
 
-//    protected List<SearchDto> getGroupedParentAndChildAttributes(CommonBasicFields type) {
-//        List<SearchDto> searchDtoList = new ArrayList<>();
-//        String regex = "(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])";
-//        Field[] fields = type.getClass().getDeclaredFields();
-//        Field[] staticFields = type.getClass().getSuperclass().getDeclaredFields();
-//        Field[] basicStaticFields = type.getClass().getSuperclass().getSuperclass().getDeclaredFields();
-//        Arrays.stream(fields).forEach(field -> {
-//            SearchDto searchDto = new SearchDto();
-//            String attrName = field.getName();
-//            String[] labels = attrName.split(regex);
-//            searchDto.setAttribute(attrName);
-//            String label = labels.length > 1 ? labels[0] + " " + labels[1] : labels[0];
-//            searchDto.setLabel(StringUtils.capitalize(label));
-//            searchDto.setDynamicAttr(true);
-//            searchDtoList.add(searchDto);
-//        });
-//        Arrays.stream(staticFields).forEach(field -> {
-//            SearchDto searchDto = new SearchDto();
-//            String attrName = field.getName();
-//            String[] labels = attrName.split(regex);
-//            searchDto.setAttribute(attrName);
-//            String label = labels.length > 1 ? labels[0] + " " + labels[1] : labels[0];
-//            searchDto.setLabel(StringUtils.capitalize(label));
-//            searchDto.setDynamicAttr(false);
-//            searchDtoList.add(searchDto);
-//        });
-//        Arrays.stream(basicStaticFields).forEach(field -> {
-//            SearchDto searchDto = new SearchDto();
-//            String attrName = field.getName();
-//            String[] labels = attrName.split(regex);
-//            searchDto.setAttribute(attrName);
-//            String label = labels.length > 1 ? labels[0] + " " + labels[1] : labels[0];
-//            searchDto.setLabel(StringUtils.capitalize(label));
-//            searchDto.setDynamicAttr(false);
-//            searchDtoList.add(searchDto);
-//        });
-//        return searchDtoList;
-//    }
+    protected List<SearchDto> getGroupedParentAndChildAttributes(CommonBasicFields type) {
+        List<SearchDto> searchDtoList = new ArrayList<>();
+        String regex = "(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])";
+        Field[] fields = type.getClass().getDeclaredFields();
+        Field[] staticFields = type.getClass().getSuperclass().getDeclaredFields();
+        Field[] basicStaticFields = type.getClass().getSuperclass().getSuperclass().getDeclaredFields();
+        Arrays.stream(fields).forEach(field -> {
+            SearchDto searchDto = new SearchDto();
+            String attrName = field.getName();
+            String[] labels = attrName.split(regex);
+            searchDto.setAttribute(attrName);
+            String label = labels.length > 1 ? labels[0] + " " + labels[1] : labels[0];
+            searchDto.setLabel(StringUtils.capitalize(label));
+            searchDto.setDynamicAttr(true);
+            searchDtoList.add(searchDto);
+        });
+        Arrays.stream(staticFields).forEach(field -> {
+            SearchDto searchDto = new SearchDto();
+            String attrName = field.getName();
+            String[] labels = attrName.split(regex);
+            searchDto.setAttribute(attrName);
+            String label = labels.length > 1 ? labels[0] + " " + labels[1] : labels[0];
+            searchDto.setLabel(StringUtils.capitalize(label));
+            searchDto.setDynamicAttr(false);
+            searchDtoList.add(searchDto);
+        });
+        Arrays.stream(basicStaticFields).forEach(field -> {
+            SearchDto searchDto = new SearchDto();
+            String attrName = field.getName();
+            String[] labels = attrName.split(regex);
+            searchDto.setAttribute(attrName);
+            String label = labels.length > 1 ? labels[0] + " " + labels[1] : labels[0];
+            searchDto.setLabel(StringUtils.capitalize(label));
+            searchDto.setDynamicAttr(false);
+            searchDtoList.add(searchDto);
+        });
+        return searchDtoList;
+    }
 
     private boolean isSearchActive(Field[] fields, Object type) {
         AtomicBoolean isSearchActive = new AtomicBoolean(false);

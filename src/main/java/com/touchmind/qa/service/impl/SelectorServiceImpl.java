@@ -33,7 +33,7 @@ public class SelectorServiceImpl implements SelectorService {
         ThreadTestContext threadTestContext = (ThreadTestContext) context.getAttribute(TestDataUtils.Field.THREAD_CONTEXT.toString());
         JSONObject testData = (JSONObject) context.getSuite().getAttribute(TestDataUtils.Field.TESTNG_CONTEXT_PARAM_NAME.toString());
         String itemSite = TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE);
-        logUiElementRetrievalResult(context, locator.getMethodName(), locator.getUiLocatorSelector(itemSite).toString());
+        logUiElementRetrievalResult(context, locator.getMethodName(), String.valueOf(locator.getUiLocatorSelector(itemSite)));
         return getBy(threadTestContext, locator.getUiLocatorSelector(itemSite));
     }
 

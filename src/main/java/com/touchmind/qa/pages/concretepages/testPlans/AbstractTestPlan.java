@@ -1,9 +1,8 @@
 package com.touchmind.qa.pages.concretepages.testPlans;
 
 import com.touchmind.core.SpringContext;
-import com.touchmind.core.mongo.model.LocatorPriority;
-import com.touchmind.core.mongo.model.TestLocatorGroup;
-import com.touchmind.core.mongo.model.TestPlan;
+import com.touchmind.core.mongo.model.*;
+import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.LocatorGroupService;
 import com.touchmind.core.service.TestPlanService;
 import com.touchmind.form.LocatorGroupData;
@@ -13,11 +12,13 @@ import com.touchmind.qa.framework.ThreadTestContext;
 import com.touchmind.qa.service.QualityAssuranceService;
 import com.touchmind.qa.service.SelectorService;
 import com.touchmind.qa.strategies.ActionFactory;
+import com.touchmind.qa.strategies.ActionType;
 import com.touchmind.qa.strategies.UrlFactory;
 import com.touchmind.qa.utils.TestDataUtils;
 import com.touchmind.qa.utils.TestDataUtils.Field;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,13 +29,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.lang.System;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
@@ -51,7 +47,14 @@ public abstract class AbstractTestPlan {
     protected UrlFactory urlFactory;
     protected ActionFactory actionFactory;
     private Environment env;
-   // private MessageResourceService messageResourceService;
+    private CoreService coreService;
+
+    protected static String getUrlServiceType(String subsidiary) {
+        if (subsidiaryUrlServiceMappings.containsKey(subsidiary)) {
+            return subsidiaryUrlServiceMappings.get(subsidiary);
+        }
+        return DEFAULT_URL_SERVICE_TYPE;
+    }
 
     @BeforeSuite
     public void beforeSuite(ITestContext context) {
@@ -70,16 +73,7 @@ public abstract class AbstractTestPlan {
         JSONObject testData = (JSONObject) context.getSuite().getAttribute(TestDataUtils.Field.TESTNG_CONTEXT_PARAM_NAME.toString());
 
         setTestDataJson(testData, context);
-       // initSubsidiaryUrlServiceMapping();
     }
-
-//    private void initSubsidiaryUrlServiceMapping() {
-//        SubsidiaryRepository subsidiaryRepository = SpringContext.getBean(SubsidiaryRepository.class);
-//        List<Subsidiary> subsidiaries = subsidiaryRepository.findByStatusOrderByIdentifier(true);
-//        subsidiaries.stream().forEach(subsidiary -> {
-//            subsidiaryUrlServiceMappings.put(subsidiary.getIdentifier(), DEFAULT_URL_SERVICE_TYPE);
-//        });
-//    }
 
     @BeforeTest
     public void setupData(ITestContext context) {
@@ -151,9 +145,9 @@ public abstract class AbstractTestPlan {
         return actionFactory = getFactory(actionFactory, ActionFactory.class);
     }
 
-//    protected MessageResourceService getMessageResourceService() {
-//        return messageResourceService = getFactory(messageResourceService, MessageResourceService.class);
-//    }
+    protected CoreService getCoreService() {
+        return coreService = getFactory(coreService, CoreService.class);
+    }
 
     protected String getTestPlanId(ITestContext context) {
         JSONObject testData = getTestData(context);
@@ -170,18 +164,41 @@ public abstract class AbstractTestPlan {
         testLocatorGroupList.stream().forEach(groupId -> {
             TestLocatorGroup testLocatorGroup = getTestLocatorGroupService().findLocatorByGroupId(groupId);
             List<LocatorPriority> locators = testLocatorGroup.getTestLocators();
+            List<LocatorPriority> locatorsWithGlobalActions = new ArrayList<>();
+            locatorsWithGlobalActions.add(getLocatorPriorityByMethodName(ActionType.ENVIRONMENT_ACTION));
             LocatorGroupData locatorGroupData = new LocatorGroupData();
             if (locators != null) {
                 locators.sort(Comparator.comparing(LocatorPriority::getPriority));
+                locatorsWithGlobalActions.addAll(locators);
                 locatorGroupData.setGroupId(groupId);
-                locatorGroupData.setLocatorPriorityList(locators);
-             //   locatorGroupData.setConditionGroupList(testLocatorGroup.getConditionGroupList());
-                locatorGroupData.setCheckEppSso(testLocatorGroup.getCheckEppSso());
+                locatorGroupData.setLocatorPriorityList(locatorsWithGlobalActions);
                 locatorGroupData.setTakeAScreenshot(BooleanUtils.isTrue(testLocatorGroup.getTakeAScreenshot()));
                 testPlans.add(locatorGroupData);
             }
         });
-
         return testPlans;
+    }
+
+    private LocatorPriority getLocatorPriorityByMethodName(String name) {
+        LocatorPriority locatorPriority = new LocatorPriority();
+        locatorPriority.setPriority(-1L);
+        locatorPriority.setLocatorId(name);
+        return locatorPriority;
+    }
+
+    public QaResultReport initQaResultReport(ITestContext context, JSONObject testData, Object sku) {
+        QaResultReport qaResultReport = new QaResultReport();
+        Object testName = TestDataUtils.getString(testData, TestDataUtils.Field.TEST_NAME);
+        qaResultReport.setTestCaseId(testName.toString());
+        qaResultReport.setSku(sku.toString());
+        Object cronSessionId = TestDataUtils.getString(testData, TestDataUtils.Field.SESSION_ID);
+        String sessionId = ObjectUtils.isNotEmpty(cronSessionId) ? cronSessionId.toString() : (String) context.getSuite().getAttribute(TestDataUtils.Field.SESSION_ID.toString());
+        qaResultReport.setSessionId(sessionId);
+        qaResultReport.setCreationTime(new Date());
+        qaResultReport.setLastModified(new Date());
+        qaResultReport.setStatus(true);
+        qaResultReport.setCreator(testData.getString("currentUser"));
+        qaResultReport.setQaLocatorResultReports(new ArrayList<>());
+        return qaResultReport;
     }
 }

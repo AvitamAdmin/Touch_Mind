@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
 import java.util.Set;
 import java.util.SortedMap;
 
@@ -22,15 +23,13 @@ public class TestLocator extends CommonFields {
     private String methodName;
     // this should be attachable similar to dom path
     private SortedMap<String, LocatorSelectorDto> uiLocatorSelector;
-//    @Deprecated
-//    // this should be attachable similar to dom path
-//    private String testDataType;
-//    @Deprecated
-//    // this should be attachable similar to dom path
-//    private String testDataSubtype;
     @Deprecated
     //This should not be part of the locator it will attached to the locator
     private Set<String> labels;
+    private String errorMsg;
+    private Boolean encrypted;
+    private String expression;
+    private List<String> subLocators;
 
 
     public LocatorSelectorDto getUiLocatorSelector(String locale) {

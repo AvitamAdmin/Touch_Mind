@@ -13,5 +13,5 @@ import java.util.List;
 @ToString
 public class TestDataSubtypeDto extends CommonDto {
     private String testDataType;
-  //  private List<String> subsidiaries;
+    private List<String> subsidiaries;
 }

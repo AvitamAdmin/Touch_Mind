@@ -21,4 +21,5 @@ public class CronJobDto extends CommonDto {
     private List<String> envProfiles;
     private List<CronTestPlanDto> cronTestPlanDtoList;
     private String campaign;
+    private String emails;
 }

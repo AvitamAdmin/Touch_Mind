@@ -18,7 +18,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class QATestResult extends CommonFields {
     private String sessionId;
-  //  private String subsidiary;
+    private String subsidiary;
     private String user;
     private String testName;
     private String testNameDescription;
@@ -41,4 +41,6 @@ public class QATestResult extends CommonFields {
     private String site;
     //TODO set campaign here
     private String campaign;
+    private String errorType;
+    private String errorMessage;
 }

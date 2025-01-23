@@ -12,7 +12,6 @@ import com.touchmind.core.service.CommonService;
 import com.touchmind.core.service.CoreService;
 import com.touchmind.core.service.cronjob.CronJobService;
 import com.touchmind.core.service.impl.CronService;
-import com.touchmind.form.CronForm;
 import com.touchmind.qa.service.impl.CronDefinition;
 import com.touchmind.qa.service.impl.CronDefinitionBean;
 import com.touchmind.qa.service.impl.CronSchedulingService;
@@ -62,53 +61,28 @@ public class CronJobServiceImpl implements CronJobService {
     }
 
     @Override
-    public CronDefinition getTaskDefinition(Map<String, String> data, String id) {
-        return null;
-    }
-
-    @Override
-    public CronJob save(CronJob cronJob) {
-        return null;
-    }
-
-    @Override
-    public void startCronJob(String id, CronService cronService) {
-
-    }
-
-    @Override
-    public CronJobWsDto handleEdit(CronJobWsDto request) {
-        return null;
-    }
-
-    @Override
     public CronJob findCronJobById(String objectId) {
         CronJob cronJob = cronRepository.findByRecordId(objectId);
         return cronJob;
     }
 
     @Override
-    public CronJob save(CronForm cronForm) {
+    public CronJob save(CronJobDto cronForm) {
         CronJob cronJob = null;
         if (cronForm.getRecordId() != null) {
             cronJob = cronRepository.findByRecordId(cronForm.getRecordId());
             modelMapper.map(cronForm, cronJob);
-          //  cronJob.setCronTestPlanDtoList(removeEmptyPlans(cronJob));
+            cronJob.setCronTestPlanDtoList(removeEmptyPlans(cronJob));
             cronRepository.save(cronJob);
         } else {
             cronJob = modelMapper.map(cronForm, CronJob.class);
             cronJob.setLastModified(new Date());
             cronJob.setModifiedBy(coreService.getCurrentUser().getUsername());
-           // cronJob.setCronTestPlanDtoList(removeEmptyPlans(cronJob));
+            cronJob.setCronTestPlanDtoList(removeEmptyPlans(cronJob));
             cronJob.setJobStatus(ServerStatus.STOPPED.status);
             cronRepository.save(cronJob);
         }
         return cronJob;
-    }
-
-    @Override
-    public void deleteCronJobById(String id) {
-
     }
 
     @Override
@@ -122,86 +96,88 @@ public class CronJobServiceImpl implements CronJobService {
 
     private List<CronTestPlanDto> removeEmptyPlans(CronJob cronJob) {
         List<CronTestPlanDto> correctPlans = new ArrayList<>();
-//        cronJob.getCronTestPlanDtoList().forEach(cronTestPlanForm -> {
-//            if (StringUtils.isNotEmpty(cronTestPlanForm.getTestPlan())) {
-//                correctPlans.add(cronTestPlanForm);
-//            }
-//        });
-//        return correctPlans;
-//    }
-
-//    @Override
-//    public void deleteCronJobById(String id) {
-//        cronSchedulingService.killOldJob(id);
-//        logger.debug("==QA deleteCronJobById " + id + " started");
-//        cronRepository.deleteByRecordId(id);
-//        logger.debug("==QA deleteCronJobById " + id + " deleted");
-//    }
-
-//    @Override
-//    public CronJob save(CronJob cronJob) {
-//        return cronRepository.save(cronJob);
-//    }
-
-//    @Override
-//    public CronDefinition getTaskDefinition(Map<String, String> data, String id) {
-//        CronDefinition cronDefinition = new CronDefinition();
-//        cronDefinition.setCronExpression(ZERO + data.get(CRON_EXPRESSION));
-//        cronDefinition.setEmail(data.get(EMAILS));
-//        cronDefinition.setTitle(data.get(CRON_ID));
-//        cronDefinition.setId(id);
-//        cronDefinition.setJobTime(df.format(new Date()));
-//        cronDefinition.setStatus(ServerStatus.SCHEDULED.status);
-//        cronDefinition.setData(data);
-//        return cronDefinition;
-//    }
-
-//    @Override
-//    public void startCronJob(String id, CronService qualityAssuranceService) {
-//        cronSchedulingService.killOldJob(id);
-//        CronJob cronJob = findCronJobById(id);
-//        CronDefinition cronDefinition = getTaskDefinition(commonService.toMap(cronJob), id);
-//        CronDefinitionBean taskDefinitionBean = new CronDefinitionBean();
-//        taskDefinitionBean.setCronService(qualityAssuranceService);
-//        cronDefinition.setReportUrl(cronJob.getSiteUrl() + REPORTS_PATH);
-//        taskDefinitionBean.setCronDefinition(cronDefinition);
-//        logger.debug("==QA startCronJob " + id + " : " + cronJob.getIdentifier() + " : " + cronJob.getCronExpression() + " scheduling");
-//        cronSchedulingService.scheduleATask(taskDefinitionBean);
-//        logger.debug("==QA startCronJob " + id + " : " + cronJob.getIdentifier() + " : " + cronJob.getCronExpression() + ServerStatus.SCHEDULED.status);
-//        cronJob.setJobStatus(ServerStatus.SCHEDULED.status);
-//        cronRepository.save(cronJob);
-//        logger.debug("==QA startCronJob " + id + " : " + cronJob.getIdentifier() + " : " + cronJob.getCronExpression() + " status changed");
-//    }
-
-//    @Override
-//    public CronJobWsDto handleEdit(CronJobWsDto request) {
-//        CronJobWsDto cronJobWsDto = new CronJobWsDto();
-//        CronJob requestData = null;
-//        List<CronJobDto> cronJobs = request.getCronJobs();
-//        List<CronJob> cronJobList = new ArrayList<>();
-//        for (CronJobDto cronJob : cronJobs) {
-//            if (cronJob.getRecordId() != null) {
-//                requestData = cronRepository.findByRecordId(cronJob.getRecordId());
-//                modelMapper.map(cronJob, requestData);
-//            } else {
-//                if (baseService.validateIdentifier(EntityConstants.CRONJOB, cronJob.getIdentifier()) != null) {
-//                    request.setSuccess(false);
-//                    request.setMessage("Identifier already present");
-//                    return request;
-//                }
-//                requestData = modelMapper.map(cronJob, CronJob.class);
-//            }
-//            baseService.populateCommonData(requestData);
-//            cronRepository.save(requestData);
-//            if (cronJob.getRecordId() == null) {
-//                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
-//            }
-//            cronRepository.save(requestData);
-//            cronJobList.add(requestData);
-//            cronJobWsDto.setBaseUrl(ADMIN_QA_CRONJOB);
-//        }
-//        cronJobWsDto.setCronJobs(modelMapper.map(cronJobList, List.class));
-//        return cronJobWsDto;
-//    }
+        cronJob.getCronTestPlanDtoList().forEach(cronTestPlanForm -> {
+            if (StringUtils.isNotEmpty(cronTestPlanForm.getTestPlan())) {
+                correctPlans.add(cronTestPlanForm);
+            }
+        });
         return correctPlans;
-    }}
+    }
+
+    @Override
+    public void deleteCronJobById(String id) {
+        cronSchedulingService.killOldJob(id);
+        logger.debug("==QA deleteCronJobById " + id + " started");
+        cronRepository.deleteByRecordId(id);
+        logger.debug("==QA deleteCronJobById " + id + " deleted");
+    }
+
+    @Override
+    public CronJob save(CronJob cronJob) {
+        return cronRepository.save(cronJob);
+    }
+
+    @Override
+    public CronDefinition getTaskDefinition(Map<String, String> data, String id) {
+        CronDefinition cronDefinition = new CronDefinition();
+        cronDefinition.setCronExpression(ZERO + data.get(CRON_EXPRESSION));
+        cronDefinition.setEmail(data.get(EMAILS));
+        cronDefinition.setTitle(data.get(CRON_ID));
+        cronDefinition.setId(id);
+        cronDefinition.setJobTime(df.format(new Date()));
+        cronDefinition.setStatus(ServerStatus.SCHEDULED.status);
+        cronDefinition.setData(data);
+        return cronDefinition;
+    }
+
+    @Override
+    public void startCronJob(String id, CronService qualityAssuranceService) {
+        cronSchedulingService.killOldJob(id);
+        CronJob cronJob = findCronJobById(id);
+        if (cronJob != null) {
+            CronDefinition cronDefinition = getTaskDefinition(commonService.toMap(cronJob), id);
+            CronDefinitionBean taskDefinitionBean = new CronDefinitionBean();
+            taskDefinitionBean.setCronService(qualityAssuranceService);
+            cronDefinition.setReportUrl(cronJob.getSiteUrl() + REPORTS_PATH);
+            taskDefinitionBean.setCronDefinition(cronDefinition);
+            logger.debug("==QA startCronJob " + id + " : " + cronJob.getIdentifier() + " : " + cronJob.getCronExpression() + " scheduling");
+            cronSchedulingService.scheduleATask(taskDefinitionBean);
+            logger.debug("==QA startCronJob " + id + " : " + cronJob.getIdentifier() + " : " + cronJob.getCronExpression() + ServerStatus.SCHEDULED.status);
+            cronJob.setJobStatus(ServerStatus.SCHEDULED.status);
+            cronRepository.save(cronJob);
+            logger.debug("==QA startCronJob " + id + " : " + cronJob.getIdentifier() + " : " + cronJob.getCronExpression() + " status changed");
+        }
+        logger.debug("==QA startCronJob - Cronjob not found");
+    }
+
+    @Override
+    public CronJobWsDto handleEdit(CronJobWsDto request) {
+        CronJobWsDto cronJobWsDto = new CronJobWsDto();
+        CronJob requestData = null;
+        List<CronJobDto> cronJobs = request.getCronJobs();
+        List<CronJob> cronJobList = new ArrayList<>();
+        for (CronJobDto cronJob : cronJobs) {
+            if (cronJob.getRecordId() != null) {
+                requestData = cronRepository.findByRecordId(cronJob.getRecordId());
+                modelMapper.map(cronJob, requestData);
+            } else {
+                if (baseService.validateIdentifier(EntityConstants.CRONJOB, cronJob.getIdentifier()) != null) {
+                    request.setSuccess(false);
+                    request.setMessage("Identifier already present");
+                    return request;
+                }
+                requestData = modelMapper.map(cronJob, CronJob.class);
+            }
+            baseService.populateCommonData(requestData);
+            cronRepository.save(requestData);
+            if (cronJob.getRecordId() == null) {
+                requestData.setRecordId(String.valueOf(requestData.getId().getTimestamp()));
+            }
+            cronRepository.save(requestData);
+            cronJobList.add(requestData);
+            cronJobWsDto.setBaseUrl(ADMIN_QA_CRONJOB);
+        }
+        cronJobWsDto.setCronJobs(modelMapper.map(cronJobList, List.class));
+        return cronJobWsDto;
+    }
+}

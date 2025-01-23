@@ -1,18 +1,25 @@
 package com.touchmind.web.controllers.admin.qa;
 
+import com.touchmind.core.mongo.dto.SavedQueryDto;
+import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.dto.TestLocatorDto;
 import com.touchmind.core.mongo.dto.TestLocatorWsDto;
 import com.touchmind.core.mongo.model.Site;
 import com.touchmind.core.mongo.model.TestLocator;
+import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.SiteRepository;
 import com.touchmind.core.mongo.repository.TestLocatorRepository;
+import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.LocatorService;
 import com.touchmind.core.service.TestLocatorService;
-import com.touchmind.form.LocatorForm;
+import com.touchmind.fileimport.service.FileExportService;
+import com.touchmind.fileimport.service.FileImportService;
+import com.touchmind.fileimport.strategies.EntityType;
 import com.touchmind.form.LocatorSelectorDto;
 import com.touchmind.qa.service.impl.SelectorServiceImpl;
 import com.touchmind.web.controllers.BaseController;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -22,15 +29,11 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.SortedMap;
@@ -52,17 +55,19 @@ public class TestLocatorController extends BaseController {
     @Autowired
     private SiteRepository siteRepository;
 
-//    @Autowired
-//    private FileImportService fileImportService;
-//
-//    @Autowired
-//    private FileExportService fileExportService;//
+    @Autowired
+    private FileImportService fileImportService;
+
+    @Autowired
+    private FileExportService fileExportService;
 
     @Autowired
     private ModelMapper modelMapper;
 
     @Autowired
     private TestLocatorService testLocatorService;
+    @Autowired
+    private BaseService baseService;
 
     @PostMapping
     @ResponseBody
@@ -77,14 +82,21 @@ public class TestLocatorController extends BaseController {
         testLocatorWsDto.setTotalPages(page.getTotalPages());
         testLocatorWsDto.setTotalRecords(page.getTotalElements());
         testLocatorWsDto.setAttributeList(getConfiguredAttributes(testLocatorWsDto.getNode()));
+        testLocatorWsDto.setSavedQuery(baseService.getSavedQuery(EntityConstants.TEST_LOCATOR));
         return testLocatorWsDto;
     }
 
-//    @GetMapping("/getAdvancedSearch")
-//    @ResponseBody
-//    public List<SearchDto> getSearchAttributes() {
-//        return getGroupedParentAndChildAttributes(new TestLocator());
-//    }
+    @GetMapping("/getAdvancedSearch")
+    @ResponseBody
+    public List<SearchDto> getSearchAttributes() {
+        return getGroupedParentAndChildAttributes(new TestLocator());
+    }
+
+    @PostMapping("/saveSearchQuery")
+    @ResponseBody
+    public String savedQuery(@RequestBody SavedQueryDto savedQueryDto) {
+        return baseService.saveSearchQuery(savedQueryDto, EntityConstants.TEST_LOCATOR);
+    }
 
     @GetMapping("/get")
     public TestLocatorWsDto getTestLocators() {
@@ -110,6 +122,11 @@ public class TestLocatorController extends BaseController {
             }
             testLocatorRepository.save(locator);
         }
+    }
+
+    @RequestMapping(value = "/getByRecordId", method = RequestMethod.GET)
+    public @ResponseBody TestLocatorDto getByRecordId(@RequestParam("recordId") String recordId) {
+        return modelMapper.map(testLocatorRepository.findByRecordId(recordId), TestLocatorDto.class);
     }
 
     @GetMapping("/add")
@@ -158,39 +175,39 @@ public class TestLocatorController extends BaseController {
 
     @RequestMapping(value = "/copyForm/{id}", method = RequestMethod.GET)
     public @ResponseBody String copyLocator(@PathVariable("id") String id) {
-        LocatorForm locatorForm = locatorService.editLocator(id);
-        locatorForm.setIdentifier(locatorForm.getIdentifier() + "_" + ObjectId.get() + "_COPY");
-        locatorForm.setRecordId(null);
-        locatorService.addLocator(locatorForm);
+        TestLocatorDto testLocatorDto = locatorService.editLocator(id);
+        testLocatorDto.setIdentifier(testLocatorDto.getIdentifier() + "_" + ObjectId.get() + "_COPY");
+        testLocatorDto.setRecordId(null);
+        locatorService.addLocator(testLocatorDto);
         return "success";
     }
-//
-//    @PostMapping("/upload")
-//    @ResponseBody
-//    public TestLocatorWsDto uploadFile(@RequestBody MultipartFile file) {
-//        TestLocatorWsDto testLocatorWsDto = new TestLocatorWsDto();
-//        try {
-//            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.TEST_LOCATOR, EntityConstants.TEST_LOCATOR, testLocatorWsDto);
-//            if (StringUtils.isEmpty(testLocatorWsDto.getMessage())) {
-//                testLocatorWsDto.setMessage("File uploaded successfully!!");
-//            }
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//        }
-//        return testLocatorWsDto;
-//    }
-//
-//    @GetMapping("/export")
-//    @ResponseBody
-//    public TestLocatorWsDto uploadFile() {
-//        TestLocatorWsDto testLocatorWsDto = new TestLocatorWsDto();
-//        try {
-//            testLocatorWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.TEST_LOCATOR));
-//            return testLocatorWsDto;
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//            return null;
-//        }
-//    }
+
+    @PostMapping("/upload")
+    @ResponseBody
+    public TestLocatorWsDto uploadFile(@RequestBody MultipartFile file) {
+        TestLocatorWsDto testLocatorWsDto = new TestLocatorWsDto();
+        try {
+            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.TEST_LOCATOR, EntityConstants.TEST_LOCATOR, testLocatorWsDto);
+            if (StringUtils.isEmpty(testLocatorWsDto.getMessage())) {
+                testLocatorWsDto.setMessage("File uploaded successfully!!");
+            }
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+        return testLocatorWsDto;
+    }
+
+    @GetMapping("/export")
+    @ResponseBody
+    public TestLocatorWsDto uploadFile() {
+        TestLocatorWsDto testLocatorWsDto = new TestLocatorWsDto();
+        try {
+            testLocatorWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.TEST_LOCATOR));
+            return testLocatorWsDto;
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+            return null;
+        }
+    }
 }
 

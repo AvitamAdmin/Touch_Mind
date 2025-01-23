@@ -4,6 +4,7 @@ import com.touchmind.core.mongo.dto.TestLocatorGroupDto;
 import com.touchmind.core.mongo.dto.TestLocatorGroupWsDto;
 import com.touchmind.core.mongo.model.TestLocatorGroup;
 import com.touchmind.core.mongo.repository.EntityConstants;
+import com.touchmind.core.mongo.repository.LocatorGroupRepository;
 import com.touchmind.core.mongo.repository.TestLocatorGroupRepository;
 import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.CoreService;
@@ -29,7 +30,7 @@ public class TestLocatorGroupServiceImpl implements TestLocatorGroupService {
     @Autowired
     private BaseService baseService;
     @Autowired
-    private TestLocatorGroupRepository testlocatorGroupRepository;
+    private LocatorGroupRepository locatorGroupRepository;
 
     @Override
     public TestLocatorGroupWsDto handleEdit(TestLocatorGroupWsDto request) {

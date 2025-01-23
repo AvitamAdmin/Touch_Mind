@@ -1,6 +1,10 @@
 package com.touchmind.qa.actions;
 
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.model.Media;
+import com.touchmind.core.mongo.model.QaLocatorResultReport;
 import com.touchmind.core.mongo.model.TestLocator;
+import com.touchmind.core.mongo.repository.QaLocatorResultReportRepository;
 import com.touchmind.form.LocatorGroupData;
 import com.touchmind.form.LocatorSelectorDto;
 import com.touchmind.qa.framework.ThreadTestContext;
@@ -10,7 +14,6 @@ import com.touchmind.qa.service.ElementActionService;
 import com.touchmind.qa.service.SelectorService;
 import com.touchmind.qa.strategies.ActionType;
 import com.touchmind.qa.utils.ReportUtils;
-import static com.touchmind.qa.utils.ReportUtils.reportAction;
 import com.touchmind.qa.utils.TestDataUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
@@ -22,6 +25,8 @@ import org.testng.ITestContext;
 
 import java.util.Map;
 
+import static com.touchmind.qa.utils.ReportUtils.reportAction;
+
 @Service(ActionType.CASCADE_TEST_PLAN_ACTION)
 public class CascadeAction implements ElementActionService {
 
@@ -29,6 +34,8 @@ public class CascadeAction implements ElementActionService {
     public static final String J_QUERY_ARGUMENTS_0_VAL = "return jQuery(arguments[0]).val()";
     @Autowired
     private SelectorService selectorService;
+    @Autowired
+    private QaLocatorResultReportRepository qaLocatorResultReportRepository;
 
     public ActionResult performAction(ActionRequest actionRequest) {
         ITestContext context = actionRequest.getContext();
@@ -40,13 +47,13 @@ public class CascadeAction implements ElementActionService {
         String itemSite = TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE);
         ActionResult actionResult = new ActionResult();
         if (element == null) {
-            //actionResult.setActionResult(testLocator.getIdentifier(), testLocator.getDescription(), null, Status.FAIL);
+            actionResult.setStepStatus(Status.FAIL);
             return actionResult;
         }
         reportAction(context, element, testLocator.getDescription(), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
         LocatorSelectorDto locatorSelectorDto = testLocator.getUiLocatorSelector(itemSite);
-        String locator = locatorSelectorDto != null ? locatorSelectorDto.getInputData():"";
-        
+        String locator = locatorSelectorDto != null ? locatorSelectorDto.getInputData() : "";
+
         Map<String, String> mapData = threadTestContext.getData();
         String elementTxt = element.getAttribute(INNER_HTML);
         String data = StringUtils.isNotEmpty(elementTxt) ? elementTxt : element.getText();
@@ -57,7 +64,11 @@ public class CascadeAction implements ElementActionService {
         mapData.put(locator, data);
         testData.put(testLocator.getIdentifier(), data);
         ReportUtils.info(context, "Data captured for capture action: " + data, testLocator.getIdentifier(), false);
-        //actionResult.setActionResult(testLocator.getIdentifier(), data, null, Status.INFO);
+        actionResult.setStepStatus(Status.INFO);
+        Media media = reportAction(context, element, testLocator.getDescription(), testLocator.getIdentifier(), locatorGroupData.isTakeAScreenshot());
+        QaLocatorResultReport qaLocatorResultReport = new QaLocatorResultReport();
+        qaLocatorResultReport = qaLocatorResultReport.getQaLocatorResultReport(actionRequest.getQaTestResultId(), testLocator.getIdentifier(), testLocator.getDescription(), media != null ? media.getPath() : null, Status.INFO, null, ActionType.CASCADE_TEST_PLAN_ACTION);
+        qaLocatorResultReportRepository.save(qaLocatorResultReport);
         return actionResult;
     }
 }

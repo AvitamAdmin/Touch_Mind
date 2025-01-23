@@ -1,12 +1,20 @@
 package com.touchmind.web.controllers;
 
+import com.touchmind.core.mongo.dto.SavedQueryDto;
+import com.touchmind.core.mongo.dto.SearchDto;
 import com.touchmind.core.mongo.dto.UserDto;
 import com.touchmind.core.mongo.dto.UserWsDto;
 import com.touchmind.core.mongo.model.Role;
 import com.touchmind.core.mongo.model.User;
+import com.touchmind.core.mongo.repository.EntityConstants;
 import com.touchmind.core.mongo.repository.UserRepository;
+import com.touchmind.core.service.BaseService;
 import com.touchmind.core.service.UserService;
+import com.touchmind.fileimport.service.FileExportService;
+import com.touchmind.fileimport.service.FileImportService;
+import com.touchmind.fileimport.strategies.EntityType;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,13 +23,11 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -37,7 +43,14 @@ public class AdminController extends BaseController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private BaseService baseService;
 
+    @Autowired
+    private FileImportService fileImportService;
+
+    @Autowired
+    private FileExportService fileExportService;
 
     @Autowired
     private UserService userService;
@@ -55,39 +68,46 @@ public class AdminController extends BaseController {
         userWsDto.setUsers(modelMapper.map(page.getContent(), List.class));
         userWsDto.setTotalPages(page.getTotalPages());
         userWsDto.setTotalRecords(page.getTotalElements());
-       // userWsDto.setAttributeList(getConfiguredAttributes(userWsDto.getNode()));
+        userWsDto.setAttributeList(getConfiguredAttributes(userWsDto.getNode()));
+        userWsDto.setSavedQuery(baseService.getSavedQuery(EntityConstants.USER));
         userWsDto.setBaseUrl(ADMIN_USER);
         return userWsDto;
     }
 
-//    @GetMapping("/user/getAdvancedSearch")
-//    @ResponseBody
-//    public List<SearchDto> getSearchAttributes() {
-//        return getGroupedParentAndChildAttributes(new User());
-//    }
+    @GetMapping("/user/getAdvancedSearch")
+    @ResponseBody
+    public List<SearchDto> getSearchAttributes() {
+        return getGroupedParentAndChildAttributes(new User());
+    }
+
+    @PostMapping("/saveSearchQuery")
+    @ResponseBody
+    public String savedQuery(@RequestBody SavedQueryDto savedQueryDto) {
+        return baseService.saveSearchQuery(savedQueryDto, EntityConstants.USER);
+    }
 
 
-//    @PostMapping("/user/get")
-//    @ResponseBody
-//    public UserDto getUser(@RequestBody UserDto userDto) {
-//        User user = userRepository.findByUsername(userDto.getUsername());
-//        Set<String> roles = new HashSet<>();
-//        Set<String> subs = new HashSet<>();
-//        UserDto userDto1 = modelMapper.map(user, UserDto.class);
-//        if (CollectionUtils.isNotEmpty(user.getRoles())) {
-//            for (Role role : user.getRoles()) {
-//                roles.add(role.getRecordId());
-//            }
-//        }
-//        if (CollectionUtils.isNotEmpty(user.getSubsidiaries())) {
-//            for (Subsidiary subsidiary : user.getSubsidiaries()) {
-//                subs.add(subsidiary.getRecordId());
-//            }
-//        }
-//        userDto1.setSubsidiaries(subs);
-//        userDto1.setRoles(roles);
-//        return userDto1;
-//    }
+    @PostMapping("/user/get")
+    @ResponseBody
+    public UserDto getUser(@RequestBody UserDto userDto) {
+        User user = userRepository.findByUsername(userDto.getUsername());
+        boolean isAdmin = false;
+        Set<String> roles = new HashSet<>();
+        Set<String> subs = new HashSet<>();
+        UserDto userDto1 = modelMapper.map(user, UserDto.class);
+        if (CollectionUtils.isNotEmpty(user.getRoles())) {
+            for (Role role : user.getRoles()) {
+                if (role.getIdentifier().equalsIgnoreCase("ROLE_ADMIN")) {
+                    isAdmin = true;
+                }
+                roles.add(role.getRecordId());
+            }
+        }
+        userDto1.setAdmin(isAdmin);
+        userDto1.setSubsidiaries(subs);
+        userDto1.setRoles(roles);
+        return userDto1;
+    }
 
     @PostMapping("/user/getedits")
     @ResponseBody
@@ -105,13 +125,8 @@ public class AdminController extends BaseController {
                     roles.add(role.getRecordId());
                 }
             }
-//            if (CollectionUtils.isNotEmpty(user.getSubsidiaries())) {
-//                for (Subsidiary subsidiary : user.getSubsidiaries()) {
-//                    subs.add(subsidiary.getRecordId());
-//                }
-//            }
             userDto1.setRoles(roles);
-          //  userDto1.setSubsidiaries(subs);
+            userDto1.setSubsidiaries(subs);
             userDtos.add(userDto1);
         }
         userWsDto.setUsers(userDtos);
@@ -144,34 +159,34 @@ public class AdminController extends BaseController {
             userRepository.deleteByRecordId(userDto.getRecordId());
         }
         userWsDto.setBaseUrl(ADMIN_USER);
-        userWsDto.setMessage("Deleted Successfully");
+        userWsDto.setMessage("Data deleted successfully!!");
         return userWsDto;
     }
 
-//    @PostMapping("/user/upload")
-//    public UserWsDto uploadFile(@RequestBody MultipartFile file) {
-//        UserWsDto userWsDto = new UserWsDto();
-//        try {
-//            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.USER, EntityConstants.USER, userWsDto);
-//            if (StringUtils.isEmpty(userWsDto.getMessage())) {
-//                userWsDto.setMessage("File uploaded successfully!!");
-//            }
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//        }
-//        return userWsDto;
-//    }
-//
-//    @GetMapping("/user/export")
-//    @ResponseBody
-//    public UserWsDto uploadFile() {
-//        UserWsDto userWsDto = new UserWsDto();
-//        try {
-//            userWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.USER));
-//            return userWsDto;
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//            return null;
-//        }
-//    }
+    @PostMapping("/user/upload")
+    public UserWsDto uploadFile(@RequestBody MultipartFile file) {
+        UserWsDto userWsDto = new UserWsDto();
+        try {
+            fileImportService.importFile(file, EntityType.ENTITY_IMPORT_ACTION, EntityConstants.USER, EntityConstants.USER, userWsDto);
+            if (StringUtils.isEmpty(userWsDto.getMessage())) {
+                userWsDto.setMessage("File uploaded successfully!!");
+            }
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+        return userWsDto;
+    }
+
+    @GetMapping("/user/export")
+    @ResponseBody
+    public UserWsDto uploadFile() {
+        UserWsDto userWsDto = new UserWsDto();
+        try {
+            userWsDto.setFileName(File.separator + "impex" + fileExportService.exportEntity(EntityConstants.USER));
+            return userWsDto;
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+            return null;
+        }
+    }
 }

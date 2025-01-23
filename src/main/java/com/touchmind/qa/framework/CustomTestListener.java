@@ -1,6 +1,5 @@
 package com.touchmind.qa.framework;
 
-import static com.touchmind.qa.utils.QaConstants.CURRENT_TEST_METHOD;
 import com.touchmind.qa.utils.ReportUtils;
 import com.touchmind.qa.utils.TestDataUtils;
 import com.touchmind.utils.BeanUtils;
@@ -11,6 +10,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.SkipException;
+
+import static com.touchmind.qa.utils.QaConstants.CURRENT_TEST_METHOD;
 
 public class CustomTestListener implements ITestListener {
     public static final String EXECUTING_PAGE_S_AND_METHOD_S = "executing.page.s.and.method.s";

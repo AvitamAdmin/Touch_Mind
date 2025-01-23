@@ -1,5 +1,6 @@
 package com.touchmind.core.mongo.dto;
 
+import com.touchmind.core.mongo.model.LocatorPriority;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,10 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class TestLocatorGroupDto extends CommonDto {
-    private List<LocatorPriorityDto> testLocators;
-  //  private String subsidiary;
-   // private List<ConditionGroupDto> conditionGroupList;
-    private Boolean checkEppSso;
+    private List<LocatorPriority> testLocators;
     private Boolean published;
     private Boolean takeAScreenshot;
 }
