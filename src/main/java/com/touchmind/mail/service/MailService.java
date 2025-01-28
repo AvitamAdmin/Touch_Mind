@@ -280,8 +280,7 @@ public class MailService {
             context.put(key, value);
         });
         String serverUrl = env.getProperty("server.url");
-        String subsidiary = data.get("subsidiary");
-        List<QATestResult> qaTestResult = qaRepository.findBySessionIdAndSubsidiaryAndTestName(sessionId, subsidiary, testPlan);
+        List<QATestResult> qaTestResult = qaRepository.findBySessionIdAndTestName(sessionId, testPlan);
         //eMail.setAttachment(createAttachment(qaTestResult));
         context.put(TestDataUtils.Field.SERVER_URL.toString(), serverUrl);
         context.put("qaTestResults", qaTestResult);
