@@ -10,7 +10,6 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class LocatorPriority {
-    private Long priority;
     private String locatorId;
     private Boolean enterKey;
     private Boolean waitForElementVisibleAndClickable;

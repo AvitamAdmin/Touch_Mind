@@ -12,4 +12,5 @@ import org.bson.types.ObjectId;
 public class ActionResult {
     private Status stepStatus;
     private ObjectId qaTestResultId;
+    private String message;
 }

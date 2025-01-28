@@ -57,10 +57,7 @@ public class ActionFactory extends AbstractTestPlan {
         return actionService;
     }
 
-    public ActionResult performAction(ActionRequest actionRequest) {
-        //TODO this test should apply to all groups in test case
-        //TODO check if the group id applicable globally if yes ? test the group if it is exist in failed list ? if yes create report return without further action
-        //TODO if no compare session and group exist in   Failed list ? if  yes create report return without further action
+    public ActionResult performAction(ActionRequest actionRequest) throws Exception {
         ITestContext context = actionRequest.getContext();
         JSONObject testData = getTestData(context);
         testData.put(TestDataUtils.Field.SKU.toString(), actionRequest.getSku().toString());
@@ -68,11 +65,11 @@ public class ActionFactory extends AbstractTestPlan {
         ThreadTestContext threadTestContext = (ThreadTestContext) context.getAttribute(TestDataUtils.Field.THREAD_CONTEXT.toString());
         boolean isDebug = BooleanUtils.toBoolean(TestDataUtils.getString(testData, TestDataUtils.Field.IS_DEBUG));
         ReportUtils.logMessage(context, isDebug, "**===** Test data : " + testData);
-        locatorsPriorities.forEach(locatorPriority -> {
+        for (LocatorPriority locatorPriority : locatorsPriorities) {
+            ActionResult actionResult = null;
             try {
                 actionRequest.setLocatorPriority(locatorPriority);
-                ActionResult actionResult = performSelectorAction(actionRequest);
-                assert actionResult != null;
+                actionResult = performSelectorAction(actionRequest);
                 if (actionResult.getStepStatus().equals(Status.FAIL)) {
                     throw new Exception();
                 }
@@ -86,7 +83,12 @@ public class ActionFactory extends AbstractTestPlan {
                 try {
                     if (locatorPriority.getCheckIfElementPresentOnThePage() == null || BooleanUtils.isNotTrue(locatorPriority.getCheckIfElementPresentOnThePage())) {
                         ReportUtils.logMessage(context, isDebug, "=== Wating: " + webDriverWaitTimeoutSeconds);
-                        performSelectorAction(actionRequest);
+                        actionResult = performSelectorAction(actionRequest);
+                        assert actionResult != null;
+                        if (actionResult.getStepStatus().equals(Status.FAIL)) {
+                            ReportUtils.fail(context, actionResult.getMessage(), actionRequest.getTestLocator().getIdentifier(), true);
+                            throw new Exception(actionResult.getMessage());
+                        }
                     }
                 } catch (Exception retryExp) {
                     ReportUtils.logMessage(context, isDebug, "=== Giving up: " + retryExp.getMessage());
@@ -98,21 +100,22 @@ public class ActionFactory extends AbstractTestPlan {
                     throw retryExp;
                 }
             }
-        });
-        return null;
+        }
+        ActionResult actionResult = new ActionResult();
+        actionResult.setStepStatus(Status.PASS);
+        return actionResult;
     }
 
     private ActionResult performSelectorAction(ActionRequest actionRequest) {
         LocatorPriority locatorPriority = actionRequest.getLocatorPriority();
-        Long priority = locatorPriority.getPriority();
         String methodName = locatorPriority.getLocatorId();
         TestLocator testLocator = null;
-        if (priority >= 0) {
-            if (StringUtils.isNotEmpty(locatorPriority.getGroupId())) {
-                methodName = ActionType.GROUP_ACTION;
-                actionRequest.setActionServiceMap(actionServiceMap);
-            } else {
-                testLocator = BeanUtils.getLocatorService().getLocatorById(methodName);
+        if (StringUtils.isNotEmpty(locatorPriority.getGroupId())) {
+            methodName = ActionType.GROUP_ACTION;
+            actionRequest.setActionServiceMap(actionServiceMap);
+        } else {
+            testLocator = BeanUtils.getLocatorService().getLocatorById(methodName);
+            if (testLocator != null) {
                 methodName = testLocator.getMethodName();
             }
         }

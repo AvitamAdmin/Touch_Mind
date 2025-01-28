@@ -48,6 +48,7 @@ public class CoreTest extends AbstractTestPlan {
     @Test(dataProvider = "inputSkus")
     public void processLocators(ITestContext context, Object[] skus) throws MalformedURLException {
         JSONObject testData = (JSONObject) context.getSuite().getAttribute(TestDataUtils.Field.TESTNG_CONTEXT_PARAM_NAME.toString());
+        getQualityAssuranceService().populateTestData(testData);
         Object cronSessionId = TestDataUtils.getString(testData, TestDataUtils.Field.SESSION_ID);
         String sessionId = ObjectUtils.isNotEmpty(cronSessionId) ? cronSessionId.toString() : (String) context.getSuite().getAttribute(TestDataUtils.Field.SESSION_ID.toString());
         LocatorGroupService locatorGroupService = SpringContext.getBean(LocatorGroupService.class);
@@ -69,8 +70,13 @@ public class CoreTest extends AbstractTestPlan {
             String testPlanId = testData.getString(TestDataUtils.Field.TEST_PLAN.toString());
             TestPlan testPlan = testPlanService.getTestPlanByRecordId(testPlanId);
             List<QATestResult> testResultList = BeanUtils.getQaRepository().findBySessionIdAndLocatorGroupIdentifierAndTestName(sessionId, locatorGroupData.getIdentifier(), testPlan.getIdentifier());
-            QATestResult qaTestResult = CollectionUtils.isNotEmpty(testResultList) ? testResultList.stream().findFirst().get() : new QATestResult();
-            BeanUtils.getQaRepository().save(qaTestResult);
+            QATestResult qaTestResult;
+            if (CollectionUtils.isNotEmpty(testResultList)) {
+                qaTestResult = testResultList.stream().findFirst().get();
+                BeanUtils.getQaRepository().save(qaTestResult);
+            } else {
+                qaTestResult = null;
+            }
             TestLocatorGroup testLocatorGroup = locatorGroupService.findLocatorByGroupId(locatorGroupData.getGroupId());
             String reportFileName = getReportFileName(testLocatorGroup.getIdentifier(), sessionId);
             testData.put(REPORT_FILE_NAME, reportFileName);
@@ -88,7 +94,9 @@ public class CoreTest extends AbstractTestPlan {
                     actionRequest.setContext(context);
                     actionRequest.setLocatorGroupData(locatorGroupData);
                     actionRequest.setSku(sku);
-                    actionRequest.setQaTestResultId(qaTestResult.getId());
+                    if (qaTestResult != null) {
+                        actionRequest.setQaTestResultId(qaTestResult.getId());
+                    }
                     wasTestPassed.set(getActionFactory().performAction(actionRequest).getStepStatus().equals(Status.PASS));
                 } catch (Exception exp) {
                     wasTestPassed.set(false);
@@ -102,7 +110,7 @@ public class CoreTest extends AbstractTestPlan {
                 ReportUtils.logMessage(context, isDebug, "=== driver closed test status : " + (wasTestPassed.get() ? ITestResult.SUCCESS : ITestResult.FAILURE));
                 Reporter.getCurrentTestResult().setStatus(wasTestPassed.get() ? ITestResult.SUCCESS : ITestResult.FAILURE);
                 ReportUtils.logMessage(context, isDebug, "=== save result started: ");
-                getQualityAssuranceService().saveTestResult(qaTestResult, context, testData, wasTestPassed, context.getStartDate(), Calendar.getInstance().getTime(), sessionId, String.valueOf(testData.get("currentUser")), sku, StringUtils.EMPTY);
+                getQualityAssuranceService().saveTestResult(qaTestResult, context, testData, wasTestPassed, context.getStartDate(), Calendar.getInstance().getTime(), sessionId, "", sku, StringUtils.EMPTY);
                 ReportUtils.logMessage(context, isDebug, "=== save result end: ");
             });
         });

@@ -85,7 +85,6 @@ public class LocatorServiceImpl implements LocatorService {
                     List<LocatorPriority> locatorPriorities = testLocatorGroup.getTestLocators();
                     locatorPriorities.forEach(locatorPriority -> {
                         if (testLocator.getId() != null && testLocator.getId().toString().equals(locatorPriority.getLocatorId())) {
-                            locatorPriority.setPriority(locatorGroup.getPriority());
                             locatorPriority.setErrorMsg(locatorGroup.getErrorMsg());
                             locatorPriorityList.add(locatorPriority);
                         } else {
@@ -136,7 +135,6 @@ public class LocatorServiceImpl implements LocatorService {
                     //TODO check if this works
                     if (StringUtils.isNotEmpty(locatorPriority.getLocatorId()) && locatorPriority.getLocatorId().equals(locatorIdentifier)) {
                         LocatorGroupDto locatorGroupDto = modelMapper.map(locatorGroup, LocatorGroupDto.class);
-                        locatorGroupDto.setPriority(locatorPriority.getPriority());
                         locatorGroupDto.setErrorMsg(locatorPriority.getErrorMsg());
                         locatorGroupsList.add(locatorGroupDto);
                     }

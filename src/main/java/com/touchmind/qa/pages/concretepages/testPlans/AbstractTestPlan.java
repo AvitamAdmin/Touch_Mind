@@ -168,7 +168,6 @@ public abstract class AbstractTestPlan {
             locatorsWithGlobalActions.add(getLocatorPriorityByMethodName(ActionType.ENVIRONMENT_ACTION));
             LocatorGroupData locatorGroupData = new LocatorGroupData();
             if (locators != null) {
-                locators.sort(Comparator.comparing(LocatorPriority::getPriority));
                 locatorsWithGlobalActions.addAll(locators);
                 locatorGroupData.setGroupId(groupId);
                 locatorGroupData.setLocatorPriorityList(locatorsWithGlobalActions);
@@ -181,7 +180,6 @@ public abstract class AbstractTestPlan {
 
     private LocatorPriority getLocatorPriorityByMethodName(String name) {
         LocatorPriority locatorPriority = new LocatorPriority();
-        locatorPriority.setPriority(-1L);
         locatorPriority.setLocatorId(name);
         return locatorPriority;
     }

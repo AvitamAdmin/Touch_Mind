@@ -45,10 +45,6 @@ public class LocatorGroupServiceImpl implements LocatorGroupService {
     public LocatorGroupDto editLocatorGroup(String locatorGroupId) {
         TestLocatorGroup locatorGroup = testLocatorGroupRepository.findByRecordId(locatorGroupId);
         if (locatorGroup != null) {
-            List<LocatorPriority> locators = locatorGroup.getTestLocators();
-            if (CollectionUtils.isNotEmpty(locators)) {
-                locatorGroup.setTestLocators(locatorGroup.getTestLocators().stream().filter(locatorPriority -> null != locatorPriority.getPriority()).collect(Collectors.toList()));
-            }
             return modelMapper.map(locatorGroup, LocatorGroupDto.class);
         }
         return null;

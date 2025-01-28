@@ -151,8 +151,8 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService {
         }
     }
 
-    public void populateTestData(Map<String, String> testMapData) {
-        String testPlan = testMapData.get(TEST_PLAN);
+    public void populateTestData(JSONObject testMapData) {
+        String testPlan = testMapData.getString(TestDataUtils.Field.TEST_PLAN.toString());
         testMapData.put(Field.TEST_NAME.toString(), qaTestPlanRepository.findByRecordId(testPlan).getIdentifier());
         populateSkuData(testMapData);
     }
@@ -174,12 +174,11 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService {
         String testPlanId = testData.getString(TestDataUtils.Field.TEST_PLAN.toString());
         TestPlan testPlan = testPlanService.getTestPlanByRecordId(testPlanId);
         ReportUtils.logMessage(context, isDebug, "=== Test Resul save: " + testData);
-        String fileName = String.valueOf(testData.get(REPORT_FILE_NAME));
+        String fileName = testData.getString(Field.REPORT_FILE_NAME.toString());
         int totalTestCount = testData.optInt(Field.TEST_COUNT.toString(), 0);
-        String subsidiary = testData.getString(Field.SUBSIDIARY.toString());
         List<QATestResult> testResultList = qaRepository.findBySessionIdAndLocatorGroupIdentifierAndTestName(sessionId, locatorGroupIdentifier, testPlan.getIdentifier());
         qaTestResult = CollectionUtils.isNotEmpty(testResultList) ? testResultList.stream().findFirst().get() : new QATestResult();
-        qaTestResult.setTestName(testData.getString(Field.TEST_NAME.toString()));
+        qaTestResult.setTestName(testPlan.getIdentifier());
         qaTestResult.setTestNameDescription(testPlan.getShortDescription());
         qaTestResult.setSku(populateSkuData(sku, qaTestResult));
         qaTestResult.setSessionId(sessionId);
@@ -221,7 +220,6 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService {
         qaTestResult.setEndTime(endTime);
         qaTestResult.setTimeTaken(endTime.getTime() - startTime.getTime());
         qaTestResult.setUser(currentUser);
-        qaTestResult.setSubsidiary(subsidiary);
         qaTestResult.setPaymentType(TestDataUtils.getString(testData, Field.PAYMENT_TYPE));
         qaTestResult.setDeliveryType(TestDataUtils.getString(testData, Field.DELIVERY_TYPE));
         qaTestResult.setSite(TestDataUtils.getString(testData, TestDataUtils.Field.SITE_ISOCODE));
@@ -274,12 +272,12 @@ public class QualityAssuranceServiceImpl implements QualityAssuranceService {
         return buffer.toString();
     }
 
-    private void populateSkuData(Map<String, String> testMapData) {
-        String skus = testMapData.get(Field.SKUS.toString());
+    private void populateSkuData(JSONObject testMapData) {
+        String skus = testMapData.getString(Field.SKUS.toString());
         if (StringUtils.isNotEmpty(skus)) {
             testMapData.put(Field.SKUS.toString(), getVariantAsCommaSeparatedList(skus));
         }
-        testMapData.put(Field.TEST_COUNT.toString(), String.valueOf(testMapData.get(Field.SKUS.toString()).split(TestDataUtils.COMMA).length));
+        testMapData.put(Field.TEST_COUNT.toString(), String.valueOf(testMapData.get(Field.SKUS.toString()).toString().split(TestDataUtils.COMMA).length));
     }
 
     private void runTestPlan(Map<String, String> data) {

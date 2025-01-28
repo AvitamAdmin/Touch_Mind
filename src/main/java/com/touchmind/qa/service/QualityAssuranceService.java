@@ -9,11 +9,14 @@ import org.json.JSONObject;
 import org.testng.ITestContext;
 
 import java.util.Date;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public interface QualityAssuranceService extends CronService {
 
     void runTest(String parameterMap);
+
+    void populateTestData(JSONObject testMapData);
 
     void saveTestResult(QATestResult qaTestResult, ITestContext context, JSONObject testData, AtomicBoolean wasTestPassed, Date startTime, Date endTime, String sessionId, String currentUser, Object sku, String locatorGroupIdentifier);
 
