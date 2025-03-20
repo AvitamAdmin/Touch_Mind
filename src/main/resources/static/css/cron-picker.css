@@ -1,0 +1,117 @@
+.cron-picker-dow {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	background: whitesmoke;
+}
+
+.cron-picker-dow button {
+	margin-right: 3px
+}
+
+.cron-picker-recurrence-types {
+	margin-bottom: 10px
+}
+
+.cron-picker-day-filter {
+	margin-bottom: 10px
+}
+
+.cron-picker-day-filter .cron-picker-day-type-filter,
+.cron-picker-day-filter .cron-picker-weekday-type-filter {
+	display: inline-block
+}
+
+.cron-picker-day-filter select {
+	display: inline-block;
+	width: 65px;
+	height: 35px;
+	margin: 0 5px;
+	color: black !important;
+	background: cornsilk;
+}
+
+.cron-picker-day-filter .cron-picker-dow-select {
+	width: 100px
+}
+
+.cron-picker-day-filter .cron-picker-ord-select {
+	width: 90px;
+}
+
+.cron-picker-time select {
+	width: 65px;
+	display: inline-block;
+	margin: 0 5px;
+	height: 35px;
+	color: black !important;
+	background: cornsilk;
+}
+
+.cron-picker-hours {
+	width: 65px;
+	height: 35px;
+}
+
+.nav-pills li.active {
+	background-color: #00a5bb;
+	border: 1px solid;
+	font-weight: bold;
+}
+
+.btn-default.active {
+	background-color: gold;
+	border: 1px solid;
+	font-weight: bold;
+}
+
+.nav-pills li {
+	margin-right: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 70px;
+	text-align: center;
+}
+
+.cron div {
+	float: left;
+	min-width: 100px;
+	border-right: 1px solid #999;
+	padding: 5px;
+}
+
+.cron a {
+	color: blue;
+}
+
+.cron div select {
+	height: 150px;
+}
+
+/* Number PreProc Type Number PreProc Statement */
+.cron div:last-of-type {
+	border: none;
+}
+
+.cron-output {
+	font-weight: bold
+}
+
+.cron-output-minute {
+	color: #008
+}
+
+.cron-output-hour {
+	color: #055
+}
+
+.cron-output-dom {
+	color: #080
+}
+
+.cron-output-month {
+	color: #550
+}
+
+.cron-output-dow {
+	color: #800
+}
